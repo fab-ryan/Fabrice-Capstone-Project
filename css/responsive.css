@@ -1,0 +1,158 @@
+/* responsive styles */
+@media screen and (max-width: 768px) {
+    
+  header {
+    position: absolute;
+    top: 0px;
+    margin-top: 0px;
+    flex-direction: column;
+  }
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px;
+  }
+  .hamburger {
+    position: absolute;
+    float: right;
+    cursor: pointer;
+    right: 0px;
+    bottom: 0px;
+    display: block;
+    transform: translate(-5%, -50%);
+  }
+  .show-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #31323d;
+    z-index: 9999;
+    width: 320px;
+    height: 100%;
+    -webkit-transform: translateX(320px);
+    -o-transform: translateX(320px);
+    -ms-transform: translateX(320px);
+    -moz-transform: translateX(320px);
+    transition: 0.25s linear all;
+    -moz-transition: 0.25s linear all;
+    -o-transition: 0.25s linear all;
+    -webkit-transition: 0.25s linear all;
+    -ms-transition: 0.25s linear all;
+  }
+  .logo {
+    position: absolute;
+  }
+  .nav-items {
+    flex-direction: column;
+  }
+  .login {
+    margin-top: -100px;
+  }
+
+  main {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 680px) {
+  body {
+    display: inline-block;
+  }
+  .about-section1 {
+    height: 300px;
+    margin-top: auto;
+    padding: 0px 90px 340px 70px;
+  }
+  .about-section1 h5 {
+    padding-top: 10px;
+    padding-left: 30px;
+    font-family: "SeoulHangang-CBL";
+  }
+  .d_about {
+    display: flex;
+    flex: auto;
+    height: 10px;
+    padding: 25px;
+  }
+
+  .d-pic img {
+    height: 280px;
+    width: 280px;
+    border-radius: 27px;
+    border: #31323d;
+  }
+
+  .d-descr {
+    opacity: 50%;
+    padding-left: 80px;
+    justify-content: center;
+    justify-items: right;
+    word-wrap: normal;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+    top: 50px;
+    font-size: smaller;
+  }
+  .d-print-none {
+    height: 1px;
+    margin: 2rem 0;
+    color: #adb5bd;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+  }
+
+  footer {
+    display: flex;
+    font-size: small;
+    justify-content: space-between;
+    size: 2px;
+  }
+}
+@media  (min-width: 320px) and (max-width: 480px) {
+  
+  
+  .content{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      
+  }
+  .about-section1{
+    padding: 2px;
+
+      
+  }
+  .d_about{
+      display: flex;
+      flex-direction: column !important;
+  }
+  .d-descr{
+      display:contents;
+      margin-top: auto;
+    margin-bottom: 20px;
+
+  }
+
+  .about-section2{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 5px;
+      margin-top: 5px;
+
+  }
+  .d-print-none::before{
+      margin-top: 40px;
+  }
+  .d-print-none{
+    
+    margin-top: 130px;
+    
+
+  }
+}

@@ -6,9 +6,16 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
+@font-face {
+  font-family: "SeoulHangang-CBL";
+  src: url("/css/font/SeoulHangang-CBL.ttf.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 ::-webkit-scrollbar {
   width: 12px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: #f1f1f1;
   box-shadow: inset 0 0 5px gray;
@@ -22,6 +29,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+.hamburger{
+  display: none;
+}
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -30,7 +40,12 @@
 body {
   background-image: url("../images/bg.jpg");
   background-repeat: no-repeat repeat;
-  background-size: contain;
+  background-size:auto;
+}
+h5{
+  font-family: "SeoulHangang-CBL";
+  font-size: medium;
+  font-weight: 100;
 }
 header {
   height: 60px;
@@ -261,12 +276,14 @@ header .login a:hover {
   text-overflow: ellipsis;
   text-size-adjust: inherit;
   text-underline-position: below;
+  color: #000000;
 }
 .mission-card p {
   text-align: justify;
   padding: 7px;
   margin: 5px;
   letter-spacing: 1px;
+  color: #000000;
 }
 footer {
   background-color: #000000;
@@ -304,15 +321,18 @@ footer {
     inset 0px -11px 8px -10px #ccc;
   background-color: #fff;
   color: #000000;
-  height: 400vh;
+  height:100%;
+  margin-bottom: 0px;
 }
 .about-section1 {
+  height: 350px;
   margin-top: auto;
+  padding: 0px 90px 0px 70px;
 }
 .about-section1 h5 {
   padding-top: 10px;
-  padding-left: 25px;
- 
+  padding-left: 30px;
+  font-family: "SeoulHangang-CBL";
 }
 .d_about {
   display: flex;
@@ -328,8 +348,7 @@ footer {
   border: #31323d;
 }
 
-.d-descr  {
-
+.d-descr {
   opacity: 50%;
   padding-left: 80px;
   justify-content: center;
@@ -340,64 +359,142 @@ footer {
   position: relative;
   top: 50px;
 }
+.d-print-none {
+  height: 1px;
+  margin: 2rem 0;
+  color: #adb5bd;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+  
+}
+.about-section2 {
+  margin-top: auto;
+  padding: 0px 90px 33px 70px;
+}
+.about-section2 .h-5 {
+  margin-bottom: 3rem;
+  font-family: "SeoulHangang-CBL";
+  font-size: medium;
+  font-weight: 100;
+  opacity: 0.99;
+}
+.h-2{
+  font-family: "SeoulHangang-CBL";
+  font-size: medium;
+  font-weight:lighter;
+}
+.timeline {
+  border-left: 2px solid #e6e9ed;
+  padding: 1rem 0;
+  
+}
+.timeline-card {
+  position: relative;
+  margin-left: 31px;
+  border-left: 2px solid;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.timeline-card:last-child {
+  margin-bottom: 1rem;
+}
+
+.timeline-card:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 12px;
+  height: 12px;
+  top: 20px;
+  left: -41px;
+  border: 2px solid;
+  z-index: 2;
+}
+
+.timeline-card:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: currentColor;
+  width: 29px;
+  height: 2px;
+  top: 25px;
+  left: -29px;
+  z-index: 1;
+}
+
+.timeline-card-primary {
+  border-left-color: #4808ff;
+}
+
+.timeline-card-primary:before {
+  border-color: #4808ff;
+}
+
+.timeline-card-primary:after {
+  background-color: #4a89dc;
+}
+
+.timeline-card-success {
+  border-left-color: #4808ff;
+}
+.timeline-card-danger{
+  border-left-color: #8a0000;
+
+}
+.timeline-card-danger::before{
+  border-color: #8a0000;
+
+}
+.timeline-card-danger::after{
+  background-color: #8a0000;
+
+}
+.timeline-card-success:before {
+  border-color: #4808ff;
+}
+
+.timeline-card-success:after {
+  background-color: #4808ff;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 2rem 2rem;
+}
+.text-muted{
+  color: #6c757d!important;
+}
+.text-sm
+{
+  font-size: smaller;
+
+}
+.mb-1{
+  margin-bottom: 1rem;
+}
+.card-body h5 span{
+  font-family: "SeoulHangang-CBL";
+  font-size: medium;
+  font-weight: 100;
+}
 
 .footer ul li a i {
   padding: 8px;
   color: white;
-}
-/* responsive styles */
-@media screen and (max-width: 768px) {
-  header {
-    position: absolute;
-    top: 0px;
-    margin-top: 0px;
-    flex-direction: column;
-  }
-  .line {
-    width: 30px;
-    height: 3px;
-    background-color: #ffffff;
-    margin: 5px;
-  }
-  .hamburger {
-    position: absolute;
-    float: right;
-    cursor: pointer;
-    right: 0px;
-    bottom: 0px;
-    transform: translate(-5%, -50%);
-  }
-  .show-menu {
-    position: fixed;
-    right: 0;
-    top: 0;
-    background-color: #31323d;
-    z-index: 9999;
-    width: 320px;
-    height: 100%;
-    -webkit-transform: translateX(320px);
-    -o-transform: translateX(320px);
-    -ms-transform: translateX(320px);
-    -moz-transform: translateX(320px);
-    transition: 0.25s linear all;
-    -moz-transition: 0.25s linear all;
-    -o-transition: 0.25s linear all;
-    -webkit-transition: 0.25s linear all;
-    -ms-transition: 0.25s linear all;
-  }
-  .logo {
-    position: absolute;
-  }
-  .nav-items {
-    flex-direction: column;
-  }
-  .login {
-    margin-top: -100px;
-  }
-
-  main {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-  }
 }
