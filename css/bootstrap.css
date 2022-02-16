@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);
 
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
@@ -10717,6 +10717,9 @@ a.text-dark:focus {
 
 .text-muted {
   color: #6c757d !important;
+}
+.text-black{
+    color: #000!important;
 }
 
 .text-black-50 {

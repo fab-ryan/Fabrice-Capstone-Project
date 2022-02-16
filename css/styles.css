@@ -503,6 +503,14 @@ footer {
   height: 100%;
   margin-bottom: 0px;
 }
+.content_blog{
+  box-shadow: inset 0px 11px 8px -10px rgb(0, 0, 0),
+    inset 0px -11px 8px -10px #ccc;
+  background-color: #f3eeee;
+  color: #000000;
+  height:fit-content;
+  margin-bottom: 0px;
+}
 .page-content {
   display: grid;
   display: -ms-grid, -moz-grid;
@@ -844,7 +852,59 @@ nav.fort ul li a:hover {
   color: #ffffff;
   font-size: 12px;
 }
+.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.blog-text{
+  margin-bottom: 30px;
+  position: relative;
+  background: #fff9f9c2;
+  width: 90%;
+  padding: 10px;
+  float: right;
+  margin-top: -3em;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  -webkit-box-shadow: 0px 10px 20px -12px rgb(0 0 0 / 18%);
+  -moz-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 10px 20px -12px rgb(0 0 0 / 18%);
 
+}
+.blog-text span.posted_by {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+}
+.blog-title{
+  text-decoration: none;
+  color: black;
+  
+}
+.blog-title h3 a{
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+}
+.blog-text p{
+  padding-left: 0px;
+}
+.fh5co-blog {
+  margin-bottom: 60px;
+}
+.blog-text span.comment {
+  float: right;
+}
+.blog-text span.comment a {
+text-decoration: none;
+color: rgba(0, 0, 0, 0.5) !important;
+}
+.blog-title p a{
+  text-decoration: none;
+  color: red;
+}
 .footer ul li a i {
   padding: 8px;
   color: white;
