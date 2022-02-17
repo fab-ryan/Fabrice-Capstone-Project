@@ -14,28 +14,53 @@
 </head>
 
 <body>
-  <header id="header">
+  <header class="nav-header">
 
     <div class="logo">
-      <a href="index.html"><img src="./images/mine_logo.png"></a>
+      <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
     </div>
-    <div class="hamburger">
+    <div class="hamburger" id="nav-toggle" name="menu-outline">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
 
     </div>
-    <nav class="navbar show-menu">
-      <ul class="nav-items">
-        <li class="active-link"><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
+    <nav class="nav" id="nav-menu">
+      <div class="nav__content bd-grid">
 
-      </ul>
+        <div class="nav__close" id="nav-close">
+
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+
+        <div class="nav__perfil">
+          <div class="nav__img">
+            <img src="./images/mine_logo.png" alt="">
+          </div>
+
+
+        </div>
+
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
+            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
+            <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+            <li class="nav__item"><a href="blog.html" class="nav__link active">Blog</a></li>
+
+
+          </ul>
+        </div>
+
+        <div class="nav__login">
+
+          <a href="login.html" class="nav__social-icon ">Login</a>
+
+
+        </div>
+      </div>
     </nav>
-    <div class="login"><a href="#">Login</a></div>
   </header>
   <main class="">
     <div class="header">
@@ -58,7 +83,8 @@
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="fh5co-blog animate-box fadeInUp animated">
-              <a href="#"><img class="img-responsive" src="images/blog/keyboard_robot_bw_clone_lego_27558_1920x1200.jpg" alt="Description" /></a>
+              <a href="#"><img class="img-responsive" src="images/blog/keyboard_robot_bw_clone_lego_27558_1920x1200.jpg"
+                  alt="Description" /></a>
               <div class="blog-text">
                 <div class="blog-title">
                   <h3><a href="" #="">Medical Mission in Southern Kenya</a></h3>
@@ -67,7 +93,7 @@
                   <p class="text-black mt-3">Far far away, behind the word mountains, far from the countries Vokalia and
                     Consonantia, there live
                     the blind texts.</p>
-                  <p><a href="#">Learn More...</a></p>
+                  <p><a href="artical.html">Learn More...</a></p>
                 </div>
               </div>
             </div>
@@ -106,7 +132,9 @@
           </div>
           <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="fh5co-blog animate-box fadeInUp animated">
-              <a href="#"><img class="img-responsive" src="images/blog/processor_cpu_upgrade_installation_chip_robot_5633_1920x1200.jpg" alt="Description" /></a>
+              <a href="#"><img class="img-responsive"
+                  src="images/blog/processor_cpu_upgrade_installation_chip_robot_5633_1920x1200.jpg"
+                  alt="Description" /></a>
               <div class="blog-text">
                 <div class="blog-title">
                   <h3><a href="" #="">Medical Mission in Southern Kenya</a></h3>
@@ -138,7 +166,8 @@
           </div>
           <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="fh5co-blog animate-box fadeInUp animated">
-              <a href="#"><img class="img-responsive" src="images/blog/intel_motherboard_pc_system_97667_1920x1200.jpg" alt="Description" /></a>
+              <a href="#"><img class="img-responsive" src="images/blog/intel_motherboard_pc_system_97667_1920x1200.jpg"
+                  alt="Description" /></a>
               <div class="blog-text">
                 <div class="blog-title">
                   <h3><a href="" #="">Medical Mission in Southern Kenya</a></h3>
@@ -177,6 +206,8 @@
     <div>copyright <i class="fa fa-copyright" aria-hidden="true"> </i>2022 Fabrice. All Rights Reserved</div>
     <div>Designed by NDACYAYISENGA Fabrice</div>
   </footer>
+  <script src="./js/app.js"></script>
+
 </body>
 
 </html>

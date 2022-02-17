@@ -8,45 +8,72 @@
   <title>About</title>
   <link href="css/styles.css" type="text/css" rel="stylesheet" />
   <link href="css/responsive.css" type="text/css" rel="stylesheet" />
+  <link href="css/isotope.css" type="text/css" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-  <header id="header">
+  <header class="nav-header">
+
     <div class="logo">
-      <a href="index.html"><img src="./images/mine_logo.png"></a>
+      <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
     </div>
-    <div class="hamburger">
+    <div class="hamburger" id="nav-toggle" name="menu-outline">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
 
     </div>
-    <nav class="navbar show-menu ">
-      <ul class="nav-items">
-        <li><a href="index.html" class="">Home</a></li>
-        <li class="active-link"><a href="about.html" class="active">About</a></li>
-        <li ><a href="experience.html">Experience</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
+    <nav class="nav" id="nav-menu">
+      <div class="nav__content bd-grid">
 
-      </ul>
+        <div class="nav__close" id="nav-close">
+
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+
+        <div class="nav__perfil">
+          <div class="nav__img">
+            <img src="./images/mine_logo.png" alt="">
+          </div>
+
+
+        </div>
+
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
+            <li class="nav__item"><a href="about.html" class="nav__link active">About</a></li>
+            <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
+            <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+            <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+
+
+          </ul>
+        </div>
+
+        <div class="nav__login">
+
+          <a href="login.html" class="nav__social-icon ">Login</a>
+
+
+        </div>
+      </div>
     </nav>
-    <div class="login"><a href="#">Login</a></div>
   </header>
   <main class="container">
     <div class="header">
       <p>About me</p>
     </div>
     <div class="content">
-      <div class="about-section1">
+      <div class="about-section1 fadeInUp animated">
         <h5>Who is NDACYAYISENGA Fabrice ?</h5>
         <div class="d_about">
-          <div class="d-pic">
+          <div class="d-pic fadeInDown animated">
             <img src="./images/IMG-20190116-WA0005.jpg">
           </div>
-          <div class="d-descr">
+          <div class="d-descr fadeInUp animated">
             <p> I grew up in east Rwandan province, am the first born in my family, I was a stubborn kidd where every
               electronic devices I touched ended up dead, but I was clever, whenever I also touched that electroic
               devices, I gained knowledge of how it work.
@@ -97,10 +124,10 @@
         <div class="timeline">
           <div class="timeline-card timeline-card-success card shadow-sm">
             <div class="card-body">
-              <h5 class="mb-1">SOrdinary Level Form 
-                 <span class="text-muted">
+              <h5 class="mb-1">SOrdinary Level Form
+                <span class="text-muted">
                   STAR Secondary School
-                  </span>
+                </span>
 
               </h5>
               <div class="text-muted text-sm mb-1 h-2">
@@ -137,6 +164,8 @@
     <div>copyright <i class="fa fa-copyright" aria-hidden="true"> </i>2022 Fabrice. All Rights Reserved</div>
     <div>Designed by NDACYAYISENGA Fabrice</div>
   </footer>
+  <script src="./js/app.js"></script>
+
 </body>
 
 </html>
