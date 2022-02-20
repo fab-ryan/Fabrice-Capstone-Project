@@ -3323,7 +3323,7 @@ input[type=button].btn-block {
 }
 
 .fade:not(.show) {
-  opacity: 0;
+  opacity: 1;
 }
 
 .collapse:not(.show) {
@@ -8228,9 +8228,9 @@ button.bg-dark:focus {
 }
 
 .sr-only {
-  position: absolute;
+  /* position: absolute;
   width: 1px;
-  height: 1px;
+  height: 1px; */
   padding: 0;
   margin: -1px;
   overflow: hidden;
