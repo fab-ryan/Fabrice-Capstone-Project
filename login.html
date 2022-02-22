@@ -62,14 +62,14 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main id="main">
         <div class="header">
             <p class="text-white text-center mt-3 fadeInUp animated">Login </p>
         </div>
-        <div class="content_blog">
+        <div class="content_blog mb-xl-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7 col-md-6 col-sm-12">
+                    <div class="col-lg-7 col-md-9 pt-5 col-sm-12">
                         <div class="mt-lg-5 mb-3">
                             <div class="card animate-box fadeInUp animated">
                                 <div class="img-circle">
@@ -78,17 +78,14 @@
                                 <div class="row">
                                     <div class="card-body text-black text-center">
                                         <h1> LOGIN HERE</h1>
-                                        <div class="col-md-6 mt-0">
-                                            <form method="" action="" class="">
+                                        <div class="col-md-8 mt-0">
+                                            <form method="POST" class="form-login">
 
-
-                                                <input type="text" name="" id="" class="form-control "
+                                                <input type="email" name="email" id="email" class="form-control "
                                                     placeholder="Email">
 
-
-
-                                                <input type="password" name="" id="" class="form-control mt-2 "
-                                                    placeholder="password">
+                                                <input type="password" name="password" id="password"
+                                                    class="form-control mt-2 " placeholder="password">
 
                                                 <div class="row mt-2">
                                                     <div class="col-sm-6">
@@ -102,11 +99,11 @@
                                                 </div>
                                                 <div class="row mt-2">
                                                     <div class="col-sm-6">
-                                                        <input type="submit" name="" id="" value="LOGIN"
+                                                        <input type="submit" name="submit" id="submit" value="LOGIN"
                                                             class="btn btn-primary-1">
 
-                                                     </div>
-                                                    
+                                                    </div>
+
                                                 </div>
                                             </form>
                                             <div class="register-line">
@@ -144,6 +141,33 @@
         <div>Designed by NDACYAYISENGA Fabrice</div>
     </footer>
     <script src="./js/app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+    <script>
+        const form = document.querySelector('.form-login');
+        
+        const app = firebase.initializeApp(firebaseConfig);
+    
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            app.auth().signInWithEmailAndPassword(form.email.value, form.password.value)
+                .then((userCredential) => {
+                    // Signed in
+                    var user = userCredential.user;
+                    window.location.href('/blog.html');
+                    alert('Thank you for ' + user.email + 'Login ');
+                    // ...
+                })
+                .catch((error) => {
+
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                });
+        });
+    </script>
 </body>
 
 </html>

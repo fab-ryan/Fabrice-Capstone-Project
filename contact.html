@@ -10,100 +10,129 @@
   <link href="css/isotope.css" type="text/css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
   <link href="css/responsive.css" type="text/css" rel="stylesheet">
+  <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
   <header class="nav-header">
 
     <div class="logo">
-        <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
+      <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
     </div>
     <div class="hamburger" id="nav-toggle" name="menu-outline">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
 
     </div>
     <nav class="nav" id="nav-menu">
-        <div class="nav__content bd-grid">
+      <div class="nav__content bd-grid">
 
-            <div class="nav__close" id="nav-close">
+        <div class="nav__close" id="nav-close">
 
-                <i class="fa fa-times" aria-hidden="true"></i>
-            </div>
-
-            <div class="nav__perfil">
-                <div class="nav__img">
-                    <img src="./images/mine_logo.png" alt="">
-                </div>
-
-
-            </div>
-
-            <div class="nav__menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
-                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
-                    <li class="nav__item"><a href="contact.html" class="nav__link active">Contact</a></li>
-                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
-
-
-                </ul>
-            </div>
-
-            <div class="nav__login">
-
-                <a href="login.html" class="nav__social-icon ">Login</a>
-
-
-            </div>
+          <i class="fa fa-times" aria-hidden="true"></i>
         </div>
+
+        <div class="nav__perfil">
+          <div class="nav__img">
+            <img src="./images/mine_logo.png" alt="">
+          </div>
+
+
+        </div>
+
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
+            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
+            <li class="nav__item"><a href="contact.html" class="nav__link active">Contact</a></li>
+            <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+
+
+          </ul>
+        </div>
+
+        <div class="nav__login">
+
+          <a href="login.html" class="nav__social-icon ">Login</a>
+
+
+        </div>
+      </div>
     </nav>
-</header>
-  <main class="container">
+  </header>
+  <main class="" id="main">
     <div class="header fadeLeft animated">
-      <p>Any Feed back send it Here</p>
+      <p class=" text-white text-center">Any Feed back send it Here</p>
     </div>
     <div class="content_contact">
-      <div class="page-content">
-        <div class="sec_address">
-          <div class="address fadeInUp animated">
-            <h4>My Address</h4>
-            <address>
-              In country of thousands hills and Great Rift Valley called RWANDA, there live the blind texts.
-              Kigali, Rwanda Kacyiru village,<br>
-              tel:<tel> +25074647287</tel>, <tel> +250785722182</tel><br>
-              Email: royalfabrice1234@gmail.com,<br> ryan.fab@outlook.com
+      <div class="row pt-lg-2">
 
-            </address>
-          </div>
-          <div class="map fadeInDown animated">
-            <h4>MAP</h4>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.292483377303!2d30.06093777411798!3d-1.9378347682493875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6a40203f041%3A0x5f8434259d8c4393!2sKacyiru%2C%20Kigali!5e0!3m2!1sen!2srw!4v1645004721851!5m2!1sen!2srw"
-              width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+        <div class="col-lg-6 pt-lg-2">
+
+          <div class="row">
+
+
+
+
+            <div class="sec_address">
+              <div class="col-12">
+                <div class="address fadeInUp animated">
+                  <h4>My Address</h4>
+                  <address>
+                    In country of thousands hills and Great Rift Valley called RWANDA, there live the blind texts.
+                    Kigali, Rwanda Kacyiru village,<br>
+                    tel:<tel> +25074647287</tel>, <tel> +250785722182</tel><br>
+                    Email: royalfabrice1234@gmail.com,<br> ryan.fab@outlook.com
+
+                  </address>
+                </div>
+              </div>
+
+              <div class="map fadeInDown animated">
+                <h4 class=" pl-4">MAP</h4>
+                <div class="col-12">
+                  <div id="map-container" class="z-depth-1-half map-container" >
+                    <iframe class="embed-responsive-item" style="height: 300px; width: 100%; border: 0px;"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31900.292483377303!2d30.06093777411798!3d-1.9378347682493875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6a40203f041%3A0x5f8434259d8c4393!2sKacyiru%2C%20Kigali!5e0!3m2!1sen!2srw!4v1645004721851!5m2!1sen!2srw"
+                     allowfullscreen=""style="border:0" loading="lazy"></iframe>
+                  </div>  
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+        <div class="col-lg-6">
+          <div class=" fadeInUp animated">
+            <div class="row">
+              <div class="col-lg-12">
+                <h2 class=" pl-lg-5 text-black-50">Message me here</h2>
 
-        <div class="sec_contact fadeInUp animated">
-          <h2>Message me here</h2>
-        <form action="" class="form-group">
-          <input class="form-control" type="text" name="" placeholder="Name">
-          
-          <input type="email" name="" id="input" class="form-control" value="" placeholder="Email" required="required" title="">
-          
-          <textarea name="" id="input" class="form-control" rows="8" required="required" placeholder="Your Message"></textarea>
-          <div class="button_contact">
-          <button type="submit" class="btn btn-primary">FEED BACK</button>&nbsp;
-          
-          
+                <form action="">
+                  <input class="form-control mb-2" type="text" name="" placeholder="Name">
+
+                  <input type="email" name="" id="input" class="form-control  mb-2" value="" placeholder="Email"
+                    required="required" title="">
+
+                  <textarea name="" id="input" class="form-control  mb-2" rows="8" required="required"
+                    placeholder="Your Message"></textarea>
+                  <div class="button_contact">
+                    <button type="submit" class="btn btn-primary-1">FEED BACK</button>&nbsp;
+
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+
         </div>
-          
-        </form></div>
-
       </div>
-    </div>
+
   </main>
   <footer class="footer">
     <div>

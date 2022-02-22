@@ -73,7 +73,7 @@ body {
   background-image: url("../images/bg.jpg");
   background-repeat: no-repeat repeat;
   background-size: auto;
-  margin: var(--header-height) 0 0 0;
+  margin: 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   font-weight: 500;
@@ -140,6 +140,7 @@ img {
   cursor: pointer;
 }
 
+
 /*===== NAV =====*/
 @media screen and (max-width: 768px) {
   .nav {
@@ -155,6 +156,7 @@ img {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     margin-bottom: 50px;
+    
   }
 
   .nav__item {
@@ -175,6 +177,8 @@ img {
     background-color: var(--first-color);
     color: white !important;
   }
+
+  .nav__login{padding-right: 2.5rem;}
 }
 
 .nav__content {
@@ -242,6 +246,10 @@ img {
 /*Aparecer menu*/
 .show {
   right: 0;
+}
+.blure{
+filter:blur(3px);
+
 }
 
 /*Active menu*/
@@ -518,8 +526,8 @@ h5 {
 }
 .mission-card {
   margin-left: 20px;
-  height: 350px;
-  width:inherit;
+  
+  width:100%;
   border-radius: 10px;
   margin: auto;
 
@@ -586,7 +594,7 @@ footer {
   height: 350px;
   margin-top: auto;
   padding: 0px 90px 0px 70px;
-  background-color: #fff;
+ 
 }
 .about-section1 h5 {
   padding-top: 10px;
@@ -758,6 +766,7 @@ footer {
   background-color: #f3eeee;
   color: #000000;
   height: 100%;
+  width: 100%;
   margin-bottom: 0px;
 }
 .content_experience {
@@ -797,13 +806,7 @@ footer {
 }
 .sec_address {
   background-color: #fff;
-  width: 100%;
-  height: 100%;
-  padding-right: 3rem !important;
-  padding-left: 3rem !important;
-  display: flex;
-  margin-top: auto;
-  flex-direction: column;
+  
 }
 .address h4 {
   font-weight: 500;
@@ -815,7 +818,8 @@ footer {
   font-weight: 500;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1.5rem;
-  padding-bottom: 10px;
+  
+  padding-bottom: 2px;
 }
 .map iframe {
   border-radius: 10px;
@@ -1222,6 +1226,11 @@ nav.fort ul li a:hover {
   flex: auto;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.two-line{
+  margin-top: 1px !important;
+    margin-bottom:0px !important;
+    
 }
 .footer ul li a i {
   padding: 8px;
