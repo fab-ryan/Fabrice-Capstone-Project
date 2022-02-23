@@ -179,6 +179,12 @@ img {
   }
 
   .nav__login{padding-right: 2.5rem;}
+  .nav__logout{
+    padding-right: 2.5rem;
+    display: none;
+    word-wrap: break-word;
+    word-break: normal;
+  }
 }
 
 .nav__content {
@@ -226,6 +232,13 @@ img {
   text-decoration: none;
   color: #fff;
 }
+.nav__logout a:hover{
+  text-decoration: none;
+  color: white;
+}
+.nav__logout{
+  color: white;
+}
 
 .nav__social-icon {
   color: var(--white-color);
@@ -248,7 +261,8 @@ img {
   right: 0;
 }
 .blure{
-filter:blur(3px);
+filter:blur(2px);
+opacity:1px
 
 }
 
@@ -1214,6 +1228,36 @@ nav.fort ul li a:hover {
   position: relative;
 
   padding-left: 1.25rem;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+}
+.nav__logout1{
+  color: var(--white-color);
+  
+  
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.25rem;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 12px;
+  z-index: 1;
+  margin-top: 10px;
+  margin-left: 0px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown a{
+  cursor: pointer;
 }
 .img-artical {
   display: block;

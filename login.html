@@ -53,20 +53,30 @@
                     </ul>
                 </div>
 
-                <div class="nav__login">
+                <div class="nav__login" id="nav_login">
 
-                    <a href="login.html" class="nav__social-icon active">Login</a>
-
+                    <a href="login.html" id="login" class="nav__social-icon active">Login</a>
 
                 </div>
+                <div class="nav__logout text-white" id="nav_logout">
+                    <div class="dropdown  nav__logout1 ">
+                        <span id="username"></span>
+
+                        <div class="dropdown-content text-black">
+                            <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+
         </nav>
     </header>
     <main id="main">
         <div class="header">
             <p class="text-white text-center mt-3 fadeInUp animated">Login </p>
         </div>
-        <div class="content_blog mb-xl-5">
+        <div class="content_blog ">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-md-9 pt-5 col-sm-12">
@@ -107,7 +117,8 @@
                                                 </div>
                                             </form>
                                             <div class="register-line">
-                                                <a href="register.html" class="register">I Don't Have Account</a>
+                                                <a href="register.html" class="register text-primary">I Don't Have
+                                                    Account</a>
 
                                             </div>
                                         </div>
@@ -140,32 +151,37 @@
         <div>copyright <i class="fa fa-copyright" aria-hidden="true"> </i>2022 Fabrice. All Rights Reserved</div>
         <div>Designed by NDACYAYISENGA Fabrice</div>
     </footer>
-    <script src="./js/app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+    <script src="./js/app.js"></script>
+
     <script>
         const form = document.querySelector('.form-login');
-        
-        const app = firebase.initializeApp(firebaseConfig);
-    
+
+
+
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+
 
             app.auth().signInWithEmailAndPassword(form.email.value, form.password.value)
                 .then((userCredential) => {
                     // Signed in
                     var user = userCredential.user;
-                    window.location.href('/blog.html');
-                    alert('Thank you for ' + user.email + 'Login ');
-                    // ...
+                    form.email.value = "";
+                    form.email.value = "";
+                    window.location = "blog.html";
+
                 })
                 .catch((error) => {
 
                     var errorCode = error.code;
                     var errorMessage = error.message;
                 });
+
         });
     </script>
 </body>
