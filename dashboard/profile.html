@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <img src="images/mine_logo.png" height="60px" width="60px">
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li class="nav-link"><a href="index.html"><span class=" fa fa-home"></span>&nbsp; Dashboard</a></li>
+                <li class="nav-link"><a href="blog-list.html"><span class=" fa fa-bars"></span> &nbsp; List Blog</a>
+                </li>
+                <li class="nav-link"><a href="blog-add.html"><span class=" fa fa-blog"></span>&nbsp; Add Blog</a></li>
+                <li class="nav-link"><a href="contact-info.html"><span class=" fa fa-phone"></span> Contacts</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <div class="hamburger" id="nav-toggle" name="menu-outline">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+
+                </div>
+
+                Dashboard
+            </h2>
+            <div class="return-button">
+                <div class="home-buttons"><a href="../index.html">Home</a></div>
+                <div class="home-buttons"><a href="../contact.html">Contact</a></div>
+                <div class="home-buttons"><a href="../blog.html">Blog</a></div>
+
+            </div>
+            <div class="user-wrapper dropdown">
+                <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" onclick="dropdown_menu()"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="./images/user.png" width="40px" height="40px" alt=" users">
+                    User Name
+
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
+                    <a class="dropdown-item " href="profile.html" style="background-color: gray;">Profile</a>
+                    <a class="dropdown-item" onclick="logout()"> Logout</a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-6">
+                        <div class="card text-center">
+                            <div class="card-header">
+
+                                <h1>User Profile</h1>
+
+                            </div>
+                            <div class="card-body">
+                                <img src="./images/user.png" alt="" width="90px" height="90px">
+
+                                <form action="">
+                                    <div class="row text-left mt-5">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="username">User Name</label>
+                                                <input id="username" class="form-control" type="text" name="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="username">First Name</label>
+                                                <input id="username" class="form-control" type="text" name="">
+                                            </div>
+                                            
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="username">Email</label>
+                                                <input id="username" class="form-control" type="text" name="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="username">Last Name</label>
+                                                <input id="username" class="form-control" type="text" name="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./js/main.js"></script>
+
+
+</body>
+
+</html>

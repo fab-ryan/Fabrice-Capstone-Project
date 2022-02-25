@@ -90,9 +90,12 @@
                                         <h1> LOGIN HERE</h1>
                                         <div class="col-md-8 mt-0">
                                             <form method="POST" class="form-login">
+                                                <span class="text-danger text-capitalize" id="login-error"></span>
+                                                <span class=" text-danger" id="email-error"></span>
 
                                                 <input type="email" name="email" id="email" class="form-control "
                                                     placeholder="Email">
+                                                <span class="text-danger" id="password-error"></span>
 
                                                 <input type="password" name="password" id="password"
                                                     class="form-control mt-2 " placeholder="password">
@@ -109,8 +112,7 @@
                                                 </div>
                                                 <div class="row mt-2">
                                                     <div class="col-sm-6">
-                                                        <input type="submit" name="submit" id="submit" value="LOGIN"
-                                                            class="btn btn-primary-1">
+                                                        <input type="submit" value="LOGIN" class="btn btn-primary-1">
 
                                                     </div>
 
@@ -129,6 +131,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </main>
     <footer class="footer">
@@ -156,6 +159,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
     <script src="./js/app.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
         const form = document.querySelector('.form-login');
@@ -166,20 +170,99 @@
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
+            if (form.email.value == "" || form.email.value == null) {
+                document.getElementById('email-error').innerHTML = "Email is required";
+                form.email.classList.add('is-invalid');
+                form.email.focus();
+
+                return false;
+            }
+            else {
+                form.email.classList.remove('is-invalid');
+                document.getElementById('email-error').innerHTML = "";
+
+                form.email.classList.add('is-valid');
+
+            }
+            var emailID = form.email.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+
+            if (atpos < 1 || (dotpos - atpos < 2)) {
+                document.getElementById('email-error').innerHTML = "Check your Email again!";
+                form.email.classList.add('is-invalid');
+                form.email.focus();
+                return false;
+            }
+            else {
+                form.email.classList.remove('is-invalid');
+                document.getElementById('email-error').innerHTML = "";
+
+            }
+            if (
+                form.password.value == "" || form.password.value == null
+            ) {
+                document.getElementById('password-error').innerText = "Password is required";
+                form.password.classList.add('is-invalid');
+                return false;
+
+            }
+            else {
+                document.getElementById('password-error').innerHTML = '';
+                form.password.classList.remove('is-invalid');
+                form.password.classList.add('is-valid');
+
+            }
+
 
             app.auth().signInWithEmailAndPassword(form.email.value, form.password.value)
                 .then((userCredential) => {
                     // Signed in
                     var user = userCredential.user;
+                    swal('welcome again', user.email,'success');
                     form.email.value = "";
-                    form.email.value = "";
-                    window.location = "blog.html";
+                    form.password.value = "";
+                    form.email.classList.remove('is-valid');
+                    form.password.classList.remove('is-valid');
+                    
+                  
+                    window.location = "dashboard/index.html";
 
                 })
                 .catch((error) => {
 
+
                     var errorCode = error.code;
                     var errorMessage = error.message;
+
+                    if (errorCode == 'auth/network-request-failed') {
+                        document.getElementById('login-error').innerHTML = "Wrong Email/ password";
+                    }
+                    else {
+                        document.getElementById('login-error').innerHTML = "";
+                    }
+                    if (errorCode == 'auth/wrong-password') {
+                        document.getElementById('login-error').innerHTML = "Wrong Email/ password";
+                    }
+                    else {
+                        document.getElementById('login-error').innerHTML = "";
+                    }
+                    if (errorCode == 'auth/wrong-password') {
+                        document.getElementById('login-error').innerHTML = "Wrong Email/ password";
+
+                    }
+                    else {
+                        document.getElementById('login-error').innerHTML = "";
+                    }
+                    if (errorCode == 'auth/user-not-found') {
+                        document.getElementById('login-error').innerHTML ="Wrong Email/ password";
+
+                    }
+                    else {
+                        document.getElementById('login-error').innerHTML = "";
+                    }
+
+                    console.log(error);
                 });
 
         });
