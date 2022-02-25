@@ -4,10 +4,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow:visible;
 }
-body{
-    background-color: rgb(241, 239, 239);
+body {
+  background-color: rgb(241, 239, 239);
 }
 .sidebar {
   width: 250px;
@@ -34,60 +34,95 @@ body{
   border-bottom: solid rgba(255, 255, 255, 0.26) 1px;
   cursor: pointer;
 }
-.sidebar-menu ul li:hover  {
+.sidebar-menu ul li:hover {
   background-color: #1546da2c;
   color: white;
   padding: 1rem;
 }
-.sidebar-menu ul li a:hover  {
-  
+.sidebar-menu ul li a:hover {
   color: white;
-  
 }
-.active{
-    background-color:#1546da2c ;
-    padding: 1rem;
-    color: #fff;
+.active {
+  background-color: #1546da2c;
+  padding: 1rem;
+  color: #fff;
 }
-.active :first-child{
-    color: #fff;
+.active :first-child {
+  color: #fff;
 }
-a:hover{
-    text-decoration: none;
-    color: white;
-    
+a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .sidebar-menu ul li.nav-link {
   padding-left: 4rem;
 }
-header{
-    display: flex;
-    justify-content: space-between;
-    height: 60px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: -4px 6px 8px 1px rgb(85, 84, 84);
-    z-index: 100;
-    width: calc((100%-250px));
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  background-color: white;
+  box-shadow: -4px 6px 8px 1px rgb(85, 84, 84);
+ 
+  position:sticky;
+  width: calc((100%-250px));
 }
 header h2 {
-    padding-left: 2rem;
-    margin-top: 0.5rem;
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+  display: flex;
 }
-.user-wrapper{
-    margin-top: 0.5rem;
-    padding-right: 2rem;
-    cursor: pointer;
+.hamburger {
+  display: block;
+  margin-right: 10px;
+  cursor: pointer;
 }
-.user-wrapper img{
-    border-radius: 50%;
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #000000;
+  margin: 5px;
 }
-main{
-margin-top: 60px;
-margin-right: 2rem;
-margin-left: 2rem;
+.home-buttons {
+  margin-top: 1rem;
+}
+.home-buttons :first-child:hover {
+  color: #000000;
+}
+.return-button {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+.user-wrapper {
+  margin-top: 0.5rem;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+.user-wrapper img {
+  border-radius: 50%;
+}
+a.dropdown-item{
+    background-color: azure;
+    
+}
+a.dropdown-item:hover{
+    background-color: rgb(44, 44, 44);
+    color: rgb(255, 254, 254);
+}
+
+main {
+  margin-top: 60px;
+  margin-right: 2rem;
+  margin-left: 2rem;
 }
 .main-content {
   margin-left: 250px;
   width: calc(100%-250px);
+}
+.btn-primary-1 {
+  color: #fff !important;
+  background-color: #010843 !important;
+  border-color: #010843 !important;
 }

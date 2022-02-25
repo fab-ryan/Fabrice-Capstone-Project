@@ -71,6 +71,8 @@
             <span id="username"></span>
 
             <div class="dropdown-content text-black">
+              <a href="./dashboard/index.html" class="text-success">Dashboard</a>
+              <br>
               <a class="text-success" id="logout-link" onclick="logout()">logout</a>
             </div>
 
@@ -108,7 +110,7 @@
               <div class="col-md-6 align-items-center">
 
                 <div class="rounded-pic">
-                  <img src="./images/IMG-20211216-WA0332.jpg" alt="cover pic" height="90px" width="90px" />
+                  <img src="" id="font-img" alt="cover pic" height="90px" width="90px" />
                 </div>
               </div>
 
@@ -220,15 +222,21 @@
   <script src="./js/app.js"></script>
   <script src="./js/home.js"></script>
   <script>
-    const app = firebase.initializeApp(firebaseConfig);
-    const storage = app.storage();
-    const storageRef = storage.ref();
-    var frontImgRef = storageRef.child('images/front.jpg');
-    frontImgRef.getDownloadURL()
-      .then((url) => {
+    // const app = firebase.initializeApp(firebaseConfig);
+    window.addEventListener('load', function () {
+      const fontimg = document.getElementById('font-img');
+      const storage = app.storage();
+      const storageRef = storage.ref();
+      var frontImgRef = storageRef.child('images/front.jpg');
+
+      frontImgRef.getDownloadURL()
+        .then((url) => {
+          const img = fontimg.setAttribute('src', url);
 
 
-      })
+        })
+    })
+
   </script>
 </body>
 

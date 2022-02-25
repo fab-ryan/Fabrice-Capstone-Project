@@ -159,6 +159,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
     <script src="./js/app.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
         const form = document.querySelector('.form-login');
@@ -218,12 +219,13 @@
                 .then((userCredential) => {
                     // Signed in
                     var user = userCredential.user;
+                    swal('welcome again', user.email,'success');
                     form.email.value = "";
                     form.password.value = "";
                     form.email.classList.remove('is-valid');
                     form.password.classList.remove('is-valid');
                     
-                   
+                  
                     window.location = "dashboard/index.html";
 
                 })
