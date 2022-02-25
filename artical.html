@@ -82,28 +82,24 @@
             <div class="container ">
                 <div class="row  mt-4">
                     <div class="col-lg-6 fadeInUp animated">
-                        <img src="./images/blog/29484.jpg" class="img-artical">
+                        <img id="blog_img" class="img-artical">
 
 
                     </div>
                     <div class="col-lg-6 text-black">
                         <div class="row">
 
-                            <div class="col-lg-12 fadeInUp animated">
-                                <h5>Screen and Monitor</h5>
-                                <p>Monitor, computer screen or displayer are the most impontant part of computer but
-                                    danger to
-                                    those who use it badly like to near it in less than 3 centimeter.
-                                    Lorem Ipsum is simply dummy text of the printing and type setting industry.
-                                    Suspendisse
-                                    ligula massa, cursus eget nunc sed, interdum cursus eros. Credit goes to Unsplash
-                                    for photos
-                                    used in homepage slider.</p>
+                            <div class="col-lg-12 fadeInUp animated mt-3">
+                                <h5 id="blog-title"></h5>
+                                <p id="blog-description"> </p>
                             </div>
                             <div class="col-lg-12 mt-5">
                                 <div class="row">
                                     <div class="col-md-4 text-muted fadeInUp animated">
-                                        posted at 12th feb 2022
+                                        posted at <span id="blog-posted-at">
+
+                                            12th feb 2022
+                                        </span>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="like-dislike-share fadeInUp animated ">
@@ -133,34 +129,28 @@
                         </h5>
                         <div class="row mb-5">
                             <div class="col-lg-6 fadeInUp animated">
-                                <form action="">
-                                    <input type="text" name="" class="form-control" placeholder="Email" id="">
-                                    <input type="text" name="" class="form-control mt-3" placeholder="Full Name" id="">
+                                <form action="" method="post" id="form_comment">
+                                    <span class="text-danger" id="name-error"></span>
 
-                                    <textarea rows="4" cols="50" class=" form-control mt-3"
+
+                                    <input type="text" name="name" class="form-control" placeholder="Full Name" id="">
+                                    <span class="text-danger" id="email-error"></span>
+                                    <input type="text" name="email" class="form-control  mt-3" placeholder="Email">
+
+                                    <span class="text-danger" id="comment-error"></span>
+                                    <textarea rows="4" cols="50" name="comment" class=" form-control mt-3"
                                         placeholder="Give your comment here..."></textarea>
 
-                                    <input type="button" value="COMMENT" class="btn btn-primary-1 mb-3 mt-3">
+                                    <input type='submit' value="COMMENT" class="btn btn-primary-1 mb-3 mt-3">
                                 </form>
                             </div>
                             <div class="col-lg-6  animated fadeInUp pb-4 ">
                                 <h4 class=" text-black-50 ">COMMENTS:</h4>
-                                <hr class="two-line">
-                                <hr class="two-line pb-1">
-                                <h6 class="text-muted text-sm ">Fabrice Ndacyayisenga on NOVEMBER AT 11:44
-                                    <span>said:</span>
-                                </h6>
-                                <p class="text-muted text-sm"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </p>
-                                <hr class="two-line">
-                                <hr class="two-line pb-1">
-                                <h6 class="text-muted text-sm text-success">Fabrice Ndacyayisenga on NOVEMBER AT 11:44
-                                    <span>
-                                        said:
-                                    </span>
-                                </h6>
-                                <p class="text-muted text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </p>
+                                <div id="blogComment">
+
+                                </div>
+
+
 
                             </div>
 
@@ -196,7 +186,163 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
     <script src="./js/app.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <script>
+        window.onload = (e) => {
+            e.preventDefault();
+            const blog_img = document.getElementById('blog_img');
+            const blog_title = document.getElementById('blog-title');
+            const blog_description = document.getElementById('blog-description');
+            const blog_created_at = document.getElementById('blog-posted-at');
+
+            var queryString = location.search.substring(1);
+            let blogId;
+
+            const db = app.firestore();
+            var blogRef = db
+
+                .collection("blogs")
+                .doc(queryString)
+                .get()
+                .then((docRef) => {
+                    const Datas = docRef.data();
+                    blog_img.setAttribute('src', Datas.emailimageURL);
+                    blog_title.innerHTML = Datas.title;
+                    blog_description.textContent = Datas.description;
+                    const date = Datas.date;
+                    const Convert_date = new Date(date.seconds * 1000);
+                    blog_created_at.innerHTML = Convert_date.toLocaleDateString('en-US');
+                    const DataId = docRef.id;
+                    blogId = DataId;
+
+                })
+                .catch((error) => {
+
+                })
+            var blog_comments = db.collection('comments').where("blog_id", "==", queryString)
+                .get().then((comments) => {
+                    comments.forEach(comment => {
+                        const datas = comment.data();
+                        const single_comment = datas.comment;
+                        const single_email = datas.email;
+                        const single_name = datas.name;
+                        const single_date = datas.date;
+                        SingleBlog(single_name, single_comment, single_date);
+                       
+                    });
+                });
+                function SingleBlog(single_name, single_comment, single_date) {
+                const blogComments = document.getElementById("blogComment");
+
+                const date_post = (single_date).toDate().toDateString();
+                const spanData=document.createElement('span');
+                const blogComment = `<hr class="two-line">
+                                <hr class="two-line pb-1">
+                                <h6 class="text-muted text-sm ">${single_name} on  ${date_post}
+                                    <span>said:</span>
+                                </h6>
+                                <p class="text-muted text-sm"> ${single_comment}
+                                </p> `;
+                spanData.innerHTML = blogComment;
+               
+                blogComments.appendChild(spanData);
+
+            }
+            const contactform = document.querySelector("#form_comment");
+
+            contactform.addEventListener('submit', (e) => {
+                e.preventDefault();
+                var name = contactform.name.value;
+                var email = contactform.email.value;
+                var comment = contactform.comment.value;
+                if (contactform.email.value == "" || contactform.email.value == null) {
+                    document.getElementById('email-error').innerHTML = "Email is required";
+                    contactform.email.classList.add('is-invalid');
+                    contactform.email.focus();
+
+                    return false;
+                }
+                else {
+                    contactform.email.classList.remove('is-invalid');
+                    document.getElementById('email-error').innerHTML = "";
+
+                    contactform.email.classList.add('is-valid');
+
+                }
+                var emailID = contactform.email.value;
+                atpos = emailID.indexOf("@");
+                dotpos = emailID.lastIndexOf(".");
+
+                if (atpos < 1 || (dotpos - atpos < 2)) {
+                    document.getElementById('email-error').innerHTML = "Check your Email again!";
+                    contactform.email.classList.add('is-invalid');
+                    contactform.email.focus();
+                    return false;
+                }
+                else {
+                    contactform.email.classList.remove('is-invalid');
+                    document.getElementById('email-error').innerHTML = "";
+
+                }
+                if ((contactform.name.value == "" || contactform.name.value == null)) {
+
+                    document.getElementById('name-error').innerHTML = "Name is required";
+                    contactform.name.classList.add('is-invalid');
+                    contactform.name.focus();
+
+                    return false;
+                }
+                else {
+                    contactform.name.classList.remove('is-invalid');
+                    document.getElementById('name-error').innerHTML = "";
+
+                    contactform.email.classList.add('is-valid');
+
+                }
+                if ((contactform.comment.valuee == "" || contactform.comment.value == null || contactform.comment.value.length <= 5)) {
+
+                    document.getElementById('comment-error').innerHTML = "Your commentis less";
+                    contactform.comment.classList.add('is-invalid');
+                    contactform.comment.focus();
+
+                    return false;
+                }
+                else {
+                    contactform.comment.classList.remove('is-invalid');
+                    document.getElementById('comment-error').innerHTML = "";
+
+                    contactform.comment.classList.add('is-valid');
+
+                }
+
+                const blog_c = db.collection("comments").add({
+                    name: name,
+                    email: email,
+                    comment: comment,
+                    date: new Date(),
+                    blog_id: queryString,
+                })
+                    .then((docRef) => {
+                        swal('Thank You', 'Your Message was Recieved', 'success').then(() => {
+                            contactform.name.value = "";
+                            contactform.email.value = "";
+                            contactform.comment.value = "";
+                            contactform.comment.classList.remove('is-valid');
+                            contactform.name.classList.remove('is-valid');
+                            contactform.email.classList.remove('is-valid');
+                        });
+
+                    })
+                    .catch((error) => {
+                        swal('error ', docRef.name + 'error', 'error');
+
+                    });
+
+
+            });
+        };
+    </script>
 </body>
 
 </html>

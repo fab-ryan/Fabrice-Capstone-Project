@@ -236,20 +236,26 @@
                     var errorMessage = error.message;
 
                     if (errorCode == 'auth/network-request-failed') {
-                        document.getElementById('login-error').innerHTML = errorMessage;
+                        document.getElementById('login-error').innerHTML = "Wrong Email/ password";
                     }
                     else {
                         document.getElementById('login-error').innerHTML = "";
                     }
                     if (errorCode == 'auth/wrong-password') {
-                        document.getElementById('login-error').innerHTML = errorMessage;
+                        document.getElementById('login-error').innerHTML = "Wrong Email/ password";
+                    }
+                    else {
+                        document.getElementById('login-error').innerHTML = "";
+                    }
+                    if (errorCode == 'auth/wrong-password') {
+                        document.getElementById('login-error').innerHTML = "Wrong Email/ password";
 
                     }
                     else {
                         document.getElementById('login-error').innerHTML = "";
                     }
                     if (errorCode == 'auth/user-not-found') {
-                        document.getElementById('login-error').innerHTML = errorMessage;
+                        document.getElementById('login-error').innerHTML ="Wrong Email/ password";
 
                     }
                     else {

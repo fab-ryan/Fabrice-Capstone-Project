@@ -117,10 +117,12 @@
             tdName.innerHTML = DataName;
             tdEmail.innerHTML = DataEmail;
             tdMessage.innerHTML = DataMessage;
+            tdAction.innerHTML = `<input type='button' class='btn btn-primary-1' value='Reply' onclick='Reply(${DataId})'>  <input type='button' class='btn btn-danger' value='Delete' onclick='Delete(${DataId})'>  `;
             tr.appendChild(tdNow);
             tr.appendChild(tdName);
             tr.appendChild(tdEmail);
             tr.appendChild(tdMessage);
+            tr.appendChild(tdAction);
             messageTr.appendChild(tr);
         }
     </script>
