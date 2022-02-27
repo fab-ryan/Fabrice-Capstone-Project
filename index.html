@@ -110,7 +110,7 @@
               <div class="col-md-6 align-items-center">
 
                 <div class="rounded-pic">
-                  <img src="./images/IMG-20211216-WA0332.jpg" id="font-img" alt="cover pic" height="90px" width="90px" />
+                  <img src="./images/IMG-20211216-WA0332.jpg"  alt="cover pic" height="90px" width="90px" />
                 </div>
               </div>
 
@@ -223,19 +223,19 @@
   <script src="./js/home.js"></script>
   <script>
     // const app = firebase.initializeApp(firebaseConfig);
-    window.addEventListener('load', function () {
-      const fontimg = document.getElementById('font-img');
-      const storage = app.storage();
-      const storageRef = storage.ref();
-      var frontImgRef = storageRef.child('images/front.jpg');
+    // window.addEventListener('load', function () {
+    //   const fontimg = document.getElementById('font-img');
+    //   const storage = app.storage();
+    //   const storageRef = storage.ref();
+    //   var frontImgRef = storageRef.child('images/front.jpg');
 
-      frontImgRef.getDownloadURL()
-        .then((url) => {
-          const img = fontimg.setAttribute('src', url);
+    //   frontImgRef.getDownloadURL()
+    //     .then((url) => {
+    //       const img = fontimg.setAttribute('src', url);
 
 
-        })
-    })
+    //     })
+    // })
 
   </script>
 </body>
