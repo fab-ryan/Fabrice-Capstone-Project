@@ -363,7 +363,7 @@ h5 {
   height: 300px;
   height: fit-content;
   margin-top: 9px;
-
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -592,6 +592,9 @@ footer {
 }
 .container-about{
   color: white;
+}
+.container-1{
+  height: 100vh;
 }
 .container-about  .header {
   text-align: center;

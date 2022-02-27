@@ -207,7 +207,7 @@
                 .get()
                 .then((docRef) => {
                     const Datas = docRef.data();
-                    blog_img.setAttribute('src', Datas.emailimageURL);
+                    blog_img.setAttribute('src', Datas.imageURL);
                     blog_title.innerHTML = Datas.title;
                     blog_description.textContent = Datas.description;
                     const date = Datas.date;
