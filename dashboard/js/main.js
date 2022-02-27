@@ -12,17 +12,41 @@ const firebaseConfig = {
 };
 
 const app = firebase.initializeApp(firebaseConfig);
+const db1 = app.firestore();
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    var uid = user.uid;
+
+    db1
+      .collection("users")
+      .doc(uid)
+      .get()
+      .then((docRef) => {
+        const data=docRef.data();
+        document.getElementById('username').innerHTML=data.UserName;
+      });
+  }
+});
 function logout() {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      window.location = "../index.html";
-    })
-    .catch((error) => {
-      // An error happened.
-    });
+  swal({
+    title: "Log out",
+    text: "Are you sure?",
+    icon: "warning",
+    buttons: true,
+
+    dangerMode: true,
+  }).then((willDelete) => {
+    if (willDelete) {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          login_button.style.display = "block";
+          location.href = "../index.html";
+        })
+        .catch((error) => {
+          location.reload();
+        });
+    }
+  });
 }
-
-
-

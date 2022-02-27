@@ -64,8 +64,8 @@
             <span id="username"></span>
 
             <div class="dropdown-content text-black">
-              <a href="./dashboard/index.html" class="text-success">Dashboard</a>
-              <br>
+              <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
+
               <a class="text-success" id="logout-link" onclick="logout()">logout</a>
             </div>
 
@@ -122,6 +122,8 @@
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
   <script src="./js/app.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
   <script>
     const db = app.firestore();
     db.collection("blogs")

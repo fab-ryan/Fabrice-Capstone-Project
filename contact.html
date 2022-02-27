@@ -64,8 +64,7 @@
             <span id="username"></span>
 
             <div class="dropdown-content text-black">
-              <a href="./dashboard/index.html" class="text-success">Dashboard</a>
-              <br>
+              <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
               <a class="text-success" id="logout-link" onclick="logout()">logout</a>
             </div>
 
@@ -175,7 +174,27 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
     const contactform = document.querySelector("#contact-form");
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        var uid = user.uid;
 
+        db1
+          .collection("users")
+          .doc(uid)
+          .get()
+          .then((docRef) => {
+            const data = docRef.data();
+            contactform.name.value = data.FirstName + ' ' + data.LastName;
+            contactform.name.readOnly = true;
+            contactform.email.value = user.email;
+            contactform.email.readOnly = true;
+          });
+      }
+      else {
+        contactform.email.readOnly = false;
+        contactform.name.readOnly = false;
+      }
+    })
     contactform.addEventListener('submit', (e) => {
       e.preventDefault();
       var name = contactform.name.value;
@@ -247,15 +266,42 @@
         message: message,
       })
         .then((docRef) => {
-          swal('Thank You', 'Your Message was Recieved', 'success').then(()=>{
-            contactform.name.value = "";
-            contactform.email.value = "";
-            contactform.message.value = "";
-            contactform.message.classList.remove('is-valid');
-            contactform.name.classList.remove('is-valid');
-            contactform.email.classList.remove('is-valid');
+          swal('Thank You', 'Your Message was Recieved', 'success').then(() => {
+
+            firebase.auth().onAuthStateChanged((user) => {
+              if (user) {
+                var uid = user.uid;
+
+                db1
+                  .collection("users")
+                  .doc(uid)
+                  .get()
+                  .then((docRef) => {
+                    const data = docRef.data();
+                    contactform.name.value = data.FirstName + ' ' + data.LastName;
+                    contactform.name.readOnly = true;
+                    contactform.email.value = user.email;
+                    contactform.email.readOnly = true;
+                    contactform.message.value = "";
+
+                    contactform.message.classList.remove('is-valid');
+                    contactform.name.classList.remove('is-valid');
+                    contactform.email.classList.remove('is-valid');
+                  });
+              }
+              else {
+                contactform.name.value = "";
+                contactform.email.value = "";
+                contactform.message.value = "";
+                contactform.message.classList.remove('is-valid');
+                contactform.name.classList.remove('is-valid');
+                contactform.email.classList.remove('is-valid');
+                contactform.email.readOnly = false;
+                contactform.name.readOnly = false;
+              }
+            })
           });
-          
+
         })
         .catch((error) => {
           swal('error ', docRef.name + 'error', 'error');

@@ -36,13 +36,37 @@ const login_button = document.getElementById("nav_login");
 const logout_button = document.getElementById("nav_logout");
 
 logout_button.style.display = "none";
+const db1 = app.firestore();
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     var uid = user.uid;
-    login_button.style.display = "none";
-    logout_button.style.display = "block";
-    username = document.getElementById("username");
-    username.textContent = user.email;
+
+    db1
+      .collection("users")
+      .doc(uid)
+      .get()
+      .then((docRef) => {
+        const Datas = docRef.data();
+        if (Datas.UserType == "user") {
+          login_button.style.display = "none";
+          logout_button.style.display = "block";
+          document.getElementById("admin_link").style.display = "none";
+          username = document.getElementById("username");
+          username.textContent = Datas.UserName;
+        } else {
+          login_button.style.display = "none";
+          logout_button.style.display = "block";
+          const br = document.createElement("br");
+
+          document
+            .getElementById("admin_link")
+            .appendChild(br).style.marginBottom = "9px";
+
+          username = document.getElementById("username");
+
+          username.textContent = Datas.UserName;
+        }
+      });
   } else {
     logout_button.style.display = "none";
     // User is signed out
@@ -50,13 +74,25 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 function logout() {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      login_button.style.display = "block";
-    })
-    .catch((error) => {
-      // An error happened.
-    });
+  swal({
+    title: "Log out",
+    text: "Are you sure?",
+    icon: "warning",
+    buttons: true,
+
+    dangerMode: true,
+  }).then((willDelete) => {
+    if (willDelete) {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          login_button.style.display = "block";
+          location.reload();
+        })
+        .catch((error) => {
+          location.reload();
+        });
+    }
+  });
 }
