@@ -82,7 +82,9 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
     <script src="./js/main.js"></script>
-    <script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="module">
         var rowsNum = 0;
 
         const db = app.firestore();
@@ -93,19 +95,21 @@
 
                     const datas = doc.data();
                     const title = datas.title;
-                    const ImgUrl = datas.emailimageURL;
+                    const ImgUrl = datas.imageURL;
                     const date = datas.date;
                     const descr = datas.description;
                     const DataId = doc.id;
-                    AddNewData(title, ImgUrl,  descr,date , DataId);
+                    AddNewData(title, ImgUrl, descr, date, DataId);
                 });
             });
-        function AddNewData(title, ImgUrl, descr, date, DataId) {
+            var blgid;
+            function AddNewData(title, ImgUrl, descr, date, DataId) {
+                
+                blgid=DataId;
 
-           
             const messageTr = document.querySelector('#blogs');
 
-
+            
             var tr = document.createElement('tr');
             var tdNum = document.createElement('td');
             var tdImage = document.createElement('td');
@@ -121,11 +125,12 @@
             rowsNum += 1;
             tdNum.innerHTML = rowsNum;
             tdTitle.innerHTML = title;
-            tdDescrition.innerHTML = descr.split(/[!,?,.]/,3);
-            tdDate.innerHTML = new Date(date.seconds * 1000).toUTCString();
+            tdDescrition.innerHTML = descr.split(/[!,?,.]/, 1);
+            tdDate.innerHTML = date.toDate().toDateString();
             tdImage.appendChild(ImgTd);
 
-            tdAction.innerHTML = `<input type='button' class='btn btn-primary-1' value='View' onclick='Reply(${DataId})'>  <input type='button' class='btn btn-danger' value='Delete' onclick='Delete(${DataId})'>  `;
+            tdAction.innerHTML = "<a href='blog-view.html?" + DataId + " ' class='text-primary'>View</a> | <a href='blog-update.html?" + DataId + "' class='text-success' >Update</a> | <a  href='javascript:void()' style='cursor:pointer' onclick'  class='text-danger' id='blg-id'> Delete  </a>";
+            tdAction.style.width = "17%";
             tr.appendChild(tdNum);
             tr.appendChild(tdImage);
             tr.appendChild(tdTitle);
@@ -133,7 +138,13 @@
             tr.appendChild(tdDate);
             tr.appendChild(tdAction);
             messageTr.appendChild(tr);
+
+
+
         }
+
+        
+
     </script>
 
 </body>

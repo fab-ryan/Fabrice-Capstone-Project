@@ -126,3 +126,9 @@ main {
   background-color: #010843 !important;
   border-color: #010843 !important;
 }
+.img-artical {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  float: right;
+}

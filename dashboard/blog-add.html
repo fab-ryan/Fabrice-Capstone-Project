@@ -183,16 +183,16 @@
                 })
                 console.log("upload is " + progress + " done");
             }, function (error) {
-                //handle error here
+                
                 console.log(error.message);
             }, function () {
-                //handle successfull upload here..
+                
                 uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
 
                     const db = app.firestore();
                     db.collection("blogs").add({
                         title: title,
-                        emailimageURL: downloadURL,
+                        imageURL: downloadURL,
 
                         description: description,
                         date: new Date(),
