@@ -64,8 +64,7 @@
                         <span id="username"></span>
 
                         <div class="dropdown-content text-black">
-                            <a href="./dashboard/index.html" class="text-success">Dashboard</a>
-                            <br>
+                            <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
                             <a class="text-success" id="logout-link" onclick="logout()">logout</a>
                         </div>
 
@@ -189,6 +188,28 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
+        const contactform = document.querySelector("#form_comment");
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                var uid = user.uid;
+
+                db1
+                    .collection("users")
+                    .doc(uid)
+                    .get()
+                    .then((docRef) => {
+                        const data = docRef.data();
+                        contactform.name.value = data.FirstName + ' ' + data.LastName;
+                        contactform.name.readOnly = true;
+                        contactform.email.value = user.email;
+                        contactform.email.readOnly = true;
+                    });
+            }
+            else {
+                contactform.email.readOnly = false;
+                contactform.name.readOnly = false;
+            }
+        })
         window.onload = (e) => {
             e.preventDefault();
             const blog_img = document.getElementById('blog_img');
@@ -229,14 +250,14 @@
                         const single_name = datas.name;
                         const single_date = datas.date;
                         SingleBlog(single_name, single_comment, single_date);
-                       
+
                     });
                 });
-                function SingleBlog(single_name, single_comment, single_date) {
+            function SingleBlog(single_name, single_comment, single_date) {
                 const blogComments = document.getElementById("blogComment");
 
                 const date_post = (single_date).toDate().toDateString();
-                const spanData=document.createElement('span');
+                const spanData = document.createElement('span');
                 const blogComment = `<hr class="two-line">
                                 <hr class="two-line pb-1">
                                 <h6 class="text-muted text-sm ">${single_name} on  ${date_post}
@@ -245,11 +266,11 @@
                                 <p class="text-muted text-sm"> ${single_comment}
                                 </p> `;
                 spanData.innerHTML = blogComment;
-               
+
                 blogComments.appendChild(spanData);
 
             }
-            const contactform = document.querySelector("#form_comment");
+
 
             contactform.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -324,13 +345,39 @@
                     blog_id: queryString,
                 })
                     .then((docRef) => {
-                        swal('Thank You', 'Your Message was Recieved', 'success').then(() => {
-                            contactform.name.value = "";
-                            contactform.email.value = "";
-                            contactform.comment.value = "";
-                            contactform.comment.classList.remove('is-valid');
-                            contactform.name.classList.remove('is-valid');
-                            contactform.email.classList.remove('is-valid');
+                        swal('Thank You', 'Your Comment was Recieved', 'success').then(() => {
+                            firebase.auth().onAuthStateChanged((user) => {
+                                if (user) {
+                                    var uid = user.uid;
+
+                                    db1
+                                        .collection("users")
+                                        .doc(uid)
+                                        .get()
+                                        .then((docRef) => {
+                                            const data = docRef.data();
+                                            contactform.name.value = data.FirstName + ' ' + data.LastName;
+                                            contactform.name.readOnly = true;
+                                            contactform.email.value = user.email;
+                                            contactform.email.readOnly = true;
+                                            contactform.comment.value = "";
+
+                                            contactform.comment.classList.remove('is-valid');
+                                            contactform.name.classList.remove('is-valid');
+                                            contactform.email.classList.remove('is-valid');
+                                        });
+                                }
+                                else {
+                                    contactform.name.value = "";
+                                    contactform.email.value = "";
+                                    contactform.comment.value = "";
+                                    contactform.comment.classList.remove('is-valid');
+                                    contactform.name.classList.remove('is-valid');
+                                    contactform.email.classList.remove('is-valid');
+                                    contactform.email.readOnly = false;
+                                    contactform.name.readOnly = false;
+                                }
+                            });
                         });
 
                     })

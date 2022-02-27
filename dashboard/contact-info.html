@@ -48,7 +48,8 @@
                 <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" onclick="dropdown_menu()"
                     aria-haspopup="true" aria-expanded="false">
                     <img src="./images/user.png" width="40px" height="40px" alt=" users">
-                    User Name
+                    <span id="username"></span>
+
 
                 </div>
                 <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
@@ -95,7 +96,7 @@
                 querySnapshot.forEach((doc) => {
 
                     const datas = doc.data();
-                    console.log(datas);
+                    
                     const DataName = datas.name;
                     const DataEmail = datas.email;
                     const DataMessage = datas.message;
