@@ -68,7 +68,8 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Contact</th>
+                            <th>Message</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -86,6 +87,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
     <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script>
         var rowsNum = 0;
 
@@ -96,15 +99,19 @@
                 querySnapshot.forEach((doc) => {
 
                     const datas = doc.data();
-                    
+
                     const DataName = datas.name;
                     const DataEmail = datas.email;
                     const DataMessage = datas.message;
+                    const DataDate = datas.date;
+
+                    
                     const DataId = doc.id;
-                    AddNewData(DataName, DataEmail, DataMessage, DataId);
+                    AddNewData(DataName, DataEmail, DataMessage, DataDate, DataId);
+
                 });
             });
-        function AddNewData(DataName, DataEmail, DataMessage, DataId) {
+        function AddNewData(DataName, DataEmail, DataMessage, DataDate, DataId) {
             const messageTr = document.querySelector('#messages');
 
             var tr = document.createElement('tr');
@@ -113,19 +120,49 @@
             var tdEmail = document.createElement('td');
             var tdMessage = document.createElement('td');
             var tdAction = document.createElement('td');
+            var tdDate = document.createElement('td');
             rowsNum += 1;
             tdNow.innerHTML = rowsNum;
             tdName.innerHTML = DataName;
             tdEmail.innerHTML = DataEmail;
             tdMessage.innerHTML = DataMessage;
-            tdAction.innerHTML = `<input type='button' class='btn btn-primary-1' value='Reply' onclick='Reply(${DataId})'>  <input type='button' class='btn btn-danger' value='Delete' onclick='Delete(${DataId})'>  `;
+            tdDate.innerHTML = DataDate.toDate().toDateString();
+            tdAction.innerHTML = `<input type='button' class='btn btn-primary-1' value='Reply' onclick='Reply(${DataId})'>  <input type='button' class='btn btn-danger' value='Delete' onclick=Delete(this.id) id="${DataId}">  `;
             tr.appendChild(tdNow);
             tr.appendChild(tdName);
             tr.appendChild(tdEmail);
             tr.appendChild(tdMessage);
+            tr.appendChild(tdDate);
             tr.appendChild(tdAction);
             messageTr.appendChild(tr);
+            const deleteForm = document.getElementById("delete");
+
+
+
         }
+        function Delete(DataId) {
+            swal({
+                title: "Attention",
+                text: "Are you sure!! You want to Delete",
+                icon: "warning",
+                buttons: true,
+
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    db.collection("messages").doc(DataId).delete().then(() => {
+                        swal('successfuly', 'You have Delete ', 'success').then(() => {
+                            location.reload();
+                        });
+                    }).catch((error) => {
+                        console.error("Error removing document: ", error);
+                    });
+                }
+
+
+            })
+        }
+
     </script>
 </body>
 

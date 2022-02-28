@@ -97,7 +97,7 @@
                                     <div class="col-md-4 text-muted fadeInUp animated">
                                         posted at <span id="blog-posted-at">
 
-                                            12th feb 2022
+                                            
                                         </span>
                                     </div>
                                     <div class="col-sm-4">
@@ -232,8 +232,8 @@
                     blog_title.innerHTML = Datas.title;
                     blog_description.textContent = Datas.description;
                     const date = Datas.date;
-                    const Convert_date = new Date(date.seconds * 1000);
-                    blog_created_at.innerHTML = Convert_date.toLocaleDateString('en-US');
+                    
+                    blog_created_at.innerHTML =date.toDate().toDateString();
                     const DataId = docRef.id;
                     blogId = DataId;
 
