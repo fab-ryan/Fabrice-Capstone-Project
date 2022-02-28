@@ -84,7 +84,7 @@
     <script src="./js/main.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <script type="module">
+    <script>
         var rowsNum = 0;
 
         const db = app.firestore();
@@ -102,14 +102,14 @@
                     AddNewData(title, ImgUrl, descr, date, DataId);
                 });
             });
-            var blgid;
-            function AddNewData(title, ImgUrl, descr, date, DataId) {
-                
-                blgid=DataId;
+        var blgid;
+        function AddNewData(title, ImgUrl, descr, date, DataId) {
+
+            blgid = DataId;
 
             const messageTr = document.querySelector('#blogs');
 
-            
+
             var tr = document.createElement('tr');
             var tdNum = document.createElement('td');
             var tdImage = document.createElement('td');
@@ -129,7 +129,8 @@
             tdDate.innerHTML = date.toDate().toDateString();
             tdImage.appendChild(ImgTd);
 
-            tdAction.innerHTML = "<a href='blog-view.html?" + DataId + " ' class='text-primary'>View</a> | <a href='blog-update.html?" + DataId + "' class='text-success' >Update</a> | <a  href='javascript:void()' style='cursor:pointer' onclick'  class='text-danger' id='blg-id'> Delete  </a>";
+            tdAction.innerHTML = `<a href="blog-view.html?${DataId}"  class="text-primary">View</a> | <a href="blog-update.html?${DataId}" class="text-success" >Update</a> |
+             <a  href="#" onclick="Delete(this.id)" class="text-danger" id="${DataId}"> Delete  </a>`;
             tdAction.style.width = "17%";
             tr.appendChild(tdNum);
             tr.appendChild(tdImage);
@@ -143,7 +144,29 @@
 
         }
 
-        
+        function Delete(DataId) {
+            swal({
+                title: "Attention",
+                text: "Are you sure!! You want to Delete This Blog",
+                icon: "warning",
+                buttons: true,
+
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    db.collection("blogs").doc(DataId).delete().then(() => {
+                        swal('successfuly', 'You have Delete ', 'success').then(() => {
+                            location.reload();
+                        });
+                    }).catch((error) => {
+                        console.error("Error removing document: ", error);
+                    });
+                }
+
+
+            })
+
+        }
 
     </script>
 

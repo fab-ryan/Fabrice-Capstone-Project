@@ -78,24 +78,24 @@
 
                                             <div class="form-group">
                                                 <label for="username">User Name</label>
-                                                <input id="username" class="form-control" type="text" name="">
+                                                <input id="usern" class="form-control" type="text" name="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="username">First Name</label>
-                                                <input id="username" class="form-control" type="text" name="">
+                                                <input id="fname" class="form-control" type="text" name="">
                                             </div>
-                                            
+
                                         </div>
 
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="username">Email</label>
-                                                <input id="username" class="form-control" type="text" name="">
+                                                <input id="email" class="form-control" type="text" name="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="username">Last Name</label>
-                                                <input id="username" class="form-control" type="text" name="">
+                                                <input id="lname" class="form-control" type="text" name="">
                                             </div>
                                         </div>
                                     </div>
@@ -116,9 +116,31 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
     <script src="./js/main.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
-    console.log(app.auth());
-</script>
+    <script>
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                var uid = user.uid;
+
+                db1
+                    .collection("users")
+                    .doc(uid)
+                    .get()
+                    .then((docRef) => {
+                        const data = docRef.data();
+                        document.getElementById('fname').value = data.FirstName;
+                        document.getElementById('fname').readOnly = true;
+                        document.getElementById('lname').value = data.LastName;
+                        document.getElementById('lname').readOnly = true;
+                        document.getElementById('usern').value = data.UserName;
+                        
+                        document.getElementById('usern').readOnly = true;
+                        document.getElementById('email').value = user.email;
+                        document.getElementById('email').readOnly = true;
+                    });
+            }
+        });
+    </script>
 
 </body>
 
