@@ -2,6 +2,7 @@ const dropdown_menu = () => {
   const dropdown_toggle = document.getElementById("dropdown-menu1");
   dropdown_toggle.classList.add("show");
 };
+
 const firebaseConfig = {
   apiKey: "AIzaSyBvQqfAlXssffV1ywtxgdYS67i3tB0WuyA",
   authDomain: "fab-web-site.firebaseapp.com",
@@ -22,8 +23,8 @@ firebase.auth().onAuthStateChanged((user) => {
       .doc(uid)
       .get()
       .then((docRef) => {
-        const data=docRef.data();
-        document.getElementById('username').innerHTML=data.UserName;
+        const data = docRef.data();
+        document.getElementById("username").innerHTML = data.UserName;
       });
   }
 });
