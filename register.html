@@ -1,141 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link href="css/styles.css" type="text/css" rel="stylesheet" />
-    <link href="css/responsive.css" type="text/css" rel="stylesheet" />
-    <link href="css/isotope.css" type="text/css" rel="stylesheet" />
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link href="css/styles.css" type="text/css" rel="stylesheet" />
+        <link href="css/responsive.css" type="text/css" rel="stylesheet" />
+        <link href="css/isotope.css" type="text/css" rel="stylesheet" />
+        <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
+    </head>
 
-<body>
-    <header class="nav-header">
+    <body>
+        <header class="nav-header">
 
-        <div class="logo">
-            <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
-        </div>
-        <div class="hamburger" id="nav-toggle" name="menu-outline">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+            <div class="logo">
+                <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
+            </div>
+            <div class="hamburger" id="nav-toggle" name="menu-outline">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
 
-        </div>
-        <nav class="nav" id="nav-menu">
-            <div class="nav__content bd-grid">
+            </div>
+            <nav class="nav" id="nav-menu">
+                <div class="nav__content bd-grid">
 
-                <div class="nav__close" id="nav-close">
+                    <div class="nav__close" id="nav-close">
 
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-
-                <div class="nav__perfil">
-                    <div class="nav__img">
-                        <img src="./images/mine_logo.png" alt="">
+                        <i class="fa fa-times" aria-hidden="true"></i>
                     </div>
 
-
-                </div>
-
-                <div class="nav__menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
-                        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
-                        <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-                        <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
-
-
-                    </ul>
-                </div>
-
-
-                <div class="nav__login" id="nav_login">
-
-                    <a href="login.html" id="login" class="nav__social-icon active">Login</a>
-
-                </div>
-                <div class="nav__logout text-white" id="nav_logout">
-                    <div class="dropdown  nav__logout1 ">
-                        <span id="username"></span>
-
-                        <div class="dropdown-content text-black">
-                            <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
-
-                            <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                    <div class="nav__perfil">
+                        <div class="nav__img">
+                            <img src="./images/mine_logo.png" alt="">
                         </div>
 
+
+                    </div>
+
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
+                            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                            <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
+                            <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                            <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+
+
+                        </ul>
+                    </div>
+
+
+                    <div class="nav__login" id="nav_login">
+
+                        <a href="login.html" id="login" class="nav__social-icon active">Login</a>
+
+                    </div>
+                    <div class="nav__logout text-white" id="nav_logout">
+                        <div class="dropdown  nav__logout1 ">
+                            <span id="username"></span>
+
+                            <div class="dropdown-content text-black">
+                                <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
+
+                                <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+            </nav>
+        </header>
+        <main id="main">
+            <div class="header">
+                <p class="text-white text-center mt-3 fadeInUp animated"> </p>
             </div>
-        </nav>
-    </header>
-    <main id="main">
-        <div class="header">
-            <p class="text-white text-center mt-3 fadeInUp animated"> </p>
-        </div>
-        <div class="content_blog">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 col-md-6 col-sm-12">
-                        <div class="mt-lg-5 mb-3">
-                            <div class="card animate-box fadeInUp animated">
-                                <div class="img-circle">
-                                    <img src="images/user.png">
-                                </div>
-                                <div class="row">
-                                    <div class="card-body text-black text-center">
-                                        <h1> REGISTER HERE</h1>
+            <div class="content_blog">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9 ">
+                            <div class="mt-lg-5 mb-3">
+                                <div class="card animate-box fadeInUp animated">
+                                    <div class="img-circle">
+                                        <img src="images/user.png">
+                                    </div>
+                                    <div class="row">
+                                        <div class="card-body text-black text-center">
+                                            <h1> REGISTER HERE</h1>
 
-                                        <form method="" action="" class="" id="register-form">
-                                            <div class="row m-4">
-                                                <div class="col-md-6">
-                                                    <span id="first_name_error" class=" text-danger"></span>
-                                                    <input type="text" name="" id="first_name" class="form-control "
-                                                        placeholder="First Name">
-                                                    <span id="email_error" class=" text-danger"></span>
-                                                    <input type="email" name="" id="email" class="form-control mt-2 "
-                                                        placeholder="Email">
-                                                    <span id="password_error" class=" text-danger"></span>
-                                                    <input type="password" name="" id="password" placeholder="Password"
-                                                        class="form-control mt-2">
-                                                </div>
+                                            <form method="" action="" class="" id="register-form">
+                                                <div class="row m-4">
+                                                    <div class="col-md-6">
+                                                        <span id="first_name_error" class=" text-danger"></span>
+                                                        <input type="text" name="" id="first_name" class="form-control "
+                                                            placeholder="First Name">
+                                                        <span id="email_error" class=" text-danger"></span>
+                                                        <input type="email" name="" id="email"
+                                                            class="form-control mt-2 " placeholder="Email">
+                                                        <span id="password_error" class=" text-danger"></span>
+                                                        <input type="password" name="" id="password"
+                                                            placeholder="Password" class="form-control mt-2">
+                                                    </div>
 
-                                                <div class="col-md-6">
+                                                    <div class="col-md-6">
 
-                                                    <span id="last_name_error" class=" text-danger"></span>
-                                                    <input type="text" name="" id="last_name" class="form-control "
-                                                        placeholder="Last Name">
+                                                        <span id="last_name_error" class=" text-danger"></span>
+                                                        <input type="text" name="" id="last_name" class="form-control "
+                                                            placeholder="Last Name">
 
-                                                    <span id="user_name_error" class=" text-danger"></span>
-                                                    <input type="text" name="" id="user_name" class="form-control mt-2 "
-                                                        placeholder="User Name">
+                                                        <span id="user_name_error" class=" text-danger"></span>
+                                                        <input type="text" name="" id="user_name"
+                                                            class="form-control mt-2 " placeholder="User Name">
 
-                                                    <span id="confirm_password_error" class=" text-danger"></span>
-                                                    <input type="password" name="" id="confirm_password"
-                                                        placeholder="Comfirm Password" class="form-control mt-2">
-                                                </div>
-                                                <div class="col-md-6 ">
-                                                    <input type="submit" name="" id="submit" value="REGISTER"
-                                                        class="btn btn-primary-1 pr-lg-5 pl-lg-5">
+                                                        <span id="confirm_password_error" class=" text-danger"></span>
+                                                        <input type="password" name="" id="confirm_password"
+                                                            placeholder="Comfirm Password" class="form-control mt-2">
+                                                    </div>
+                                                    <div class="col-md-6 ">
+                                                        <input type="submit" name="" id="submit" value="REGISTER"
+                                                            class="btn btn-primary-1 pr-lg-5 pl-lg-5">
 
-                                                    <input type="reset" value="CLEAR" class=" btn btn-danger ">
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="register-line">
-                                                        <a href="login.html" class="register text-primary">I Have
-                                                            Account</a>
+                                                        <input type="reset" value="CLEAR" class=" btn btn-danger ">
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="register-line">
+                                                            <a href="login.html" class="register text-primary">I Have
+                                                                Account</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
 
-                                        </form>
+                                            </form>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -143,211 +144,259 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
-    <footer class="footer">
-        <div>
-            <ul>
-                <li>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-github"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div>copyright <i class="fa fa-copyright" aria-hidden="true"> </i>2022 Fabrice. All Rights Reserved</div>
-        <div>Designed by NDACYAYISENGA Fabrice</div>
-    </footer>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
-    <script src="./js/app.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-        const form = document.querySelector('#register-form');
+        </main>
+        <footer class="footer">
+            <div>
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div>copyright <i class="fa fa-copyright" aria-hidden="true"> </i>2022 Fabrice. All Rights Reserved</div>
+            <div>Designed by NDACYAYISENGA Fabrice</div>
+        </footer>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+        <script src="./js/app.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            const form = document.querySelector( '#register-form' );
+            form.addEventListener( 'submit', async ( e ) => {
+                e.preventDefault();
+                const first_name = form.first_name.value;
+                const last_name = form.last_name.value;
+                const email = form.email.value;
+                const password = form.password.value;
+                const confirm_password = form.confirm_password.value;
+                const user_name = form.user_name.value;
+                //  Start Validation Lines
+                if ( first_name == '' || first_name == null ) {
+                    document.getElementById( 'first_name_error' ).innerHTML = "First Name Required";
+                    form.first_name.classList.add( 'is-invalid' );
+                    form.first_name.focus();
+                    return false;
+                }
+                else {
+                    form.first_name.classList.remove( 'is-invalid' );
+                    document.getElementById( 'first_name_error' ).innerHTML = "";
+
+                    form.first_name.classList.add( 'is-valid' );
+                }
+                if ( last_name == '' || last_name == null ) {
+                    document.getElementById( 'last_name_error' ).innerHTML = "Last Name Required";
+                    form.last_name.classList.add( 'is-invalid' );
+                    form.last_name.focus();
+                    return false;
+                }
+                else {
+                    form.last_name.classList.remove( 'is-invalid' );
+                    document.getElementById( 'last_name_error' ).innerHTML = "";
+
+                    form.last_name.classList.add( 'is-valid' );
+                }
+                if ( user_name == '' || user_name == null ) {
+                    document.getElementById( 'user_name_error' ).innerHTML = "User Name Required";
+                    form.user_name.classList.add( 'is-invalid' );
+                    form.user_name.focus();
+                    return false;
+                }
+                else {
+                    form.user_name.classList.remove( 'is-invalid' );
+                    document.getElementById( 'user_name_error' ).innerHTML = "";
+
+                    form.user_name.classList.add( 'is-valid' );
+                }
+                if ( form.email.value == "" || form.email.value == null ) {
+                    document.getElementById( 'email_error' ).innerHTML = "Email is required";
+                    form.email.classList.add( 'is-invalid' );
+                    form.email.focus();
+
+                    return false;
+                }
+                else {
+                    form.email.classList.remove( 'is-invalid' );
+                    document.getElementById( 'email_error' ).innerHTML = "";
+
+                    form.email.classList.add( 'is-valid' );
+
+                }
+                var emailID = form.email.value;
+                atpos = emailID.indexOf( "@" );
+                dotpos = emailID.lastIndexOf( "." );
+
+                if ( atpos < 1 || ( dotpos - atpos < 2 ) ) {
+                    document.getElementById( 'email_error' ).innerHTML = "Check your Email again!";
+                    form.email.classList.add( 'is-invalid' );
+                    form.email.focus();
+                    return false;
+                }
+                else {
+                    form.email.classList.remove( 'is-invalid' );
+                    document.getElementById( 'email_error' ).innerHTML = "";
+
+                }
+                if ( password == '' || password == null ) {
+                    document.getElementById( 'password_error' ).innerHTML = "Password Required";
+                    form.password.classList.add( 'is-invalid' );
+                    form.password.focus();
+                    return false;
+                }
+                else {
+
+                    form.password.classList.remove( 'is-invalid' );
+                    document.getElementById( 'password_error' ).innerHTML = "";
+
+
+                    form.password.classList.add( 'is-valid' );
+                }
+                if ( confirm_password == '' || confirm_password == null ) {
+                    document.getElementById( 'confirm_password_error' ).innerHTML = "Confirm Password Required";
+                    form.confirm_password.classList.add( 'is-invalid' );
+                    form.confirm_password.focus();
+
+                    return false;
+                }
+                else {
+                    form.confirm_password.classList.add( 'is-valid' );
+                    form.confirm_password.classList.remove( 'is-invalid' );
+                    document.getElementById( 'confirm_password_error' ).innerHTML = "";
+                }
+                if (
+                    password != confirm_password
+                ) {
+
+                    swal( 'error', 'Confirm does not Match', 'error' ).then( () => {
+
+                        form.password.value = '';
+                        form.confirm_password.value = '';
+                        form.confirm_password.classList.remove( 'is-valid' );
+                        form.password.classList.remove( 'is-valid' );
+                    } );
+                    form.password.focus();
+                    form.confirm_password.focus();
+                    return false;
+                }
+                try {
+                    const SignUp = await fetch( api + 'user', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify( {
+                            firstname: first_name,
+                            lastname: last_name,
+                            email: email,
+                            password: password,
+                            confirmpassword: confirm_password,
+                            username: user_name
+                        } )
+                    } );
+                    response = await SignUp.json();
+                    if ( SignUp.status == 400 ) {
+                        swal( "Error", response.error, "error" ).then( () => {
+                            form.email.value = "";
+                            form.password.value = "";
+                            form.confirm_password.value = '';
+                            form.confirm_password.classList.remove( 'is-valid' );
+                            form.password.classList.remove( 'is-valid' );
+                            location.href = 'register.html';
+                            form.first_name.classList.remove( 'is-invalid' );
+                            document.getElementById( 'first_name_error' ).innerHTML = "";
+                            form.first_name.classList.add( 'is-valid' );
+
+                        } );
+
+                    }
+                    else if ( SignUp.status == 400 ) {
+                        swal( "Error", response.error, "error" ).then( () => {
+                            form.email.value = "";
+                            form.password.value = "";
+                            form.confirm_password.value = '';
+                            form.confirm_password.classList.remove( 'is-valid' );
+                            form.password.classList.remove( 'is-valid' );
+                            location.href = 'register.html';
 
 
 
+                        } );
+                    }
+                    else if ( SignUp.status == 201 ) {
+                        swal( "Success", response.message, 'success' ).then( () => {
+                            location.href = 'blog.html';
+                            localStorage.setItem( "token", "Bear " + SignUp.json().token );
+                        } );
+                    }
+                } catch ( error ) {
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const first_name = form.first_name.value;
-            const last_name = form.last_name.value;
-            const email = form.email.value;
-            const password = form.password.value;
-            const confirm_password = form.confirm_password.value;
-            const user_name = form.user_name.value;
-            //  Start Validation Lines
-            if (first_name == '' || first_name == null) {
-                document.getElementById('first_name_error').innerHTML = "First Name Required";
-                form.first_name.classList.add('is-invalid');
-                form.first_name.focus();
-                return false
-            }
-            else {
-                form.first_name.classList.remove('is-invalid');
-                document.getElementById('first_name_error').innerHTML = "";
+                }
+                // End of Validation 
+                // Start Store User Information
+                // const auth = app.auth();
+                // const db = app.firestore();
+                // auth.createUserWithEmailAndPassword( email, password )
+                //     .then( ( userCredential ) => {
 
-                form.first_name.classList.add('is-valid');
-            }
-            if (last_name == '' || last_name == null) {
-                document.getElementById('last_name_error').innerHTML = "Last Name Required";
-                form.last_name.classList.add('is-invalid');
-                form.last_name.focus();
-                return false
-            }
-            else {
-                form.last_name.classList.remove('is-invalid');
-                document.getElementById('last_name_error').innerHTML = "";
+                //         var user = userCredential.user;
 
-                form.last_name.classList.add('is-valid');
-            }
-            if (user_name == '' || user_name == null) {
-                document.getElementById('user_name_error').innerHTML = "User Name Required";
-                form.user_name.classList.add('is-invalid');
-                form.user_name.focus();
-                return false
-            }
-            else {
-                form.user_name.classList.remove('is-invalid');
-                document.getElementById('user_name_error').innerHTML = "";
-
-                form.user_name.classList.add('is-valid');
-            }
-            if (form.email.value == "" || form.email.value == null) {
-                document.getElementById('email_error').innerHTML = "Email is required";
-                form.email.classList.add('is-invalid');
-                form.email.focus();
-
-                return false;
-            }
-            else {
-                form.email.classList.remove('is-invalid');
-                document.getElementById('email_error').innerHTML = "";
-
-                form.email.classList.add('is-valid');
-
-            }
-            var emailID = form.email.value;
-            atpos = emailID.indexOf("@");
-            dotpos = emailID.lastIndexOf(".");
-
-            if (atpos < 1 || (dotpos - atpos < 2)) {
-                document.getElementById('email_error').innerHTML = "Check your Email again!";
-                form.email.classList.add('is-invalid');
-                form.email.focus();
-                return false;
-            }
-            else {
-                form.email.classList.remove('is-invalid');
-                document.getElementById('email_error').innerHTML = "";
-
-            }
-            if (password == '' || password == null) {
-                document.getElementById('password_error').innerHTML = "Password Required";
-                form.password.classList.add('is-invalid');
-                form.password.focus();
-                return false
-            }
-            else {
-
-                form.password.classList.remove('is-invalid');
-                document.getElementById('password_error').innerHTML = "";
+                //         db.collection( "users" ).doc( user.uid ).set( {
+                //             FirstName: first_name,
+                //             LastName: last_name,
+                //             UserName: user_name,
+                //             UserType: 'user',
+                //             date: new Date(),
+                //         } );
 
 
-                form.password.classList.add('is-valid');
-            }
-            if (confirm_password == '' || confirm_password == null) {
-                document.getElementById('confirm_password_error').innerHTML = "Confirm Password Required";
-                form.confirm_password.classList.add('is-invalid');
-                form.confirm_password.focus();
+                //     } )
+                //     .then( ( docRef ) => {
+                //         swal( 'Thank You', 'You Have Registed Successfully', 'success' ).then( () => {
+                //             auth.onAuthStateChanged( ( user ) => {
+                //                 if ( user ) {
+                //                     db.collection( "users" )
+                //                         .doc( user.uid )
+                //                         .get()
+                //                         .then( ( docRef ) => {
+                //                             const Data = docRef.data();
+                //                             if ( Data.UserName == 'user' ) {
+                //                                 location.href = 'blog.html';
+                //                             }
+                //                             else {
+                //                                 location.href = './dashboard/index.html';
+                //                             }
 
-                return false;
-            }
-            else {
-                form.confirm_password.classList.add('is-valid');
-                form.confirm_password.classList.remove('is-invalid');
-                document.getElementById('confirm_password_error').innerHTML = "";
-            }
-            if (
-                password != confirm_password
-            ) {
+                //                         } );
+                //                 }
+                //             } );
 
-                swal('error', 'Confirm does not Match', 'error').then(() => {
+                //         } )
+                //             .catch( ( error ) => {
+                //                 swal( 'error ', 'Registration Failed Try again later', 'error' );
 
-                    form.password.value = '';
-                    form.confirm_password.value = '';
-                    form.confirm_password.classList.remove('is-valid');
-                    form.password.classList.remove('is-valid');
-                })
-                form.password.focus();
-                form.confirm_password.focus();
-                return false
-            }
-
-            // End of Validation 
-            // Start Store User Information
-            const auth = app.auth();
-            const db = app.firestore();
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-
-                    var user = userCredential.user;
-
-                    db.collection("users").doc(user.uid).set({
-                        FirstName: first_name,
-                        LastName: last_name,
-                        UserName: user_name,
-                        UserType: 'user',
-                        date: new Date(),
-                    });
+                //             } );
 
 
-                })
-                .then((docRef) => {
-                    swal('Thank You', 'You Have Registed Successfully', 'success').then(() => {
-                        auth.onAuthStateChanged((user) => {
-                            if (user) {
-                                db.collection("users")
-                                    .doc(user.uid)
-                                    .get()
-                                    .then((docRef) => {
-                                        const Data = docRef.data();
-                                        if (Data.UserName == 'user') {
-                                            location.href = 'blog.html';
-                                        }
-                                        else {
-                                            location.href = './dashboard/index.html';
-                                        }
+                //     } )
+                //     .catch( ( error ) => {
+                //         var errorCode = error.code;
+                //         var errorMessage = error.message;
 
-                                    })
-                            }
-                        });
+                //     } );
+            } );
 
-                    })
-                        .catch((error) => {
-                            swal('error ', 'Registration Failed Try again later', 'error');
-
-                        });
-
-
-                })
-                .catch((error) => {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-
-                });
-        });
-
-    </script>
-</body>
+        </script>
+    </body>
 
 </html>

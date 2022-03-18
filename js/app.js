@@ -30,49 +30,57 @@ const firebaseConfig = {
   messagingSenderId: "283650575875",
   appId: "1:283650575875:web:2bd8aed1b6f44ef32f8836",
 };
-
-const app = firebase.initializeApp(firebaseConfig);
+const api = "https://my-brand-api-fabrice.herokuapp.com/api/v1/";
+let response;
 const login_button = document.getElementById("nav_login");
 const logout_button = document.getElementById("nav_logout");
+const app = firebase.initializeApp(firebaseConfig);
 
 logout_button.style.display = "none";
 const db1 = app.firestore();
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    var uid = user.uid;
+const token = localStorage.getItem("token");
+if (token) {
+  login_button.style.display = "none";
+  logout_button.style.display = "block";
+  document.getElementById("admin_link").style.display = "none";
+  username = document.getElementById("username");
+}
+// firebase.auth().onAuthStateChanged((user) => {
+//   if (user) {
+//     var uid = user.uid;
 
-    db1
-      .collection("users")
-      .doc(uid)
-      .get()
-      .then((docRef) => {
-        const Datas = docRef.data();
-        if (Datas.UserType == "user") {
-          login_button.style.display = "none";
-          logout_button.style.display = "block";
-          document.getElementById("admin_link").style.display = "none";
-          username = document.getElementById("username");
-          username.textContent = Datas.UserName;
-        } else {
-          login_button.style.display = "none";
-          logout_button.style.display = "block";
-          const br = document.createElement("br");
+//     db1
+//       .collection("users")
+//       .doc(uid)
+//       .get()
+//       .then((docRef) => {
+//         const Datas = docRef.data();
+//         if (Datas.UserType == "user") {
+//           login_button.style.display = "none";
+//           logout_button.style.display = "block";
+//           document.getElementById("admin_link").style.display = "none";
+//           username = document.getElementById("username");
+//           username.textContent = Datas.UserName;
+//         } else {
+//           login_button.style.display = "none";
+//           logout_button.style.display = "block";
+//           const br = document.createElement("br");
 
-          document
-            .getElementById("admin_link")
-            .appendChild(br).style.marginBottom = "9px";
+//           document
+//             .getElementById("admin_link")
+//             .appendChild(br).style.marginBottom = "9px";
 
-          username = document.getElementById("username");
+//           username = document.getElementById("username");
 
-          username.textContent = Datas.UserName;
-        }
-      });
-  } else {
-    logout_button.style.display = "none";
-    // User is signed out
-    // ...
-  }
-});
+//           username.textContent = Datas.UserName;
+//         }
+//       });
+//   } else {
+//     logout_button.style.display = "none";
+//     // User is signed out
+//     // ...
+//   }
+// });
 function logout() {
   swal({
     title: "Log out",
@@ -81,18 +89,15 @@ function logout() {
     buttons: true,
 
     dangerMode: true,
-  }).then((willDelete) => {
-    if (willDelete) {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          login_button.style.display = "block";
-          location.reload();
-        })
-        .catch((error) => {
-          location.reload();
-        });
-    }
-  });
+  })
+    .then((willDelete) => {
+      if (willDelete) {
+        localStorage.removeItem("token");
+
+        location.reload();
+      }
+    })
+    .then(() => {
+      login_button.style.display = "block";
+    });
 }
