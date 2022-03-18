@@ -20,30 +20,21 @@ function linkAction() {
   Main.classList.remove("blure");
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
-
-// firebase configurations
-const firebaseConfig = {
-  apiKey: "AIzaSyBvQqfAlXssffV1ywtxgdYS67i3tB0WuyA",
-  authDomain: "fab-web-site.firebaseapp.com",
-  projectId: "fab-web-site",
-  storageBucket: "fab-web-site.appspot.com",
-  messagingSenderId: "283650575875",
-  appId: "1:283650575875:web:2bd8aed1b6f44ef32f8836",
-};
 const api = "https://my-brand-api-fabrice.herokuapp.com/api/v1/";
 let response;
 const login_button = document.getElementById("nav_login");
 const logout_button = document.getElementById("nav_logout");
-const app = firebase.initializeApp(firebaseConfig);
+
 
 logout_button.style.display = "none";
-const db1 = app.firestore();
+
 const token = localStorage.getItem("token");
 if (token) {
   login_button.style.display = "none";
   logout_button.style.display = "block";
   document.getElementById("admin_link").style.display = "none";
   username = document.getElementById("username");
+  username.textContent = localStorage.getItem("username");
 }
 // firebase.auth().onAuthStateChanged((user) => {
 //   if (user) {
@@ -93,11 +84,14 @@ function logout() {
     .then((willDelete) => {
       if (willDelete) {
         localStorage.removeItem("token");
+        localStorage.removeItem("username");
 
         location.reload();
       }
     })
     .then(() => {
-      login_button.style.display = "block";
+      logout_button.style.display = "block";
+      username = document.getElementById("username");
+      username.textContent = localStorage.getItem("username");
     });
 }

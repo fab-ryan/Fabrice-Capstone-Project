@@ -255,6 +255,7 @@
                             form.email.classList.remove( 'is-valid' );
                             form.password.classList.remove( 'is-valid' );
                             localStorage.setItem( "token", "Bearer " + data.token );
+                            localStorage.setItem( "username", data.username );
                             if ( data.role == "admin" ) {
                                 location.href = 'dashboard/index.html';
                             }

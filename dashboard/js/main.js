@@ -11,22 +11,6 @@ const firebaseConfig = {
   messagingSenderId: "283650575875",
   appId: "1:283650575875:web:2bd8aed1b6f44ef32f8836",
 };
-// const app = firebase.initializeApp(firebaseConfig);
-// const db1 = app.firestore();
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     var uid = user.uid;
-
-//     db1
-//       .collection("users")
-//       .doc(uid)
-//       .get()
-//       .then((docRef) => {
-//         const data = docRef.data();
-//         document.getElementById("username").innerHTML = data.UserName;
-//       });
-//   }
-// });
 let token = localStorage.getItem("token");
 const api = "https://my-brand-api-fabrice.herokuapp.com/api/v1/";
 function logout() {
@@ -41,6 +25,7 @@ function logout() {
     .then((willDelete) => {
       if (willDelete) {
         localStorage.removeItem("token");
+        localStorage.removeItem("username");
         location.href = "../index.html";
       }
     })
@@ -60,14 +45,15 @@ async function UserInformation() {
       Authorization: token,
     },
   });
+
   const userInfo = await userInfos.json();
   if (userInfos.status == 400) {
     history.back();
   } else if (userInfo.data.role == "user") {
     history.back(-1);
+    location.href = "../index.html";
   } else {
     document.getElementById("username").innerHTML = userInfo.data.username;
     console.log("Welcame Admin ");
   }
 }
-UserInformation();

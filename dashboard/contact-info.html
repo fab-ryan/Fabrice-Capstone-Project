@@ -1,169 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacts</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
 
-</head>
+    </head>
 
-<body>
-    <div class="sidebar">
-        <div class="sidebar-brand">
-            <img src="images/mine_logo.png" height="60px" width="60px">
+    <body>
+        <div class="sidebar">
+            <div class="sidebar-brand">
+                <img src="images/mine_logo.png" height="60px" width="60px">
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="nav-link "><a href="index.html"><span class=" fa fa-home"></span>&nbsp; Dashboard</a>
+                    </li>
+                    <li class="nav-link"><a href="blog-list.html"><span class=" fa fa-bars"></span>&nbsp; List Blog</a>
+                    </li>
+                    <li class="nav-link"><a href="blog-add.html"><span class=" fa fa-blog"></span>&nbsp; Add Blog</a>
+                    </li>
+                    <li class="nav-link active"><a href="#"><span class=" fa fa-phone"></span>&nbsp; Contacts</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="sidebar-menu">
-            <ul>
-                <li class="nav-link "><a href="index.html"><span class=" fa fa-home"></span>&nbsp; Dashboard</a>
-                </li>
-                <li class="nav-link"><a href="blog-list.html"><span class=" fa fa-bars"></span>&nbsp; List Blog</a></li>
-                <li class="nav-link"><a href="blog-add.html"><span class=" fa fa-blog"></span>&nbsp; Add Blog</a></li>
-                <li class="nav-link active"><a href="#"><span class=" fa fa-phone"></span>&nbsp; Contacts</a></li>
-            </ul>
+        <div class="main-content">
+            <header>
+                <h2>
+                    <div class="hamburger" id="nav-toggle" name="menu-outline">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+
+                    </div>
+                    Dashboard
+                </h2>
+                <div class="return-button">
+                    <div class="home-buttons"><a href="../index.html">Home</a></div>
+                    <div class="home-buttons"><a href="../contact.html">Contact</a></div>
+                    <div class="home-buttons"><a href="../blog.html">Blog</a></div>
+
+                </div>
+                <div class="user-wrapper dropdown">
+                    <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                        onclick="dropdown_menu()" aria-haspopup="true" aria-expanded="false">
+                        <img src="./images/user.png" width="40px" height="40px" alt=" users">
+                        <span id="username"></span>
+
+
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
+                        <a class="dropdown-item" href="profile.html">Profile</a>
+                        <a class="dropdown-item" onclick="logout()"> Logout</a>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <h1>List All Contacts</h1>
+                <div class=" bg-danger">
+
+                    <table class="table   table-light table-hover" style="background-color: white;">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="messages" class="tbody-light">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </main>
         </div>
-    </div>
-    <div class="main-content">
-        <header>
-            <h2>
-                <div class="hamburger" id="nav-toggle" name="menu-outline">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
+        <script src="./js/main.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-                </div>
-                Dashboard
-            </h2>
-            <div class="return-button">
-                <div class="home-buttons"><a href="../index.html">Home</a></div>
-                <div class="home-buttons"><a href="../contact.html">Contact</a></div>
-                <div class="home-buttons"><a href="../blog.html">Blog</a></div>
+        <script>
+            var rowsNum = 0;
+            async function getAllMessage() {
+                response = await fetch( api + "messages", {
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                        "Authorization": token
+                    },
 
-            </div>
-            <div class="user-wrapper dropdown">
-                <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" onclick="dropdown_menu()"
-                    aria-haspopup="true" aria-expanded="false">
-                    <img src="./images/user.png" width="40px" height="40px" alt=" users">
-                    <span id="username"></span>
+                } );
+                const datas = await response.json();
+                datas.data.forEach( el => {
+                    const DataName = el.name;
+                    const DataEmail = el.email;
+                    const DataMessage = el.message;
+                    const DataDate = "Date";
+                    const DataId = el._id;
 
+                    AddNewData( DataName, DataEmail, DataMessage, DataDate, DataId );
+                } );
 
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
-                    <a class="dropdown-item" href="profile.html">Profile</a>
-                    <a class="dropdown-item" onclick="logout()"> Logout</a>
-                </div>
-            </div>
-        </header>
-        <main>
-            <h1>List All Contacts</h1>
-            <div class=" bg-danger">
+            }
 
-                <table class="table   table-light table-hover" style="background-color: white;">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>No</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Message</th>
-                            <th>Date</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="messages" class="tbody-light">
+            function AddNewData( DataName, DataEmail, DataMessage, DataDate, DataId ) {
+                const messageTr = document.querySelector( '#messages' );
 
+                var tr = document.createElement( 'tr' );
+                var tdNow = document.createElement( 'td' );
+                var tdName = document.createElement( 'td' );
+                var tdEmail = document.createElement( 'td' );
+                var tdMessage = document.createElement( 'td' );
+                var tdAction = document.createElement( 'td' );
+                var tdDate = document.createElement( 'td' );
+                rowsNum += 1;
+                tdNow.innerHTML = rowsNum;
+                tdName.innerHTML = DataName;
+                tdEmail.innerHTML = DataEmail;
+                tdMessage.innerHTML = DataMessage;
+                tdDate.innerHTML = DataDate;
+                tdAction.innerHTML = `<input type='button' class='btn btn-primary-1' value='Reply' onclick='Reply(${DataId})'>  <input type='button' class='btn btn-danger' value='Delete' onclick=Delete(this.id) id="${DataId}">  `;
+                tr.appendChild( tdNow );
+                tr.appendChild( tdName );
+                tr.appendChild( tdEmail );
+                tr.appendChild( tdMessage );
+                tr.appendChild( tdDate );
+                tr.appendChild( tdAction );
+                messageTr.appendChild( tr );
+                const deleteForm = document.getElementById( "delete" );
+            }
+            getAllMessage();
+            function Delete( DataId ) {
+                swal( {
+                    title: "Attention",
+                    text: "Are you sure!! You want to Delete",
+                    icon: "warning",
+                    buttons: true,
 
-                    </tbody>
-                </table>
-            </div>
-        </main>
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <script>
-        var rowsNum = 0;
-
-        const db = app.firestore();
-        db.collection("messages")
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-
-                    const datas = doc.data();
-
-                    const DataName = datas.name;
-                    const DataEmail = datas.email;
-                    const DataMessage = datas.message;
-                    const DataDate = datas.date;
-
-                    
-                    const DataId = doc.id;
-                    AddNewData(DataName, DataEmail, DataMessage, DataDate, DataId);
-
-                });
-            });
-        function AddNewData(DataName, DataEmail, DataMessage, DataDate, DataId) {
-            const messageTr = document.querySelector('#messages');
-
-            var tr = document.createElement('tr');
-            var tdNow = document.createElement('td');
-            var tdName = document.createElement('td');
-            var tdEmail = document.createElement('td');
-            var tdMessage = document.createElement('td');
-            var tdAction = document.createElement('td');
-            var tdDate = document.createElement('td');
-            rowsNum += 1;
-            tdNow.innerHTML = rowsNum;
-            tdName.innerHTML = DataName;
-            tdEmail.innerHTML = DataEmail;
-            tdMessage.innerHTML = DataMessage;
-            tdDate.innerHTML = DataDate.toDate().toDateString();
-            tdAction.innerHTML = `<input type='button' class='btn btn-primary-1' value='Reply' onclick='Reply(${DataId})'>  <input type='button' class='btn btn-danger' value='Delete' onclick=Delete(this.id) id="${DataId}">  `;
-            tr.appendChild(tdNow);
-            tr.appendChild(tdName);
-            tr.appendChild(tdEmail);
-            tr.appendChild(tdMessage);
-            tr.appendChild(tdDate);
-            tr.appendChild(tdAction);
-            messageTr.appendChild(tr);
-            const deleteForm = document.getElementById("delete");
+                    dangerMode: true,
+                } ).then( ( willDelete ) => {
+                    if ( willDelete ) {
+                        fetch( api + "message/" + DataId, {
+                            method: "DELETE",
+                            headers: {
+                                Accept: "application/json",
+                                "Content-Type": "application/json",
+                                "Authorization": token
+                            },
+                        } ).then( res => res.json() )
+                            .then( json => swal( '"Delete', json.message, 'success' ) );
 
 
-
-        }
-        function Delete(DataId) {
-            swal({
-                title: "Attention",
-                text: "Are you sure!! You want to Delete",
-                icon: "warning",
-                buttons: true,
-
-                dangerMode: true,
-            }).then((willDelete) => {
-                if (willDelete) {
-                    db.collection("messages").doc(DataId).delete().then(() => {
-                        swal('successfuly', 'You have Delete ', 'success').then(() => {
-                            location.reload();
-                        });
-                    }).catch((error) => {
-                        console.error("Error removing document: ", error);
-                    });
-                }
+                    }
 
 
-            })
-        }
+                } );
+            }
 
-    </script>
-</body>
+
+        </script>
+    </body>
 
 </html>
