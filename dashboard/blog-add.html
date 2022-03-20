@@ -29,6 +29,12 @@
                     <li class="nav-link"><a href="contact-info.html"><span class=" fa fa-phone"></span>
                             &nbsp;Contacts</a>
                     </li>
+                    <li class="nav-link"><a href="All-subscriber.html"><span class=" fa fa-subscript"></span>
+                            &nbsp;All Subscribers</a>
+                    </li>
+                    <li class="nav-link"><a href="All-users.html"><span class=" fa fa-user"></span>
+                            &nbsp;All Users</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -94,6 +100,14 @@
                                                     <input type="file" id="img" class="form-control ">
                                                 </div>
                                                 <div class="form-group">
+                                                    <span class="text-danger" id="title-error"></span>
+                                                    <span class="label label-default">Article Preview <i
+                                                            class="text-danger">*</i></span>
+
+                                                    <textarea rows="2" name="preview" id="preview"
+                                                        class=" form-control"></textarea>
+                                                </div>
+                                                <div class="form-group">
                                                     <span class="text-danger" id="description-error"></span>
 
                                                     <span class="label label-default">Article Description<i
@@ -115,21 +129,17 @@
                 </div>
             </main>
         </div>
-
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
         <script src="./js/main.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <script>
             const AddBlogForm = document.querySelector( "#form" );
-            AddBlogForm.addEventListener( 'submit', ( e ) => {
+            AddBlogForm.addEventListener( 'submit', async ( e ) => {
                 e.preventDefault();
                 var title = AddBlogForm.title.value;
                 var img = AddBlogForm.img.files[ 0 ];
                 var description = AddBlogForm.description.value;
+                var preview = AddBlogForm.preview.value;
 
                 if ( AddBlogForm.title.value == "" || AddBlogForm.title.value == null ) {
                     document.getElementById( 'title-error' ).innerHTML = "Title is required";
@@ -176,53 +186,41 @@
                     AddBlogForm.description.classList.add( 'is-valid' );
 
                 }
-                const ImageName = img.name;
-                var storageRef = app.storage().ref( 'blog_images/' + ImageName );
-                var uploadTask = storageRef.put( img );
-                uploadTask.on( 'state_changed', function ( snapshot ) {
 
-                    var progress = ( snapshot.bytesTransferred / snapshot.totalBytes ) * 100;
-                    swal( 'Please Waite Image is Beng Uploaded', {
-                        content: progress,
-                        timer: progress,
+
+                try {
+
+                    const formData = new FormData();
+                    formData.append( "ArticleTitle", title, );
+                    formData.append( "ArticlePreview", preview );
+                    formData.append( "ArticleImage", img );
+                    formData.append( "ArticleDescription", description );
+
+
+                    response = await fetch( api + "blog", {
+                        method: "POST",
+                        headers: {
+                            "Authorization": token,
+                        },
+                        body: formData
                     } );
-                    console.log( "upload is " + progress + " done" );
-                }, function ( error ) {
+                    const res = await response.json();
 
-                    swal( 'error', 'Error in Uploding picture', 'error' );
-                }, function () {
-
-                    uploadTask.snapshot.ref.getDownloadURL().then( function ( downloadURL ) {
-
-                        const db = app.firestore();
-                        db.collection( "blogs" ).add( {
-                            title: title,
-                            imageURL: downloadURL,
-
-                            description: description,
-                            date: new Date(),
-
-                        } )
-                            .then( ( docRef ) => {
-                                swal( 'Thank You', 'Your Blog Has been Created', 'success' ).then( () => {
-                                    AddBlogForm.title.value = "";
-                                    AddBlogForm.img.value = "";
-                                    AddBlogForm.description.value = "";
-                                    AddBlogForm.title.classList.remove( 'is-valid' );
-                                    AddBlogForm.img.classList.remove( 'is-valid' );
-                                    AddBlogForm.description.classList.remove( 'is-valid' );
-                                } );
-
-                            } )
-                            .catch( ( error ) => {
-                                swal( 'error ', docRef.name + 'error', 'error' );
-
-                            } );
-
+                    swal( 'Thank You', 'Your Blog Has been Created', 'success' ).then( () => {
+                        AddBlogForm.title.value = "";
+                        AddBlogForm.img.value = "";
+                        AddBlogForm.description.value = "";
+                        AddBlogForm.title.classList.remove( 'is-valid' );
+                        AddBlogForm.img.classList.remove( 'is-valid' );
+                        AddBlogForm.description.classList.remove( 'is-valid' );
                     } );
 
+                } catch ( error ) {
+                    console.log( error );
 
-                } );
+                }
+
+
             } );
         </script>
     </body>

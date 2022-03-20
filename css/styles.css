@@ -140,7 +140,6 @@ img {
   cursor: pointer;
 }
 
-
 /*===== NAV =====*/
 @media screen and (max-width: 768px) {
   .nav {
@@ -156,7 +155,6 @@ img {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     margin-bottom: 50px;
-    
   }
 
   .nav__item {
@@ -178,8 +176,10 @@ img {
     color: white !important;
   }
 
-  .nav__login{padding-right: 2.5rem;}
-  .nav__logout{
+  .nav__login {
+    padding-right: 2.5rem;
+  }
+  .nav__logout {
     padding-right: 2.5rem;
     display: none;
     word-wrap: break-word;
@@ -233,11 +233,12 @@ img {
   text-decoration: none;
   color: #fff;
 }
-.nav__logout a:hover{
+/* .nav__logout a:hover {
   text-decoration: none;
   color: white;
-}
-.nav__logout{
+  cursor: pointer;
+} */
+.nav__logout {
   color: white;
 }
 
@@ -261,10 +262,9 @@ img {
 .show {
   right: 0;
 }
-.blure{
-filter:blur(2px);
-opacity:1px
-
+.blure {
+  filter: blur(2px);
+  opacity: 1px;
 }
 
 /*Active menu*/
@@ -533,16 +533,16 @@ h5 {
   flex: 0 0 5px !important;
   padding: 0px !important;
 }
-@media (max-width:992px) {
- .col-1{
-   display: none;
-   padding: 30px;
- }
+@media (max-width: 992px) {
+  .col-1 {
+    display: none;
+    padding: 30px;
+  }
 }
 .mission-card {
   margin-left: 20px;
-  
-  width:100%;
+
+  width: 100%;
   border-radius: 10px;
   margin: auto;
 
@@ -590,13 +590,13 @@ footer {
   box-shadow: inset 0px 11px 8px -10px rgb(0, 0, 0),
     inset 0px -11px 8px -10px #ccc;
 }
-.container-about{
+.container-about {
   color: white;
 }
-.container-1{
+.container-1 {
   height: 100vh;
 }
-.container-about  .header {
+.container-about .header {
   text-align: center;
   padding: 20px;
 }
@@ -612,7 +612,6 @@ footer {
   height: 350px;
   margin-top: auto;
   padding: 0px 90px 0px 70px;
- 
 }
 .about-section1 h5 {
   padding-top: 10px;
@@ -680,11 +679,10 @@ footer {
   margin-bottom: 2rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
-.container-experience{
+.container-experience {
   color: #fff;
-  
 }
-.container-experience .header{
+.container-experience .header {
   text-align: center;
 }
 .card {
@@ -824,7 +822,6 @@ footer {
 }
 .sec_address {
   background-color: #fff;
-  
 }
 .address h4 {
   font-weight: 500;
@@ -836,7 +833,7 @@ footer {
   font-weight: 500;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1.5rem;
-  
+
   padding-bottom: 2px;
 }
 .map iframe {
@@ -941,11 +938,10 @@ textarea.form-control {
 .experience-body {
   padding: 0px;
 }
-.experience-other{
+.experience-other {
   padding: 0px;
 }
 .row {
-  
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
@@ -1014,7 +1010,6 @@ p {
   padding-bottom: 30px;
   position: relative;
 }
-
 
 .col-md-12 {
   position: relative;
@@ -1238,19 +1233,18 @@ nav.fort ul li a:hover {
   display: inline-block;
   padding: 0.5rem 0.8rem;
 }
-.nav__logout1{
+.nav__logout1 {
   color: var(--white-color);
-  
-  
   padding: 0.5rem 0.8rem;
   border-radius: 0.25rem;
+  cursor: pointer;
 }
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 12px;
   z-index: 1;
   margin-top: 10px;
@@ -1260,7 +1254,7 @@ nav.fort ul li a:hover {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.dropdown a{
+.dropdown a {
   cursor: pointer;
 }
 .img-artical {
@@ -1275,10 +1269,9 @@ nav.fort ul li a:hover {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.two-line{
+.two-line {
   margin-top: 1px !important;
-    margin-bottom:0px !important;
-    
+  margin-bottom: 0px !important;
 }
 .footer ul li a i {
   padding: 8px;
