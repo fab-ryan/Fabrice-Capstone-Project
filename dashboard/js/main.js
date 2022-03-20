@@ -3,14 +3,6 @@ const dropdown_menu = () => {
   dropdown_toggle.classList.add("show");
 };
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBvQqfAlXssffV1ywtxgdYS67i3tB0WuyA",
-  authDomain: "fab-web-site.firebaseapp.com",
-  projectId: "fab-web-site",
-  storageBucket: "fab-web-site.appspot.com",
-  messagingSenderId: "283650575875",
-  appId: "1:283650575875:web:2bd8aed1b6f44ef32f8836",
-};
 let token = localStorage.getItem("token");
 const api = "https://my-brand-api-fabrice.herokuapp.com/api/v1/";
 function logout() {
@@ -37,6 +29,10 @@ function logout() {
 if (!token) {
   history.back();
 }
+let username = "";
+username = localStorage.getItem("username");
+
+document.getElementById("username").innerHTML = username;
 async function UserInformation() {
   const userInfos = await fetch(api + "userInfo", {
     headers: {
@@ -53,7 +49,6 @@ async function UserInformation() {
     history.back(-1);
     location.href = "../index.html";
   } else {
-    document.getElementById("username").innerHTML = userInfo.data.username;
     console.log("Welcame Admin ");
   }
 }

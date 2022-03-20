@@ -26,6 +26,12 @@
                     </li>
                     <li class="nav-link"><a href="contact-info.html"><span class=" fa fa-phone"></span> Contacts</a>
                     </li>
+                    <li class="nav-link"><a href="All-subscriber.html"><span class=" fa fa-subscript"></span>
+                            &nbsp;All Subscribers</a>
+                    </li>
+                    <li class="nav-link"><a href="All-users.html"><span class=" fa fa-user"></span>
+                            &nbsp;All Users</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -154,14 +160,35 @@
                 tr.appendChild( tdDate );
                 tr.appendChild( tdAction );
                 messageTr.appendChild( tr );
-
-
-
             }
+            async function Delete( BlogId ) {
+                swal( {
+                    title: "Delete Comment",
+                    text: "Are you sure?",
+                    icon: "warning",
+                    buttons: true,
 
+                    dangerMode: true,
+                } )
+                    .then( async ( willDelete ) => {
+                        if ( willDelete ) {
+                            response = await fetch( api + 'blog/' + BlogId, {
+                                method: 'DELETE',
+                                headers: {
+                                    "Authorization": token
+                                }
+                            } );
+                            if ( response.ok == true ) {
+                                swal( "Blog ", "Blog Deleted Well", 'success' ).then( () => {
+                                    window.location.reload();
+                                } );
+                            }
+                        }
+                    } );
+            }
             getAllBlog();
 
-            
+
         </script>
 
     </body>
