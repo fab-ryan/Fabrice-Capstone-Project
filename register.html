@@ -165,10 +165,7 @@
             <div>copyright <i class="fa fa-copyright" aria-hidden="true"> </i>2022 Fabrice. All Rights Reserved</div>
             <div>Designed by NDACYAYISENGA Fabrice</div>
         </footer>
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+ 
         <script src="./js/app.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
@@ -342,58 +339,7 @@
                 } catch ( error ) {
 
                 }
-                // End of Validation 
-                // Start Store User Information
-                // const auth = app.auth();
-                // const db = app.firestore();
-                // auth.createUserWithEmailAndPassword( email, password )
-                //     .then( ( userCredential ) => {
-
-                //         var user = userCredential.user;
-
-                //         db.collection( "users" ).doc( user.uid ).set( {
-                //             FirstName: first_name,
-                //             LastName: last_name,
-                //             UserName: user_name,
-                //             UserType: 'user',
-                //             date: new Date(),
-                //         } );
-
-
-                //     } )
-                //     .then( ( docRef ) => {
-                //         swal( 'Thank You', 'You Have Registed Successfully', 'success' ).then( () => {
-                //             auth.onAuthStateChanged( ( user ) => {
-                //                 if ( user ) {
-                //                     db.collection( "users" )
-                //                         .doc( user.uid )
-                //                         .get()
-                //                         .then( ( docRef ) => {
-                //                             const Data = docRef.data();
-                //                             if ( Data.UserName == 'user' ) {
-                //                                 location.href = 'blog.html';
-                //                             }
-                //                             else {
-                //                                 location.href = './dashboard/index.html';
-                //                             }
-
-                //                         } );
-                //                 }
-                //             } );
-
-                //         } )
-                //             .catch( ( error ) => {
-                //                 swal( 'error ', 'Registration Failed Try again later', 'error' );
-
-                //             } );
-
-
-                //     } )
-                //     .catch( ( error ) => {
-                //         var errorCode = error.code;
-                //         var errorMessage = error.message;
-
-                //     } );
+                
             } );
 
         </script>

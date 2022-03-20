@@ -25,53 +25,33 @@ let response;
 const login_button = document.getElementById("nav_login");
 const logout_button = document.getElementById("nav_logout");
 
-
 logout_button.style.display = "none";
 
 const token = localStorage.getItem("token");
+const role = localStorage.getItem("role");
 if (token) {
-  login_button.style.display = "none";
-  logout_button.style.display = "block";
-  document.getElementById("admin_link").style.display = "none";
-  username = document.getElementById("username");
+  if (role == "user") {
+    login_button.style.display = "none";
+    logout_button.style.display = "block";
+    document.getElementById("admin_link").style.display = "none";
+    username = document.getElementById("username");
+    const br = document.createElement("br");
+    document.getElementById("profile_link").appendChild(br).style.marginBottom =
+      "9px";
+  } else {
+    login_button.style.display = "none";
+    logout_button.style.display = "block";
+    const br = document.createElement("br");
+
+    document.getElementById("admin_link").appendChild(br).style.marginBottom =
+      "9px";
+
+    username = document.getElementById("username");
+  }
+
   username.textContent = localStorage.getItem("username");
 }
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     var uid = user.uid;
 
-//     db1
-//       .collection("users")
-//       .doc(uid)
-//       .get()
-//       .then((docRef) => {
-//         const Datas = docRef.data();
-//         if (Datas.UserType == "user") {
-//           login_button.style.display = "none";
-//           logout_button.style.display = "block";
-//           document.getElementById("admin_link").style.display = "none";
-//           username = document.getElementById("username");
-//           username.textContent = Datas.UserName;
-//         } else {
-//           login_button.style.display = "none";
-//           logout_button.style.display = "block";
-//           const br = document.createElement("br");
-
-//           document
-//             .getElementById("admin_link")
-//             .appendChild(br).style.marginBottom = "9px";
-
-//           username = document.getElementById("username");
-
-//           username.textContent = Datas.UserName;
-//         }
-//       });
-//   } else {
-//     logout_button.style.display = "none";
-//     // User is signed out
-//     // ...
-//   }
-// });
 function logout() {
   swal({
     title: "Log out",
@@ -85,6 +65,7 @@ function logout() {
       if (willDelete) {
         localStorage.removeItem("token");
         localStorage.removeItem("username");
+        localStorage.removeItem("role");
 
         location.reload();
       }
@@ -95,3 +76,58 @@ function logout() {
       username.textContent = localStorage.getItem("username");
     });
 }
+
+const subscribeform = document.querySelector("#subscription-form");
+subscribeform.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = subscribeform.email.value;
+  if (subscribeform.email.value == "" || subscribeform.email.value == null) {
+    subscribeform.email.classList.add("is-invalid");
+    subscribeform.email.focus();
+
+    return false;
+  } else {
+    subscribeform.email.classList.add("is-valid");
+  }
+  var emailID = subscribeform.email.value;
+  atpos = emailID.indexOf("@");
+  dotpos = emailID.lastIndexOf(".");
+
+  if (atpos < 1 || dotpos - atpos < 2) {
+    subscribeform.email.classList.add("is-invalid");
+    subscribeform.email.focus();
+    return false;
+  } else {
+    subscribeform.email.classList.remove("is-invalid");
+  }
+  try {
+    response = await fetch(api + "subscriber", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    });
+    const subSuccess = await response.json();
+    if (response.status == 201) {
+      swal(
+        "Hello",
+        "You have Subscribe to my brand you will recieve every new article on your email",
+        "success"
+      ).then(() => {
+        subscribeform.email.value = "";
+        subscribeform.email.classList.remove("is-valid");
+      });
+    } else {
+      swal("error", subSuccess.error, "error").then(() => {
+        subscribeform.email.value = "";
+        subscribeform.email.classList.remove("is-valid");
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
