@@ -82,7 +82,8 @@
                         <div class="card bg-primary">
                             <div class="card-bady">
                                 <h2>Subscriber</h2>
-                                3
+                                <div id="subscriber_number"></div>
+
                             </div>
                         </div>
                     </div>
@@ -120,6 +121,17 @@
                 const DataBlog = await AllBlogs.json();
                 document.getElementById( "blog_number" ).innerHTML = DataBlog.counts;
             }
+            async function getAllSubscriber() {
+                const AllBlogs = await fetch( api + "subscriber", {
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                        Authorization: token,
+                    },
+                } );
+                const DataBlog = await AllBlogs.json();
+                document.getElementById( "subscriber_number" ).innerHTML = DataBlog.count;
+            }
 
             async function getAllMessage() {
                 const AllMessage = await fetch( api + "messages", {
@@ -148,6 +160,7 @@
             getAllBlog();
             getAllMessage();
             getAllUser();
+            getAllSubscriber();
         </script>
 
     </body>
