@@ -45,7 +45,7 @@ if (token) {
 
     document.getElementById("admin_link").appendChild(br).style.marginBottom =
       "9px";
-
+    document.getElementById("profile_link").style.display = "none";
     username = document.getElementById("username");
   }
 
@@ -66,6 +66,7 @@ function logout() {
         localStorage.removeItem("token");
         localStorage.removeItem("username");
         localStorage.removeItem("role");
+        localStorage.removeItem("userId");
 
         location.reload();
       }
