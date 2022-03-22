@@ -135,3 +135,17 @@ main {
 #username {
   cursor: pointer;
 }
+#out-toggle {
+  display: none;
+}
+@media (max-width: 800px) and (min-width: 350px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0px;
+  }
+  #out-toggle {
+    padding-top: 9px;
+  }
+}
