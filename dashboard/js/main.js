@@ -2,7 +2,26 @@ const dropdown_menu = () => {
   const dropdown_toggle = document.getElementById("dropdown-menu1");
   dropdown_toggle.classList.add("show");
 };
+function display_sidbar(x) {
+  const nav_toggle = document.getElementById("nav-toggle");
+  const out_toggle = document.getElementById("out-toggle");
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.style.display = "block";
+  nav_toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    sidebar.style.display = "block";
+    sidebar.style.transition = "all 2s";
+    sidebar.style.zIndex = 1;
+    out_toggle.style.display = "inline-block";
+  });
 
+  out_toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    sidebar.style.display = "none";
+    sidebar.style.zIndex = 0;
+    out_toggle.style.display = "none";
+  });
+}
 let token = localStorage.getItem("token");
 const api = "https://my-brand-api-fabrice.herokuapp.com/api/v1/";
 function logout() {
@@ -18,6 +37,8 @@ function logout() {
       if (willDelete) {
         localStorage.removeItem("token");
         localStorage.removeItem("username");
+        localStorage.removeItem("role");
+        localStorage.removeItem("userId");
         location.href = "../index.html";
       }
     })
@@ -30,25 +51,14 @@ if (!token) {
   history.back();
 }
 let username = "";
+let role = "";
 username = localStorage.getItem("username");
-
+role = localStorage.getItem("role");
 document.getElementById("username").innerHTML = username;
-async function UserInformation() {
-  const userInfos = await fetch(api + "userInfo", {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: token,
-    },
-  });
-
-  const userInfo = await userInfos.json();
-  if (userInfos.status == 400) {
-    history.back();
-  } else if (userInfo.data.role == "user") {
-    history.back(-1);
-    location.href = "../index.html";
-  } else {
-    console.log("Welcame Admin ");
-  }
+if (role == "") {
+  history.back(-1);
+} else if (role == "user") {
+  history.back(-1);
+} else {
+  console.log("welcome Admin");
 }

@@ -14,128 +14,137 @@
     </head>
 
     <body>
-        <header class="nav-header">
+        <div class="loading" id="preloader">
+            <img src="/images/loading2.gif" alt="">
+        </div>
+        <div class="afterloading" id="afterload">
 
-            <div class="logo">
-                <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
-            </div>
-            <div class="hamburger" id="nav-toggle" name="menu-outline">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+            <header class="nav-header">
 
-            </div>
-            <nav class="nav" id="nav-menu">
-                <div class="nav__content bd-grid">
+                <div class="logo">
+                    <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
+                </div>
+                <div class="hamburger" id="nav-toggle" name="menu-outline">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
 
-                    <div class="nav__close" id="nav-close">
+                </div>
+                <nav class="nav" id="nav-menu">
+                    <div class="nav__content bd-grid">
 
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                    </div>
+                        <div class="nav__close" id="nav-close">
 
-                    <div class="nav__perfil">
-                        <div class="nav__img">
-                            <img src="./images/mine_logo.png" alt="">
+                            <i class="fa fa-times" aria-hidden="true"></i>
                         </div>
 
-
-                    </div>
-
-                    <div class="nav__menu">
-                        <ul class="nav__list">
-                            <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
-                            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                            <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
-                            <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-                            <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
-
-
-                        </ul>
-                    </div>
-
-
-                    <div class="nav__login" id="nav_login">
-
-                        <a href="login.html" id="login" class="nav__social-icon active">Login</a>
-
-                    </div>
-                    <div class="nav__logout text-white" id="nav_logout">
-                        <div class="dropdown  nav__logout1 ">
-                            <span id="username"></span>
-
-                            <div class="dropdown-content text-black">
-                                <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
-
-                                <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                        <div class="nav__perfil">
+                            <div class="nav__img">
+                                <img src="./images/mine_logo.png" alt="">
                             </div>
 
+
+                        </div>
+
+                        <div class="nav__menu">
+                            <ul class="nav__list">
+                                <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
+                                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                                <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
+                                <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+
+
+                            </ul>
+                        </div>
+
+
+                        <div class="nav__login" id="nav_login">
+
+                            <a href="login.html" id="login" class="nav__social-icon active">Login</a>
+
+                        </div>
+                        <div class="nav__logout text-white" id="nav_logout">
+                            <div class="dropdown  nav__logout1 ">
+                                <span id="username"></span>
+
+                                <div class="dropdown-content text-black">
+                                    <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
+
+                                    <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
+                </nav>
+            </header>
+            <main id="main">
+                <div class="header">
+                    <p class="text-white text-center mt-3 fadeInUp animated"> </p>
                 </div>
-            </nav>
-        </header>
-        <main id="main">
-            <div class="header">
-                <p class="text-white text-center mt-3 fadeInUp animated"> </p>
-            </div>
-            <div class="content_blog">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-9 ">
-                            <div class="mt-lg-5 mb-3">
-                                <div class="card animate-box fadeInUp animated">
-                                    <div class="img-circle">
-                                        <img src="images/user.png">
-                                    </div>
-                                    <div class="row">
-                                        <div class="card-body text-black text-center">
-                                            <h1> REGISTER HERE</h1>
+                <div class="content_blog">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9 ">
+                                <div class="mt-lg-5 mb-3">
+                                    <div class="card animate-box fadeInUp animated">
+                                        <div class="img-circle">
+                                            <img src="images/user.png">
+                                        </div>
+                                        <div class="row">
+                                            <div class="card-body text-black text-center">
+                                                <h1> REGISTER HERE</h1>
 
-                                            <form method="" action="" class="" id="register-form">
-                                                <div class="row m-4">
-                                                    <div class="col-md-6">
-                                                        <span id="first_name_error" class=" text-danger"></span>
-                                                        <input type="text" name="" id="first_name" class="form-control "
-                                                            placeholder="First Name">
-                                                        <span id="email_error" class=" text-danger"></span>
-                                                        <input type="email" name="" id="email"
-                                                            class="form-control mt-2 " placeholder="Email">
-                                                        <span id="password_error" class=" text-danger"></span>
-                                                        <input type="password" name="" id="password"
-                                                            placeholder="Password" class="form-control mt-2">
-                                                    </div>
+                                                <form method="" action="" class="" id="register-form">
+                                                    <div class="row m-4">
+                                                        <div class="col-md-6">
+                                                            <span id="first_name_error" class=" text-danger"></span>
+                                                            <input type="text" name="" id="first_name"
+                                                                class="form-control " placeholder="First Name">
+                                                            <span id="email_error" class=" text-danger"></span>
+                                                            <input type="email" name="" id="email"
+                                                                class="form-control mt-2 " placeholder="Email">
+                                                            <span id="password_error" class=" text-danger"></span>
+                                                            <input type="password" name="" id="password"
+                                                                placeholder="Password" class="form-control mt-2">
+                                                        </div>
 
-                                                    <div class="col-md-6">
+                                                        <div class="col-md-6">
 
-                                                        <span id="last_name_error" class=" text-danger"></span>
-                                                        <input type="text" name="" id="last_name" class="form-control "
-                                                            placeholder="Last Name">
+                                                            <span id="last_name_error" class=" text-danger"></span>
+                                                            <input type="text" name="" id="last_name"
+                                                                class="form-control " placeholder="Last Name">
 
-                                                        <span id="user_name_error" class=" text-danger"></span>
-                                                        <input type="text" name="" id="user_name"
-                                                            class="form-control mt-2 " placeholder="User Name">
+                                                            <span id="user_name_error" class=" text-danger"></span>
+                                                            <input type="text" name="" id="user_name"
+                                                                class="form-control mt-2 " placeholder="User Name">
 
-                                                        <span id="confirm_password_error" class=" text-danger"></span>
-                                                        <input type="password" name="" id="confirm_password"
-                                                            placeholder="Comfirm Password" class="form-control mt-2">
-                                                    </div>
-                                                    <div class="col-md-6 ">
-                                                        <input type="submit" name="" id="submit" value="REGISTER"
-                                                            class="btn btn-primary-1 pr-lg-5 pl-lg-5">
+                                                            <span id="confirm_password_error"
+                                                                class=" text-danger"></span>
+                                                            <input type="password" name="" id="confirm_password"
+                                                                placeholder="Comfirm Password"
+                                                                class="form-control mt-2">
+                                                        </div>
+                                                        <div class="col-md-6 ">
+                                                            <input type="submit" name="" id="submit" value="REGISTER"
+                                                                class="btn btn-primary-1 pr-lg-5 pl-lg-5">
 
-                                                        <input type="reset" value="CLEAR" class=" btn btn-danger ">
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="register-line">
-                                                            <a href="login.html" class="register text-primary">I Have
-                                                                Account</a>
+                                                            <input type="reset" value="CLEAR" class=" btn btn-danger ">
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="register-line">
+                                                                <a href="login.html" class="register text-primary">I
+                                                                    Have
+                                                                    Account</a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
 
-                                            </form>
+                                                </form>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -143,44 +152,55 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
-        <footer class="footer">
-            <div>
-                <ul>
-                    <li>
-                        <a href=" #"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-github"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <form id="subscription-form">
-                <div style="display: flex;">
-                    <input type="text" name="email" class="form-control" id="email" placeholder="Subscriber to My blog">
-                    &nbsp;
-                    <span>
-                    </span>
-                    <button type="submit" style="background-color: currentColor; border: none;"> <i class="fa fa-rocket"
-                            style="font-size:30px; cursor: pointer; color:red;" aria-hidden=" true"></i></button>
-
-
+            </main>
+            <footer class="footer">
+                <div>
+                    <ul>
+                        <li>
+                            <a href=" #"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
                 </div>
-            </form>
-            <div>copyright <i class="fa fa-copyright " aria-hidden="true"> </i>2022 Fabrice All Rights Reserved</div>
+                <form id="subscription-form">
+                    <div style="display: flex;">
+                        <input type="text" name="email" class="form-control" id="email"
+                            placeholder="Subscriber to My blog">
+                        &nbsp;
+                        <span>
+                        </span>
+                        <button type="submit" style="background-color: currentColor; border: none;"> <i
+                                class="fa fa-rocket" style="font-size:30px; cursor: pointer; color:red;"
+                                aria-hidden=" true"></i></button>
 
-        </footer>
+
+                    </div>
+                </form>
+                <div>copyright <i class="fa fa-copyright " aria-hidden="true"> </i>2022 Fabrice All Rights Reserved
+                </div>
+
+            </footer>
+        </div>
 
         <script src="./js/app.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
+            window.onload = setTimeout( function () {
+
+                const preloader = document.getElementById( "preloader" );
+                preloader.style.opacity = 0.1;
+                const afterload = document.getElementById( "afterload" );
+                preloader.style.display = "none";
+                afterload.style.display = "block";
+            }, 1000 );
             const form = document.querySelector( '#register-form' );
             form.addEventListener( 'submit', async ( e ) => {
                 e.preventDefault();

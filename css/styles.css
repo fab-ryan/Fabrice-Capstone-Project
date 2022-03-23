@@ -578,6 +578,7 @@ footer {
   align-items: center;
   margin: auto;
   bottom: 0;
+  clear: both;
 }
 .footer ul {
   list-style: none;
@@ -1276,4 +1277,18 @@ nav.fort ul li a:hover {
 .footer ul li a i {
   padding: 8px;
   color: white;
+}
+
+.loading {
+  background-color: #fffafa;
+  height: 100vh;
+}
+
+.loading img {
+  top: 40%;
+  left: 40%;
+  position: absolute;
+}
+.afterloading {
+  display: none;
 }
