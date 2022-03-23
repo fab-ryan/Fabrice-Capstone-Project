@@ -14,190 +14,208 @@
     </head>
 
     <body>
-        <header class="nav-header">
+        <div class="loading" id="preloader">
+            <img src="/images/loading2.gif" alt="">
+        </div>
+        <div class="afterloading" id="afterload">
 
-            <div class="logo">
-                <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
-            </div>
-            <div class="hamburger" id="nav-toggle" name="menu-outline">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+            <header class="nav-header">
 
-            </div>
-            <nav class="nav" id="nav-menu">
-                <div class="nav__content bd-grid">
+                <div class="logo">
+                    <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
+                </div>
+                <div class="hamburger" id="nav-toggle" name="menu-outline">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
 
-                    <div class="nav__close" id="nav-close">
+                </div>
+                <nav class="nav" id="nav-menu">
+                    <div class="nav__content bd-grid">
 
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                    </div>
+                        <div class="nav__close" id="nav-close">
 
-                    <div class="nav__perfil">
-                        <div class="nav__img">
-                            <img src="./images/mine_logo.png" alt="">
+                            <i class="fa fa-times" aria-hidden="true"></i>
                         </div>
 
-
-                    </div>
-
-                    <div class="nav__menu">
-                        <ul class="nav__list">
-                            <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
-                            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                            <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
-                            <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-                            <li class="nav__item"><a href="blog.html" class="nav__link active">Blog</a></li>
-
-
-                        </ul>
-                    </div>
-
-                    <div class="nav__login" id="nav_login">
-
-                        <a href="login.html" class="nav__social-icon ">Login</a>
-
-
-                    </div>
-                    <div class="nav__logout text-white" id="nav_logout">
-                        <div class="dropdown  nav__logout1 ">
-                            <span id="username"></span>
-
-                            <div class="dropdown-content text-black">
-                                <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
-                                <a href="profile.html" class="text-success" id="profile_link">Profile</a>
-                                <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                        <div class="nav__perfil">
+                            <div class="nav__img">
+                                <img src="./images/mine_logo.png" alt="">
                             </div>
 
+
+                        </div>
+
+                        <div class="nav__menu">
+                            <ul class="nav__list">
+                                <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
+                                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                                <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
+                                <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                                <li class="nav__item"><a href="blog.html" class="nav__link active">Blog</a></li>
+
+
+                            </ul>
+                        </div>
+
+                        <div class="nav__login" id="nav_login">
+
+                            <a href="login.html" class="nav__social-icon ">Login</a>
+
+
+                        </div>
+                        <div class="nav__logout text-white" id="nav_logout">
+                            <div class="dropdown  nav__logout1 ">
+                                <span id="username"></span>
+
+                                <div class="dropdown-content text-black">
+                                    <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
+                                    <a href="profile.html" class="text-success" id="profile_link">Profile</a>
+                                    <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
+                </nav>
+            </header>
+            <main id="main">
+                <div class="header">
+                    <p class="text-white text-center mt-3 fadeInUp animated"> </p>
                 </div>
-            </nav>
-        </header>
-        <main id="main">
-            <div class="header">
-                <p class="text-white text-center mt-3 fadeInUp animated"> </p>
-            </div>
-            <div class="content_blog card">
-                <div class="container ">
-                    <div class="row  mt-4">
-                        <div class="col-lg-6 fadeInUp animated">
-                            <img id="blog_img" class="img-artical">
+                <div class="content_blog card">
+                    <div class="container ">
+                        <div class="row  mt-4">
+                            <div class="col-lg-6 fadeInUp animated">
+                                <img id="blog_img" class="img-artical">
 
 
-                        </div>
-                        <div class="col-lg-6 text-black">
-                            <div class="row">
+                            </div>
+                            <div class="col-lg-6 text-black">
+                                <div class="row">
 
-                                <div class="col-lg-12 fadeInUp animated mt-3">
-                                    <h5 id="blog-title"></h5>
-                                    <p id="blog-description"> </p>
-                                </div>
-                                <div class="col-lg-12 mt-5">
-                                    <div class="row">
-                                        <div class="col-md-4 text-muted fadeInUp animated">
-                                            posted at <span id="blog-posted-at">
+                                    <div class="col-lg-12 fadeInUp animated mt-3">
+                                        <h5 id="blog-title"></h5>
+                                        <p id="blog-description"> </p>
+                                    </div>
+                                    <div class="col-lg-12 mt-5">
+                                        <div class="row">
+                                            <div class="col-md-4 text-muted fadeInUp animated">
+                                                posted at <span id="blog-posted-at">
 
 
-                                            </span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="like-dislike-share fadeInUp animated ">
-                                                <a href="#" class="text-muted"><i class="fa fa-thumbs-up  "><span
-                                                            class="ml-1">30</span></i></a>
-                                                <a href="#" class="text-muted"><i class="fa fa-thumbs-down  "><span
-                                                            class="ml-1">6</span></i></a>
-                                                <a href="#" class="text-muted"><i class="fa fa-share  "></i></a>
+                                                </span>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="like-dislike-share fadeInUp animated ">
+                                                    <a href="#" class="text-muted"><i class="fa fa-thumbs-up  "><span
+                                                                class="ml-1">30</span></i></a>
+                                                    <a href="#" class="text-muted"><i class="fa fa-thumbs-down  "><span
+                                                                class="ml-1">6</span></i></a>
+                                                    <a href="#" class="text-muted"><i class="fa fa-share  "></i></a>
+
+                                                </div>
 
                                             </div>
-
-                                        </div>
-                                        <div class="col-sm-3 text-muted fadeInUp animated">
-                                            comment <span class="ml-1" id="comment_count"></span>
+                                            <div class="col-sm-3 text-muted fadeInUp animated">
+                                                comment <span class="ml-1" id="comment_count"></span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row mt-5 text-black">
-                        <div class="col-lg-12">
-                            <h5 class="muted-text fadeInUp animated">
-                                Give A Comment on this Article
-                            </h5>
-                            <div class="row mb-5">
-                                <div class="col-lg-6 fadeInUp animated">
-                                    <form action="" method="post" id="form_comment">
-                                        <span class="text-danger" id="name-error"></span>
-
-
-                                        <input type="text" name="name" class="form-control" placeholder="Full Name"
-                                            id="">
-                                        <span class="text-danger" id="email-error"></span>
-                                        <input type="text" name="email" class="form-control  mt-3" placeholder="Email">
-
-                                        <span class="text-danger" id="comment-error"></span>
-                                        <textarea rows="4" cols="50" name="comment" class=" form-control mt-3"
-                                            placeholder="Give your comment here..."></textarea>
-
-                                        <input type='submit' value="COMMENT" class="btn btn-primary-1 mb-3 mt-3">
-                                    </form>
-                                </div>
-                                <div class="col-lg-6  animated fadeInUp pb-4 ">
-                                    <h4 class=" text-black-50 ">COMMENTS:</h4>
-                                    <div id="blogComment">
-
-                                    </div>
-
-
 
                                 </div>
 
                             </div>
+                        </div>
+                        <div class="row mt-5 text-black">
+                            <div class="col-lg-12">
+                                <h5 class="muted-text fadeInUp animated">
+                                    Give A Comment on this Article
+                                </h5>
+                                <div class="row mb-5">
+                                    <div class="col-lg-6 fadeInUp animated">
+                                        <form action="" method="post" id="form_comment">
+                                            <span class="text-danger" id="name-error"></span>
 
+
+                                            <input type="text" name="name" class="form-control" placeholder="Full Name"
+                                                id="">
+                                            <span class="text-danger" id="email-error"></span>
+                                            <input type="text" name="email" class="form-control  mt-3"
+                                                placeholder="Email">
+
+                                            <span class="text-danger" id="comment-error"></span>
+                                            <textarea rows="4" cols="50" name="comment" class=" form-control mt-3"
+                                                placeholder="Give your comment here..."></textarea>
+
+                                            <input type='submit' value="COMMENT" class="btn btn-primary-1 mb-3 mt-3">
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-6  animated fadeInUp pb-4 ">
+                                        <h4 class=" text-black-50 ">COMMENTS:</h4>
+                                        <div id="blogComment">
+
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
-        <footer class="footer">
-            <div>
-                <ul>
-                    <li>
-                        <a href=" #"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-github"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <form id="subscription-form">
-                <div style="display: flex;">
-                    <input type="text" name="email" class="form-control" id="email" placeholder="Subscriber to My blog">
-                    &nbsp;
-                    <span>
-                    </span>
-                    <button type="submit" style="background-color: currentColor; border: none;"> <i class="fa fa-rocket"
-                            style="font-size:30px; cursor: pointer; color:red;" aria-hidden=" true"></i></button>
-        
-        
+            </main>
+            <footer class="footer">
+                <div>
+                    <ul>
+                        <li>
+                            <a href=" #"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
                 </div>
-            </form>
-            <div>copyright <i class="fa fa-copyright " aria-hidden="true"> </i>2022 Fabrice All Rights Reserved</div>
-        
-        </footer>
+                <form id="subscription-form">
+                    <div style="display: flex;">
+                        <input type="text" name="email" class="form-control" id="email"
+                            placeholder="Subscriber to My blog">
+                        &nbsp;
+                        <span>
+                        </span>
+                        <button type="submit" style="background-color: currentColor; border: none;"> <i
+                                class="fa fa-rocket" style="font-size:30px; cursor: pointer; color:red;"
+                                aria-hidden=" true"></i></button>
+
+
+                    </div>
+                </form>
+                <div>copyright <i class="fa fa-copyright " aria-hidden="true"> </i>2022 Fabrice All Rights Reserved
+                </div>
+
+            </footer>
+        </div>
         <script src="./js/app.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <script>
+            window.onload = setTimeout( function () {
+
+                const preloader = document.getElementById( "preloader" );
+                preloader.style.opacity = 0.1;
+                const afterload = document.getElementById( "afterload" );
+                preloader.style.display = "none";
+                afterload.style.display = "block";
+            }, 2000 );
             const contactform = document.querySelector( "#form_comment" );
             var BlogId = location.search.substring( 1 );
             async function UserInformation() {

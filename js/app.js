@@ -20,6 +20,14 @@ function linkAction() {
   Main.classList.remove("blure");
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+// End of Nav bar
+document.addEventListener("DOMContentLoaded", function () {
+  let footerheight = document.querySelector("footer").offsetHeight;
+  document.querySelector("body").style.paddingBottom = footerheight;
+});
+// end of footer looder
+
 const api = "https://my-brand-api-fabrice.herokuapp.com/api/v1/";
 let response;
 const login_button = document.getElementById("nav_login");
