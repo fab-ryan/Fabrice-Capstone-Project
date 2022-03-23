@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow:visible;
+  overflow: visible;
 }
 body {
   background-color: rgb(241, 239, 239);
@@ -64,8 +64,8 @@ header {
   height: 60px;
   background-color: white;
   box-shadow: -4px 6px 8px 1px rgb(85, 84, 84);
- 
-  position:sticky;
+
+  position: sticky;
   width: calc((100%-250px));
 }
 header h2 {
@@ -103,13 +103,12 @@ header h2 {
 .user-wrapper img {
   border-radius: 50%;
 }
-a.dropdown-item{
-    background-color: azure;
-    
+a.dropdown-item {
+  background-color: azure;
 }
-a.dropdown-item:hover{
-    background-color: rgb(44, 44, 44);
-    color: rgb(255, 254, 254);
+a.dropdown-item:hover {
+  background-color: rgb(44, 44, 44);
+  color: rgb(255, 254, 254);
 }
 
 main {
@@ -131,4 +130,22 @@ main {
   max-width: 100%;
   height: auto;
   float: right;
+}
+/* Username Buttone  */
+#username {
+  cursor: pointer;
+}
+#out-toggle {
+  display: none;
+}
+@media (max-width: 800px) and (min-width: 350px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0px;
+  }
+  #out-toggle {
+    padding-top: 9px;
+  }
 }

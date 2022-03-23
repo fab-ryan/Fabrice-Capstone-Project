@@ -1,205 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
 
-</head>
+    </head>
 
-<body>
-    <div class="sidebar">
-        <div class="sidebar-brand">
-            <img src="images/mine_logo.png" height="60px" width="60px">
-        </div>
-        <div class="sidebar-menu">
-            <ul>
-                <li class="nav-link"><a href="index.html"><span class=" fa fa-home"></span>&nbsp; Dashboard</a></li>
-                <li class="nav-link"><a href="blog-list.html"><span class=" fa fa-bars"></span> &nbsp; List Blog</a>
-                </li>
-                <li class="nav-link"><a href="blog-add.html"><span class=" fa fa-blog"></span>&nbsp; Add Blog</a></li>
-                <li class="nav-link"><a href="contact-info.html"><span class=" fa fa-phone"></span> Contacts</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="main-content">
-        <header>
-            <h2>
-                <div class="hamburger" id="nav-toggle" name="menu-outline">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-
-                </div>
-
-                Dashboard
-            </h2>
-            <div class="return-button">
-                <div class="home-buttons"><a href="../index.html">Home</a></div>
-                <div class="home-buttons"><a href="../contact.html">Contact</a></div>
-                <div class="home-buttons"><a href="../blog.html">Blog</a></div>
-
+    <body>
+        <div class="sidebar">
+            <div class="sidebar-brand">
+                <img src="images/mine_logo.png" height="60px" width="60px">
             </div>
-            <div class="user-wrapper dropdown">
-                <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" onclick="dropdown_menu()"
-                    aria-haspopup="true" aria-expanded="false">
-                    <img src="./images/user.png" width="40px" height="40px" alt=" users">
-                    <span id="username"></span>
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="nav-link"><a href="index.html"><span class=" fa fa-home"></span>&nbsp; Dashboard</a></li>
+                    <li class="nav-link"><a href="blog-list.html"><span class=" fa fa-bars"></span> &nbsp; List Blog</a>
+                    </li>
+                    <li class="nav-link"><a href="blog-add.html"><span class=" fa fa-blog"></span>&nbsp; Add Blog</a>
+                    </li>
+                    <li class="nav-link"><a href="contact-info.html"><span class=" fa fa-phone"></span> Contacts</a>
+                    </li>
+                    <li class="nav-link"><a href="All-subscriber.html"><span class=" fa fa-subscript"></span>
+                            &nbsp;All Subscribers</a>
+                    </li>
+                    <li class="nav-link"><a href="All-users.html"><span class=" fa fa-user"></span>
+                            &nbsp;All Users</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <header>
+                <h2>
+                    <div class="hamburger" id="nav-toggle" name="menu-outline">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+
+                    </div>
+
+                    Dashboard
+                </h2>
+                <div class="return-button">
+                    <div class="home-buttons"><a href="../index.html">Home</a></div>
+                    <div class="home-buttons"><a href="../contact.html">Contact</a></div>
+                    <div class="home-buttons"><a href="../blog.html">Blog</a></div>
 
                 </div>
-                <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
-                    <a class="dropdown-item " href="profile.html" style="background-color: gray;">Profile</a>
-                    <a class="dropdown-item" onclick="logout()"> Logout</a>
+                <div class="user-wrapper dropdown">
+                    <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                        onclick="dropdown_menu()" aria-haspopup="true" aria-expanded="false">
+                        <img src="./images/user.png" width="40px" height="40px" alt=" users">
+                        <span id="username"></span>
+
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
+                        <a class="dropdown-item " href="profile.html" style="background-color: gray;">Profile</a>
+                        <a class="dropdown-item" onclick="logout()"> Logout</a>
+                    </div>
                 </div>
-            </div>
-        </header>
-        <main>
-            <div class="container p-3" style="background-color: white; ">
-                <div class="row  mt-4">
-                    <div class="col-lg-6 fadeInUp animated">
-                        <img id="blog_img" class="img-artical">
+            </header>
+            <main>
+                <div class="container p-3" style="background-color: white; ">
+                    <div class="row  mt-4">
+                        <div class="col-lg-6 fadeInUp animated">
+                            <img id="blog_img" class="img-artical">
+
+
+                        </div>
+                        <div class="col-lg-6 text-black">
+                            <div class="row">
+
+                                <div class="col-lg-12 fadeInUp animated mt-3">
+                                    <h5 id="blog-title"></h5>
+                                    <p id="blog-description"> </p>
+                                </div>
+                                <div class="col-lg-12 mt-5">
+                                    <div class="row">
+                                        <div class="col-md-4 text-muted fadeInUp animated">
+                                            posted at <span id="blog-posted-at">
+
+
+                                            </span>
+
+                                        </div>
+                                        <div class="col-md-5 text-muted">
+                                            liked by &nbsp; Disliked by &nbsp; Shared by
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
 
 
                     </div>
-                    <div class="col-lg-6 text-black">
-                        <div class="row">
+                    <div class="row mt-5 text-black">
+                        <div class="col-lg-12">
 
-                            <div class="col-lg-12 fadeInUp animated mt-3">
-                                <h5 id="blog-title"></h5>
-                                <p id="blog-description"> </p>
-                            </div>
-                            <div class="col-lg-12 mt-5">
-                                <div class="row">
-                                    <div class="col-md-4 text-muted fadeInUp animated">
-                                        posted at <span id="blog-posted-at">
+                            <div class="row mb-5">
 
-                                            
-                                        </span>
+                                <div class="col-lg-12 animated fadeInUp pb-4 ">
+                                    <h4 class=" text-black-50 ">COMMENTS:</h4>
 
-                                    </div>
-                                    <div class="col-md-5 text-muted">
-                                     liked by   &nbsp;  Disliked by &nbsp; Shared by 
-                                    </div>
+                                    <table class="table table-condensed table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Comments</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="comment_body">
+
+                                        </tbody>
+                                    </table>
+
+
+
+
                                 </div>
 
                             </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-                <div class="row mt-5 text-black">
-                    <div class="col-lg-12">
-
-                        <div class="row mb-5">
-
-                            <div class="col-lg-12 animated fadeInUp pb-4 ">
-                                <h4 class=" text-black-50 ">COMMENTS:</h4>
-
-                                <table class="table table-condensed table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Comments</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="comment_body">
-
-                                    </tbody>
-                                </table>
-
-
-
-
-                            </div>
 
                         </div>
-
                     </div>
                 </div>
-            </div>
-        </main>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            </main>
+        </div>
+        <script src="./js/main.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <script>
-        window.onload = (e) => {
-            e.preventDefault();
-            var queryString = location.search.substring(1);
-            
-            const blog_img = document.getElementById('blog_img');
-            const blog_title = document.getElementById('blog-title');
-            const blog_description = document.getElementById('blog-description');
-            const blog_created_at = document.getElementById('blog-posted-at');
+        <script>
+            let BlogId = location.search.substring( 1 );
+            let rowsNum = 0;
+            async function getOneBlog() {
 
-            const db = app.firestore();
-            var blogRef = db
+                const blog_img = document.getElementById( 'blog_img' );
+                const blog_title = document.getElementById( 'blog-title' );
+                const blog_description = document.getElementById( 'blog-description' );
+                const blog_created_at = document.getElementById( 'blog-posted-at' );
+                try {
+                    response = await fetch( api + 'blog/' + BlogId, {
+                        headers: {
+                            "Authorization": token
+                        }
+                    } );
+                    const datas = await response.json();
 
-                .collection("blogs")
-                .doc(queryString)
-                .get()
-                .then((docRef) => {
-                    const Datas = docRef.data();
-                    blog_img.setAttribute('src', Datas.imageURL);
-                    blog_title.innerHTML = Datas.title;
-                    blog_description.textContent = Datas.description;
-                    const date = Datas.date;
-                     blog_created_at.innerHTML=date.toDate().toString() ;
-                    const DataId = docRef.id;
-                    blogId = DataId;
+                    blog_img.setAttribute( 'src', datas.data.ArticleImage );
+                    blog_title.innerHTML = datas.data.ArticleTitle;
+                    blog_description.textContent = datas.data.ArticleDescription;
+                    const date = datas.data.created_at;
 
-                })
-                .catch((error) => {
+                    blog_created_at.innerHTML = new Date( date ).toDateString();
+                    const DataId = datas.data._id;
 
-                })
-            var blog_comments = db.collection('comments').where("blog_id", "==", queryString)
-                .get().then((comments) => {
-                    comments.forEach(comment => {
-                        const datas = comment.data();
-                        const single_comment = datas.comment;
-                        const single_email = datas.email;
-                        const single_name = datas.name;
-                        const single_date = datas.date;
-                        SingleBlog(single_name, single_comment, single_email);
 
-                    });
-                });
-            var rowsNum = 0;
-            function SingleBlog(single_name, single_comment, single_email) {
-                const tdBody = document.getElementById('comment_body');
-                const tr = document.createElement('tr');
-                const tdName = document.createElement('td');
-                const tdComment = document.createElement('td');
-                const tdEmail = document.createElement('td');
-                const tdNo = document.createElement('td');
+                }
+                catch ( error ) {
+                    console.log( error );
+                };
+
+            }
+            async function allComment() {
+
+                response = await fetch( api + "blog/" + BlogId + "/comment" );
+                const commentData = await response.json();
+                commentData.data.forEach( comment => {
+                    const single_comment = comment.comment;
+                    const single_email = comment.email;
+                    const single_name = comment.fullname;
+                    const DataId = comment._id;
+
+                    SingleBlog( single_name, single_comment, single_email, DataId );
+
+                } );
+            }
+
+
+            function SingleBlog( single_name, single_comment, single_email, DataId ) {
+                const tdBody = document.getElementById( 'comment_body' );
+                const tr = document.createElement( 'tr' );
+                const tdName = document.createElement( 'td' );
+                const tdComment = document.createElement( 'td' );
+                const tdEmail = document.createElement( 'td' );
+                const tdNo = document.createElement( 'td' );
+                const tdAction = document.createElement( 'td' );
                 rowsNum += 1;
                 tdNo.innerHTML = rowsNum;
                 tdName.innerHTML = single_name;
                 tdEmail.innerHTML = single_email;
                 tdComment.innerHTML = single_comment;
-                tr.appendChild(tdNo);
-                tr.appendChild(tdName);
-                tr.appendChild(tdEmail);
-                tr.appendChild(tdComment);
-                tdBody.appendChild(tr);
+                tdAction.innerHTML = `<a  href="#" onclick="Delete(this.id)" class="text-danger" id="${DataId}"> Delete  </a>`;
+                tr.appendChild( tdNo );
+                tr.appendChild( tdName );
+                tr.appendChild( tdEmail );
+                tr.appendChild( tdComment );
+                tr.appendChild( tdAction );
+                tdBody.appendChild( tr );
             }
-        }
+            function Delete( commentID ) {
+                swal( {
+                    title: "Delete Comment",
+                    text: "Are you sure?",
+                    icon: "warning",
+                    buttons: true,
 
-    </script>
+                    dangerMode: true,
+                } )
+                    .then( async ( willDelete ) => {
+                        if ( willDelete ) {
+                            response = await fetch( api + 'blog/' + BlogId + "/comment/" + commentID, {
+                                method: 'DELETE',
+                                headers: {
+                                    "Authorization": token
+                                }
+                            } );
+                            if ( response.ok == true ) {
+                                swal( "comment ", "comment Deleted Well", 'success' ).then( () => {
+                                    window.location.reload();
+                                } );
+                            }
+                        }
+                    } );
+            }
+            allComment();
+            getOneBlog()
+        </script>
 
-</body>
+    </body>
 
 </html>

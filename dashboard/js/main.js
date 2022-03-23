@@ -2,32 +2,28 @@ const dropdown_menu = () => {
   const dropdown_toggle = document.getElementById("dropdown-menu1");
   dropdown_toggle.classList.add("show");
 };
+function display_sidbar(x) {
+  const nav_toggle = document.getElementById("nav-toggle");
+  const out_toggle = document.getElementById("out-toggle");
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.style.display = "block";
+  nav_toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    sidebar.style.display = "block";
+    sidebar.style.transition = "all 2s";
+    sidebar.style.zIndex = 1;
+    out_toggle.style.display = "inline-block";
+  });
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBvQqfAlXssffV1ywtxgdYS67i3tB0WuyA",
-  authDomain: "fab-web-site.firebaseapp.com",
-  projectId: "fab-web-site",
-  storageBucket: "fab-web-site.appspot.com",
-  messagingSenderId: "283650575875",
-  appId: "1:283650575875:web:2bd8aed1b6f44ef32f8836",
-};
-
-const app = firebase.initializeApp(firebaseConfig);
-const db1 = app.firestore();
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    var uid = user.uid;
-
-    db1
-      .collection("users")
-      .doc(uid)
-      .get()
-      .then((docRef) => {
-        const data = docRef.data();
-        document.getElementById("username").innerHTML = data.UserName;
-      });
-  }
-});
+  out_toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    sidebar.style.display = "none";
+    sidebar.style.zIndex = 0;
+    out_toggle.style.display = "none";
+  });
+}
+let token = localStorage.getItem("token");
+const api = "https://my-brand-api-fabrice.herokuapp.com/api/v1/";
 function logout() {
   swal({
     title: "Log out",
@@ -36,18 +32,33 @@ function logout() {
     buttons: true,
 
     dangerMode: true,
-  }).then((willDelete) => {
-    if (willDelete) {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          login_button.style.display = "block";
-          location.href = "../index.html";
-        })
-        .catch((error) => {
-          location.reload();
-        });
-    }
-  });
+  })
+    .then((willDelete) => {
+      if (willDelete) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        localStorage.removeItem("role");
+        localStorage.removeItem("userId");
+        location.href = "../index.html";
+      }
+    })
+    .then(() => {
+      login_button.style.display = "block";
+    });
+}
+
+if (!token) {
+  history.back();
+}
+let username = "";
+let role = "";
+username = localStorage.getItem("username");
+role = localStorage.getItem("role");
+document.getElementById("username").innerHTML = username;
+if (role == "") {
+  history.back(-1);
+} else if (role == "user") {
+  history.back(-1);
+} else {
+  console.log("welcome Admin");
 }

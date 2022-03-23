@@ -1,129 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="css/styles.css" type="text/css" rel="stylesheet" />
-    <link href="css/responsive.css" type="text/css" rel="stylesheet" />
-    <link href="css/isotope.css" type="text/css" rel="stylesheet" />
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link href="css/styles.css" type="text/css" rel="stylesheet" />
+        <link href="css/responsive.css" type="text/css" rel="stylesheet" />
+        <link href="css/isotope.css" type="text/css" rel="stylesheet" />
+        <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
+    </head>
 
-<body>
-    <header class="nav-header">
-
-        <div class="logo">
-            <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
+    <body>
+        <div class="loading" id="preloader">
+            <img src="/images/loading2.gif" alt="">
         </div>
-        <div class="hamburger" id="nav-toggle" name="menu-outline">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+        <div class="afterloading" id="afterload">
 
-        </div>
-        <nav class="nav" id="nav-menu">
-            <div class="nav__content bd-grid">
+            <header class="nav-header">
 
-                <div class="nav__close" id="nav-close">
-
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                <div class="logo">
+                    <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
                 </div>
-
-                <div class="nav__perfil">
-                    <div class="nav__img">
-                        <img src="./images/mine_logo.png" alt="">
-                    </div>
-
+                <div class="hamburger" id="nav-toggle" name="menu-outline">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
 
                 </div>
+                <nav class="nav" id="nav-menu">
+                    <div class="nav__content bd-grid">
 
-                <div class="nav__menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
-                        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
-                        <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-                        <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                        <div class="nav__close" id="nav-close">
 
-
-                    </ul>
-                </div>
-
-                <div class="nav__login" id="nav_login">
-
-                    <a href="login.html" id="login" class="nav__social-icon active">Login</a>
-
-                </div>
-                <div class="nav__logout text-white" id="nav_logout">
-                    <div class="dropdown  nav__logout1 ">
-                        <span id="username"></span>
-
-                        <div class="dropdown-content text-black">
-                            <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
-
-                            <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                            <i class="fa fa-times" aria-hidden="true"></i>
                         </div>
 
-                    </div>
-                </div>
-            </div>
+                        <div class="nav__perfil">
+                            <div class="nav__img">
+                                <img src="./images/mine_logo.png" alt="">
+                            </div>
 
-        </nav>
-    </header>
-    <main id="main">
-        <div class="header">
-            <p class="text-white text-center mt-3 fadeInUp animated">Login </p>
-        </div>
-        <div class="content_blog ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 col-md-9 pt-5 col-sm-12">
-                        <div class="mt-lg-5 mb-3">
-                            <div class="card animate-box fadeInUp animated">
-                                <div class="img-circle">
-                                    <img src="images/user.png">
+
+                        </div>
+
+                        <div class="nav__menu">
+                            <ul class="nav__list">
+                                <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
+                                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                                <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
+                                <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+
+
+                            </ul>
+                        </div>
+
+                        <div class="nav__login" id="nav_login">
+
+                            <a href="login.html" id="login" class="nav__social-icon active">Login</a>
+
+                        </div>
+                        <div class="nav__logout text-white" id="nav_logout">
+                            <div class="dropdown  nav__logout1 ">
+                                <span id="username"></span>
+
+                                <div class="dropdown-content text-black">
+                                    <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
+
+                                    <a class="text-success" id="logout-link" onclick="logout()">logout</a>
                                 </div>
-                                <div class="row">
-                                    <div class="card-body text-black text-center">
-                                        <h1> LOGIN HERE</h1>
-                                        <div class="col-md-8 mt-0">
-                                            <form method="POST" class="form-login">
-                                                <span class="text-danger text-capitalize" id="login-error"></span>
-                                                <span class=" text-danger" id="email-error"></span>
 
-                                                <input type="email" name="email" id="email" class="form-control "
-                                                    placeholder="Email">
-                                                <span class="text-danger" id="password-error"></span>
+                            </div>
+                        </div>
+                    </div>
 
-                                                <input type="password" name="password" id="password"
-                                                    class="form-control mt-2 " placeholder="password">
+                </nav>
+            </header>
+            <main id="main">
+                <div class="header">
+                    <p class="text-white text-center mt-3 fadeInUp animated">Login </p>
+                </div>
+                <div class="content_blog ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-9 pt-5 col-sm-12">
+                                <div class="mt-lg-5 mb-3">
+                                    <div class="card animate-box fadeInUp animated">
+                                        <div class="img-circle">
+                                            <img src="images/user.png">
+                                        </div>
+                                        <div class="row">
+                                            <div class="card-body text-black text-center">
+                                                <h1> LOGIN HERE</h1>
+                                                <div class="col-md-8 mt-0">
+                                                    <form method="POST" class="form-login">
+                                                        <span class="text-danger text-capitalize"
+                                                            id="login-error"></span>
+                                                        <span class=" text-danger" id="email-error"></span>
 
-                                                <div class="row mt-2">
-                                                    <div class="col-sm-6">
-                                                        <a href=""> <input type="checkbox" name="" id=""
-                                                                class="form-check-login"> Remember me
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <a href="">Forget Password</a>
+                                                        <input type="email" name="email" id="email"
+                                                            class="form-control " placeholder="Email">
+                                                        <span class="text-danger" id="password-error"></span>
+
+                                                        <input type="password" name="password" id="password"
+                                                            class="form-control mt-2 " placeholder="password">
+
+                                                        <div class="row mt-2">
+                                                            <div class="col-sm-6">
+                                                                <a href=""> <input type="checkbox" name="" id=""
+                                                                        class="form-check-login"> Remember me
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <a href="">Forget Password</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-sm-6">
+                                                                <input type="submit" value="LOGIN"
+                                                                    class="btn btn-primary-1">
+
+                                                            </div>
+
+                                                        </div>
+                                                    </form>
+                                                    <div class="register-line">
+                                                        <a href="register.html" class="register text-primary">I Don't
+                                                            Have
+                                                            Account</a>
+
                                                     </div>
                                                 </div>
-                                                <div class="row mt-2">
-                                                    <div class="col-sm-6">
-                                                        <input type="submit" value="LOGIN" class="btn btn-primary-1">
-
-                                                    </div>
-
-                                                </div>
-                                            </form>
-                                            <div class="register-line">
-                                                <a href="register.html" class="register text-primary">I Don't Have
-                                                    Account</a>
-
                                             </div>
                                         </div>
                                     </div>
@@ -131,149 +141,171 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
-            </div>
+            </main>
+            <footer class="footer">
+                <div>
+                    <ul>
+                        <li>
+                            <a href=" #"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <form id="subscription-form">
+                    <div style="display: flex;">
+                        <input type="text" name="email" class="form-control" id="email"
+                            placeholder="Subscriber to My blog">
+                        &nbsp;
+                        <span>
+                        </span>
+                        <button type="submit" style="background-color: currentColor; border: none;"> <i
+                                class="fa fa-rocket" style="font-size:30px; cursor: pointer; color:red;"
+                                aria-hidden=" true"></i></button>
 
+
+                    </div>
+                </form>
+                <div>copyright <i class="fa fa-copyright " aria-hidden="true"> </i>2022 Fabrice All Rights Reserved
+                </div>
+
+            </footer>
         </div>
-    </main>
-    <footer class="footer">
-        <div>
-            <ul>
-                <li>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-github"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div>copyright <i class="fa fa-copyright" aria-hidden="true"> </i>2022 Fabrice. All Rights Reserved</div>
-        <div>Designed by NDACYAYISENGA Fabrice</div>
-    </footer>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
-    <script src="./js/app.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <script>
-        const form = document.querySelector('.form-login');
+        <script src="./js/app.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
+        <script>
+            window.onload = setTimeout( function () {
 
+                const preloader = document.getElementById( "preloader" );
+                preloader.style.opacity = 0.1;
+                const afterload = document.getElementById( "afterload" );
+                preloader.style.display = "none";
+                afterload.style.display = "block";
+            }, 1000 );
+            const form = document.querySelector( '.form-login' );
+            form.addEventListener( 'submit', async ( e ) => {
+                e.preventDefault();
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+                if ( form.email.value == "" || form.email.value == null ) {
+                    document.getElementById( 'email-error' ).innerHTML = "Email is required";
+                    form.email.classList.add( 'is-invalid' );
+                    form.email.focus();
 
-            if (form.email.value == "" || form.email.value == null) {
-                document.getElementById('email-error').innerHTML = "Email is required";
-                form.email.classList.add('is-invalid');
-                form.email.focus();
+                    return false;
+                }
+                else {
+                    form.email.classList.remove( 'is-invalid' );
+                    document.getElementById( 'email-error' ).innerHTML = "";
 
-                return false;
-            }
-            else {
-                form.email.classList.remove('is-invalid');
-                document.getElementById('email-error').innerHTML = "";
+                    form.email.classList.add( 'is-valid' );
 
-                form.email.classList.add('is-valid');
+                }
+                var emailID = form.email.value;
+                atpos = emailID.indexOf( "@" );
+                dotpos = emailID.lastIndexOf( "." );
 
-            }
-            var emailID = form.email.value;
-            atpos = emailID.indexOf("@");
-            dotpos = emailID.lastIndexOf(".");
+                if ( atpos < 1 || ( dotpos - atpos < 2 ) ) {
+                    document.getElementById( 'email-error' ).innerHTML = "Check your Email again!";
+                    form.email.classList.add( 'is-invalid' );
+                    form.email.focus();
+                    return false;
+                }
+                else {
+                    form.email.classList.remove( 'is-invalid' );
+                    document.getElementById( 'email-error' ).innerHTML = "";
 
-            if (atpos < 1 || (dotpos - atpos < 2)) {
-                document.getElementById('email-error').innerHTML = "Check your Email again!";
-                form.email.classList.add('is-invalid');
-                form.email.focus();
-                return false;
-            }
-            else {
-                form.email.classList.remove('is-invalid');
-                document.getElementById('email-error').innerHTML = "";
+                }
+                if (
+                    form.password.value == "" || form.password.value == null
+                ) {
+                    document.getElementById( 'password-error' ).innerText = "Password is required";
+                    form.password.classList.add( 'is-invalid' );
+                    return false;
 
-            }
-            if (
-                form.password.value == "" || form.password.value == null
-            ) {
-                document.getElementById('password-error').innerText = "Password is required";
-                form.password.classList.add('is-invalid');
-                return false;
+                }
+                else {
+                    document.getElementById( 'password-error' ).innerHTML = '';
+                    form.password.classList.remove( 'is-invalid' );
+                    form.password.classList.add( 'is-valid' );
 
-            }
-            else {
-                document.getElementById('password-error').innerHTML = '';
-                form.password.classList.remove('is-invalid');
-                form.password.classList.add('is-valid');
+                }
 
-            }
+                try {
+                    response = await fetch( api + 'login', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify( {
+                            email: form.email.value,
+                            password: form.password.value
+                        } )
+                    } );
+                    const data = await response.json();
+                    if ( response.status == 401 ) {
+                        swal( "Error", data.error, "error" ).then( () => {
+                            form.email.value = "";
+                            form.password.value = "";
+                            form.email.classList.remove( 'is-valid' );
+                            form.password.classList.remove( 'is-valid' );
+                            location.href = 'login.html';
 
+                        } );
+                    }
+                    else if ( response.status == 403 ) {
+                        swal( "Error", data.error, "error" ).then( () => {
+                            form.email.value = "";
+                            form.password.value = "";
+                            form.email.classList.remove( 'is-valid' );
+                            form.password.classList.remove( 'is-valid' );
+                            location.href = 'login.html';
 
-            app.auth().signInWithEmailAndPassword(form.email.value, form.password.value)
-                .then((userCredential) => {
-                    // Signed in
-                    var user = userCredential.user;
-
-                    db1.collection("users")
-                        .doc(user.uid)
-                        .get()
-                        .then((docRef) => {
-                            const Data = docRef.data();
-                            if (Data.UserType == 'user') {
-                                swal('welcome again', Data.UserName, 'success').then(() => {
-
-                                    form.email.value = "";
-                                    form.password.value = "";
-                                    form.email.classList.remove('is-valid');
-                                    form.password.classList.remove('is-valid'); location.href = 'index.html';
-
-                                });
+                        } );
+                    }
+                    else if ( response.status == 201 ) {
+                        swal( "Welcome", data.message, "success" ).then( () => {
+                            form.email.value = "";
+                            form.password.value = "";
+                            form.email.classList.remove( 'is-valid' );
+                            form.password.classList.remove( 'is-valid' );
+                            localStorage.setItem( "token", "Bearer " + data.token );
+                            localStorage.setItem( "username", data.username );
+                            localStorage.setItem( "role", data.role );
+                            localStorage.setItem( "userId", data.userId );
+                            if ( data.role == "admin" ) {
+                                location.href = 'dashboard/index.html';
                             }
                             else {
-                                swal('welcome Admin', Data.UserName, 'success').then(() => {
-                                    location.href = './dashboard/index.html';
-                                    form.email.value = "";
-                                    form.password.value = "";
-                                    form.email.classList.remove('is-valid');
-                                    form.password.classList.remove('is-valid');
-                                });
+                                location.href = 'blog.html';
                             }
-                        });
+                        } );
 
-                })
-
-
-
-                .catch((error) => {
-
-
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    if (error) {
-                        swal("Error", 'Wrong Email / Password', 'error')
-                            .then(() => {
-                                form.email.value = "";
-                                form.password.value = "";
-                                form.email.classList.remove('is-valid');
-                                form.password.classList.remove('is-valid');
-                                window.location = 'login.html';
-                            })
+                    }
+                    else {
+                        swal( "error", data.error, error );
                     }
 
+                } catch ( error ) {
+                    console.log( error );
+
+                }
 
 
-                });
-
-        });
-    </script>
-</body>
+            } );
+        </script>
+    </body>
 
 </html>

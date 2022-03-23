@@ -1,228 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="css/styles.css" type="text/css" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
 
-  <link href="css/responsive.css" type="text/css" rel="stylesheet" />
-  <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
-  <link href="css/isotope.css" type="text/css" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
+    <link href="css/responsive.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link href="css/isotope.css" type="text/css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
 
 
-  <title>Home</title>
-</head>
+    <title>Home</title>
+  </head>
 
-<body>
-
-  <header class="nav-header">
-
-    <div class="logo">
-      <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
+  <body>
+    <div class="loading" id="preloader">
+      <img src="/images/loading2.gif" alt="">
     </div>
-    <div class="hamburger" id="nav-toggle" name="menu-outline">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+    <div class="afterloading" id="afterload">
 
-    </div>
-    <nav class="nav" id="nav-menu">
-      <div class="nav__content bd-grid">
 
-        <div class="nav__close" id="nav-close">
+      <header class="nav-header">
 
-          <i class="fa fa-times" aria-hidden="true"></i>
+        <div class="logo">
+          <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
         </div>
-
-        <div class="nav__perfil">
-
-          <div class="nav__img">
-            <a href="index.html">
-              <img src="./images/mine_logo.png" alt="">
-            </a>
-          </div>
-
+        <div class="hamburger" id="nav-toggle" name="menu-outline">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
 
         </div>
+        <nav class="nav" id="nav-menu">
+          <div class="nav__content bd-grid">
 
-        <div class="nav__menu">
-          <ul class="nav__list">
-            <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
-            <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-            <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
-            <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-            <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+            <div class="nav__close" id="nav-close">
 
-
-          </ul>
-        </div>
-
-        <div class="nav__login" id="nav_login">
-
-          <a href="login.html" class="nav__social-icon">Login</a>
-
-
-        </div>
-        <div class="nav__logout text-white" id="nav_logout">
-          <div class="dropdown  nav__logout1 ">
-            <span id="username"></span>
-
-            <div class="dropdown-content text-black">
-              <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
-              <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+              <i class="fa fa-times" aria-hidden="true"></i>
             </div>
 
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
+            <div class="nav__perfil">
 
-  <main id="main">
-    <div class="top-header">
-      <div class="container-xl">
-        <div class="row">
-          <div class="col-md-6 float-left">
-
-            <div class="p-right fadeInUp animated">
-              <h2>I’M A FREELANCE
-                DEVELOPER
-              </h2>
-              <h5> but also I do have some
-                have other knowledge like maintenance,
-                networking and server administration
-                management.
-              </h5>
-
-
-              <div class="download-cv"><button> Download My CV<i class="fa fa-download"></i></button> &nbsp; <button>
-                  Hire
-                  Me</button></div>
-            </div>
-          </div>
-          <div class="col-md-6 pl-xl-5">
-            <div class="row">
-
-              <div class="col-md-6 align-items-center">
-
-                <div class="rounded-pic">
-                  <img src="./images/IMG-20211216-WA0332.jpg"  alt="cover pic" height="90px" width="90px" />
-                </div>
+              <div class="nav__img">
+                <a href="index.html">
+                  <img src="./images/mine_logo.png" alt="">
+                </a>
               </div>
 
+
+            </div>
+
+            <div class="nav__menu">
+              <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
+                <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+
+
+              </ul>
+            </div>
+
+            <div class="nav__login" id="nav_login">
+
+              <a href="login.html" class="nav__social-icon">Login</a>
+
+
+            </div>
+            <div class="nav__logout text-white" id="nav_logout">
+              <div class="dropdown  nav__logout1 ">
+                <span id="username"></span>
+
+                <div class="dropdown-content text-black">
+                  <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
+                  <a href="profile.html" class="text-success" id="profile_link">Profile</a>
+                  <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                </div>
+
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-sections">
-      <div class="container-xl">
-        <div class="row">
-          <div class="col-lg-5 pt-4">
+        </nav>
+      </header>
+
+      <main id="main">
+        <div class="top-header">
+          <div class="container-xl">
             <div class="row">
-              <div class=" col-md-8 ">
-                <div class="pic-card">
+              <div class="col-md-6 float-left">
 
-                  <div class="slideshow-container">
+                <div class="p-right fadeInUp animated">
+                  <h2>I’M A FREELANCE
+                    DEVELOPER
+                  </h2>
+                  <h5> but also I do have some
+                    have other knowledge like maintenance,
+                    networking and server administration
+                    management.
+                  </h5>
 
-                    <div class="mySlides fade">
-                      <img src="./images/IMG-20211216-WA0295.jpg" style="width:100%">
 
-                    </div>
-                    <div class="mySlides fade">
-                      <img src="./images/IMG-20211216-WA0295.jpg" style="width:100%">
-
-                    </div>
-                    <div class="mySlides fade">
-                      <img src="./images/IMG-20211216-WA0038.jpg" style="width:100%">
-                    </div>
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                    <div style="text-align:center;margin-top: -20px;">
-                      <span class="dot" onclick="currentSlide(1)"></span>
-                      <span class="dot" onclick="currentSlide(2)"></span>
-                      <span class="dot" onclick="currentSlide(3)"></span>
-                    </div>
+                  <div class="download-cv"><button> Download My CV<i class="fa fa-download"></i></button> &nbsp;
+                    <button>
+                      Hire
+                      Me</button>
                   </div>
                 </div>
-
               </div>
-            </div>
-          </div>
-          <div class="col-1">
-            <div class="h-line"></div>
-          </div>
-          <div class="col-lg-5 pt-4  ">
-            <div class="mission-card">
-              <div class="row">
-                <div class="col-md-12">
+              <div class="col-md-6 pl-xl-5">
+                <div class="row">
 
+                  <div class="col-md-6 align-items-center">
 
+                    <div class="rounded-pic">
+                      <img src="./images/IMG-20211216-WA0332.jpg" alt="cover pic" height="90px" width="90px" />
+                    </div>
+                  </div>
 
-                  <h2>
-                    MISSION
-                  </h2>
-
-
-
-                  <p>I'm web designer, and I'm very passionate and dedicated to my work. I have acquired the skills and
-                    knowledge necessary to make your project a success. I enjoy every step of the design process, from
-                    discussion and collaboration. Motivated web designer and developer with experience creating custom
-                    websites
-                    through Node Js, Express Js, React Js, PHP, Laravel,
-                    Javascript, Java, HTML and CSS. I have strong
-                    collaboration skills and proven history of application development. but also I have other skill
-                    click
-                    on
-                    about to view more.</p>
                 </div>
-
               </div>
-
             </div>
           </div>
         </div>
+        <div class="card-sections">
+          <div class="container-xl">
+            <div class="row">
+              <div class="col-lg-5 pt-4">
+                <div class="row">
+                  <div class=" col-md-8 ">
+                    <div class="pic-card">
 
-      </div>
+                      <div class="slideshow-container">
+
+                        <div class="mySlides fade">
+                          <img src="./images/IMG-20211216-WA0295.jpg" style="width:100%">
+
+                        </div>
+                        <div class="mySlides fade">
+                          <img src="./images/IMG-20211216-WA0295.jpg" style="width:100%">
+
+                        </div>
+                        <div class="mySlides fade">
+                          <img src="./images/IMG-20211216-WA0038.jpg" style="width:100%">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                        <div style="text-align:center;margin-top: -20px;">
+                          <span class="dot" onclick="currentSlide(1)"></span>
+                          <span class="dot" onclick="currentSlide(2)"></span>
+                          <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-1">
+                <div class="h-line"></div>
+              </div>
+              <div class="col-lg-5 pt-4  ">
+                <div class="mission-card">
+                  <div class="row">
+                    <div class="col-md-12">
+
+
+
+                      <h2>
+                        MISSION
+                      </h2>
+
+
+
+                      <p>I'm web designer, and I'm very passionate and dedicated to my work. I have acquired the skills
+                        and
+                        knowledge necessary to make your project a success. I enjoy every step of the design process,
+                        from
+                        discussion and collaboration. Motivated web designer and developer with experience creating
+                        custom
+                        websites
+                        through Node Js, Express Js, React Js, PHP, Laravel,
+                        Javascript, Java, HTML and CSS. I have strong
+                        collaboration skills and proven history of application development. but also I have other skill
+                        click
+                        on
+                        about to view more.</p>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </main>
+      <footer class="footer">
+        <div>
+          <ul>
+            <li>
+              <a href=" #"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-github"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+        <form id="subscription-form">
+          <div style="display: flex;">
+            <input type="text" name="email" class="form-control" id="email" placeholder="Subscriber to My blog">
+            &nbsp;
+            <span>
+            </span>
+            <button type="submit" style="background-color: currentColor; border: none;"> <i class="fa fa-rocket"
+                style="font-size:30px; cursor: pointer; color:red;" aria-hidden=" true"></i></button>
+
+
+          </div>
+        </form>
+        <div>copyright <i class="fa fa-copyright " aria-hidden="true"> </i>2022 Fabrice All Rights Reserved</div>
+
+      </footer>
     </div>
+    <script src="./js/app.js"></script>
+    <script src="./js/home.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>  window.onload = setTimeout( function () {
 
+        const preloader = document.getElementById( "preloader" );
+        preloader.style.opacity = 0.1;
+        const afterload = document.getElementById( "afterload" );
+        preloader.style.display = "none";
+        afterload.style.display = "block";
+      }, 1000 );</script>
 
-  </main>
-  <footer class="footer">
-    <div>
-      <ul>
-        <li>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-facebook"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-github"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-        </li>
-      </ul>
-    </div>
-    <div>copyright <i class="fa fa-copyright" aria-hidden="true"> </i>2022 Fabrice. All Rights Reserved</div>
-    <div>Designed by NDACYAYISENGA Fabrice</div>
-  </footer>
-
-
-  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
-  <script src="./js/app.js"></script>
-  <script src="./js/home.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-  
-</body>
+  </body>
 
 </html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link href="css/styles.css" type="text/css" rel="stylesheet" />
+        <link href="css/responsive.css" type="text/css" rel="stylesheet" />
+        <link href="css/isotope.css" type="text/css" rel="stylesheet" />
+        <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
+        <style>
+            .form-group {
+                padding: 0px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="loading" id="preloader">
+            <img src="/images/loading2.gif" alt="">
+        </div>
+        <div class="afterloading" id="afterload">
+
+            <header class="nav-header">
+
+                <div class="logo">
+                    <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
+                </div>
+                <div class="hamburger" id="nav-toggle" name="menu-outline">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+
+                </div>
+                <nav class="nav" id="nav-menu">
+                    <div class="nav__content bd-grid">
+
+                        <div class="nav__close" id="nav-close">
+
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="nav__perfil">
+                            <div class="nav__img">
+                                <img src="./images/mine_logo.png" alt="">
+                            </div>
+
+
+                        </div>
+
+                        <div class="nav__menu">
+                            <ul class="nav__list">
+                                <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
+                                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                                <li class="nav__item"><a href="experience.html" class="nav__link">Experience</a></li>
+                                <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+
+
+                            </ul>
+                        </div>
+
+
+                        <div class="nav__login" id="nav_login">
+
+                            <a href="login.html" id="login" class="nav__social-icon active">Login</a>
+
+                        </div>
+                        <div class="nav__logout text-white" id="nav_logout">
+                            <div class="dropdown  nav__logout1 ">
+                                <span id="username"></span>
+
+                                <div class="dropdown-content text-black">
+                                    <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
+                                    <a href="profile.html" class="text-success" id="profile_link">Profile</a>
+
+                                    <a class="text-success" id="logout-link" onclick="logout()">logout</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main id="main">
+                <div class="header">
+                    <p class="text-white text-center mt-3 fadeInUp animated"> </p>
+                </div>
+                <div class="content_blog">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9 ">
+                                <div class="mt-lg-5 mb-3">
+                                    <div class="card animate-box fadeInUp animated">
+                                        <div class="img-circle">
+                                            <img src="images/user.png">
+                                        </div>
+                                        <h1>Update User Profile</h1>
+                                        <form action="" id="profile-form">
+                                            <div class="row text-left mt-5">
+                                                <div class="col-md-6">
+
+                                                    <div class="form-group">
+                                                        <label for="username">User Name</label>
+                                                        <input id="username" class="form-control" type="text" name="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="username">First Name</label>
+                                                        <input id="firstname" class="form-control" type="text" name="">
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="username">Email</label>
+                                                        <input id="email" class="form-control" type="text" name="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="username">Last Name</label>
+                                                        <input id="lastname" class="form-control" type="text" name="">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
+                                                    <a href="changepassword.html">
+                                                        <input class="form-control btn btn-outline-primary"
+                                                            type="button" value="Change Password" name="">
+                                                    </a>
+
+                                                </div>
+                                                <div class="col-sm-6 col-md-4 col-xl-4 mb-3">
+                                                    <input class="form-control btn btn-primary-1" type="submit"
+                                                        value="Update" name="">
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div>
+                    <ul>
+                        <li>
+                            <a href=" #"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <form id="subscription-form">
+                    <div style="display: flex;">
+                        <input type="text" name="email" class="form-control" id="email"
+                            placeholder="Subscriber to My blog">
+                        &nbsp;
+                        <span>
+                        </span>
+                        <button type="submit" style="background-color: currentColor; border: none;"> <i
+                                class="fa fa-rocket" style="font-size:30px; cursor: pointer; color:red;"
+                                aria-hidden=" true"></i></button>
+
+
+                    </div>
+                </form>
+                <div>copyright <i class="fa fa-copyright " aria-hidden="true"> </i>2022 Fabrice All Rights Reserved
+                </div>
+
+            </footer>
+        </div>
+        <script src="./js/app.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            window.onload = setTimeout( function () {
+
+                const preloader = document.getElementById( "preloader" );
+                preloader.style.opacity = 0.1;
+                const afterload = document.getElementById( "afterload" );
+                preloader.style.display = "none";
+                afterload.style.display = "block";
+            }, 1000 );
+            const profileform = document.querySelector( "#profile-form" );
+            const userId = localStorage.getItem( "userId" );
+            async function getUserProfile() {
+                response = await fetch( api + "user/" + userId, {
+                    headers: {
+                        "Authorization": token
+                    }
+
+                } );
+                const user = await response.json();
+                profileform.firstname.value = user.data.firstname;
+                profileform.lastname.value = user.data.lastname;
+                profileform.username.value = user.data.username;
+                profileform.email.value = user.data.email;
+                profileform.email.readOnly = true;
+            }
+            profileform.addEventListener( 'submit', async ( e ) => {
+                e.preventDefault();
+                const firstname = profileform.firstname.value;
+                const lastname = profileform.lastname.value;
+                const username = profileform.username.value;
+                const emai = profileform.email.value;
+                try {
+                    response = await fetch( api + "user/" + userId, {
+                        method: "PATCH",
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                            'Authorization': token
+                        },
+                        body: JSON.stringify( {
+                            firstname: firstname,
+                            lastname: lastname,
+                            username: username,
+                            email: emai
+                        } )
+                    } );
+                    const userUpdate = await response.json();
+                    console.log( userUpdate );
+                    if ( response.status == 201 ) {
+                        swal( "Update", userUpdate.message, "succes" );
+                    }
+                    else {
+                        swal( "error", userUpdate.error, "error" );
+
+                    }
+
+
+                } catch ( error ) {
+                    console.log( error );
+                }
+            } );
+            getUserProfile()
+
+
+
+        </script>
+    </body>
+
+</html>
