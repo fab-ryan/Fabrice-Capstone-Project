@@ -205,15 +205,27 @@
                         body: formData
                     } );
                     const res = await response.json();
+                    if ( response.status == 400 ) {
+                        swal( 'Error', res.error, 'error' ).then( () => {
+                            AddBlogForm.title.value = "";
+                            AddBlogForm.img.value = "";
+                            AddBlogForm.description.value = "";
+                            AddBlogForm.title.classList.remove( 'is-valid' );
+                            AddBlogForm.img.classList.remove( 'is-valid' );
+                            AddBlogForm.description.classList.remove( 'is-valid' );
+                        } );
+                    }
+                    else {
 
-                    swal( 'Thank You', 'Your Blog Has been Created', 'success' ).then( () => {
-                        AddBlogForm.title.value = "";
-                        AddBlogForm.img.value = "";
-                        AddBlogForm.description.value = "";
-                        AddBlogForm.title.classList.remove( 'is-valid' );
-                        AddBlogForm.img.classList.remove( 'is-valid' );
-                        AddBlogForm.description.classList.remove( 'is-valid' );
-                    } );
+                        swal( 'Thank You', 'Your Blog Has been Created', 'success' ).then( () => {
+                            AddBlogForm.title.value = "";
+                            AddBlogForm.img.value = "";
+                            AddBlogForm.description.value = "";
+                            AddBlogForm.title.classList.remove( 'is-valid' );
+                            AddBlogForm.img.classList.remove( 'is-valid' );
+                            AddBlogForm.description.classList.remove( 'is-valid' );
+                        } );
+                    }
 
                 } catch ( error ) {
                     console.log( error );
