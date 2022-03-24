@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
-        
+
     </head>
 
     <body>
@@ -81,17 +81,17 @@
                                 <div class="card-body">
                                     <img src="./images/user.png" alt="" width="90px" height="90px">
 
-                                    <form action="">
+                                    <form action="" id="profile-form">
                                         <div class="row text-left mt-5">
                                             <div class="col-md-6">
 
                                                 <div class="form-group">
                                                     <label for="username">User Name</label>
-                                                    <input id="usern" class="form-control" type="text" name="">
+                                                    <input id="username_id" class="form-control" type="text" name="">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="username">First Name</label>
-                                                    <input id="fname" class="form-control" type="text" name="">
+                                                    <input id="firstname" class="form-control" type="text" name="">
                                                 </div>
 
                                             </div>
@@ -104,7 +104,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="username">Last Name</label>
-                                                    <input id="lname" class="form-control" type="text" name="">
+                                                    <input id="lastname" class="form-control" type="text" name="">
                                                 </div>
                                             </div>
 
@@ -116,7 +116,7 @@
 
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-xl-4">
-                                                <input class="form-control btn btn-primary-1" type="button"
+                                                <input class="form-control btn btn-primary-1" type="submit"
                                                     value="Update" name="">
                                             </div>
                                         </div>
@@ -134,28 +134,61 @@
         <script src="./js/main.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
-            firebase.auth().onAuthStateChanged( ( user ) => {
-                if ( user ) {
-                    var uid = user.uid;
+            const profileform = document.querySelector( "#profile-form" );
+            const userId = localStorage.getItem( "userId" );
+            async function getUserProfile() {
+                response = await fetch( api + "user/" + userId, {
+                    headers: {
+                        "Authorization": token
+                    }
 
-                    db1
-                        .collection( "users" )
-                        .doc( uid )
-                        .get()
-                        .then( ( docRef ) => {
-                            const data = docRef.data();
-                            document.getElementById( 'fname' ).value = data.FirstName;
-                            document.getElementById( 'fname' ).readOnly = true;
-                            document.getElementById( 'lname' ).value = data.LastName;
-                            document.getElementById( 'lname' ).readOnly = true;
-                            document.getElementById( 'usern' ).value = data.UserName;
+                } );
+                const user = await response.json();
+                profileform.firstname.value = user.data.firstname;
+                profileform.lastname.value = user.data.lastname;
+                profileform.username_id.value = user.data.username;
+                profileform.email.value = user.data.email;
+                profileform.email.readOnly = true;
+            }
+            profileform.addEventListener( 'submit', async ( e ) => {
+                e.preventDefault();
+                const firstname = profileform.firstname.value;
+                const lastname = profileform.lastname.value;
+                const username = profileform.username_id.value;
+                const emai = profileform.email.value;
+                try {
+                    response = await fetch( api + "user/" + userId, {
+                        method: "PATCH",
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                            'Authorization': token
+                        },
+                        body: JSON.stringify( {
+                            firstname: firstname,
+                            lastname: lastname,
+                            username: username,
+                            email: emai
+                        } )
+                    } );
+                    const userUpdate = await response.json();
 
-                            document.getElementById( 'usern' ).readOnly = true;
-                            document.getElementById( 'email' ).value = user.email;
-                            document.getElementById( 'email' ).readOnly = true;
+                    if ( response.status == 201 ) {
+                        swal( "Update", userUpdate.message, "success" ).then( () => {
+                            location.reload();
                         } );
+                    }
+                    else {
+                        swal( "error", userUpdate.error, "error" );
+
+                    }
+
+
+                } catch ( error ) {
+                    console.log( error );
                 }
             } );
+            getUserProfile()
         </script>
 
     </body>

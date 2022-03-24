@@ -67,6 +67,7 @@
                 </div>
             </header>
             <main>
+
                 <h1>List All Contacts</h1>
                 <div class=" bg-danger">
 
@@ -86,13 +87,16 @@
 
                         </tbody>
                     </table>
+
                 </div>
+
             </main>
         </div>
         <script src="./js/main.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <script>
+
             var rowsNum = 0;
             async function getAllMessage() {
                 response = await fetch( api + "messages", {
@@ -132,7 +136,7 @@
                 tdEmail.innerHTML = DataEmail;
                 tdMessage.innerHTML = DataMessage;
                 tdDate.innerHTML = DataDate;
-                tdAction.innerHTML = `<input type='button' class='btn btn-primary-1' value='Reply' onclick='Reply(${DataId})'>  <input type='button' class='btn btn-danger' value='Delete' onclick=Delete(this.id) id="${DataId}">  `;
+                tdAction.innerHTML = `<input type='button' class='btn btn-primary-1' value='Reply' onclick='Reply(this.id)' id="${DataId}"'>  <input type='button' class='btn btn-danger' value='Delete' onclick=Delete(this.id) id="${DataId}">  `;
                 tr.appendChild( tdNow );
                 tr.appendChild( tdName );
                 tr.appendChild( tdEmail );
@@ -170,6 +174,9 @@
                 } );
             }
 
+            function Reply( DataId ) {
+                console.log( "Replay message" );
+            }
 
         </script>
     </body>

@@ -328,6 +328,7 @@
                         } )
                     } );
                     const commentMessage = await response.json();
+
                     if ( response.status == 403 ) {
                         swal( "Error", commentMessage.message, "error" ).then( () => {
 
@@ -337,14 +338,33 @@
 
                         } );
                     }
+                    else if ( response.status == 400 ) {
+                        swal( "Error", commentMessage.error, "error" ).then( () => {
+                            contactform.name.value = "";
+                            contactform.email.value = "";
+                            contactform.comment.value = "";
+                            localStorage.removeItem( "token" );
+                            localStorage.removeItem( "username" );
+                            localStorage.removeItem( "role" );
+                            localStorage.removeItem( "userId" );
+                            location.href = "login.html";
+                        } );
+                    }
+                    else if ( response.status == 409 ) {
+                        swal( "Error", commentMessage.error, 'error' ).then( () => {
+                            contactform.comment.value = "";
+                            location.reload();
+                        } );
+                    }
                     else {
                         swal( "Success", commentMessage.message, "success" ).then( () => {
                             contactform.comment.value = "";
+                            location.reload();
                         } );
                     }
                 }
                 catch ( error ) {
-                    swal( 'error ', error + 'error', 'error' );
+                    swal( 'error ', error, 'error' );
 
                 };
 
