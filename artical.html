@@ -255,16 +255,25 @@
                 try {
                     response = await fetch( api + 'blog/' + BlogId );
                     const datas = await response.json();
+                    if ( response.status == 404 ) {
+                        swal( "Error", commentMessage.error, 'error' ).then( () => {
+                            contactform.comment.value = "";
+                            location.href = "blog.html";
+                        } );
 
-                    blog_img.setAttribute( 'src', datas.data.ArticleImage );
-                    blog_title.innerHTML = datas.data.ArticleTitle;
-                    blog_description.textContent = datas.data.ArticleDescription;
-                    const date = datas.data.created_at;
+                    }
+                    else {
 
-                    blog_created_at.innerHTML = new Date( date ).toDateString();
-                    comment_count.innerHTML = datas.data.comments.length;
-                    const DataId = datas.data._id;
+                        blog_img.setAttribute( 'src', datas.data.ArticleImage );
+                        blog_title.innerHTML = datas.data.ArticleTitle;
+                        blog_description.textContent = datas.data.ArticleDescription;
+                        const date = datas.data.created_at;
 
+                        blog_created_at.innerHTML = new Date( date ).toDateString();
+                        comment_count.innerHTML = datas.data.comments.length;
+                        const DataId = datas.data._id;
+
+                    }
 
                 }
                 catch ( error ) {
@@ -356,6 +365,7 @@
                             location.reload();
                         } );
                     }
+
                     else {
                         swal( "Success", commentMessage.message, "success" ).then( () => {
                             contactform.comment.value = "";
