@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Register</title>
+        <title>Profile</title>
         <link href="css/styles.css" type="text/css" rel="stylesheet" />
         <link href="css/responsive.css" type="text/css" rel="stylesheet" />
         <link href="css/isotope.css" type="text/css" rel="stylesheet" />
@@ -188,7 +188,6 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             window.onload = setTimeout( function () {
-
                 const preloader = document.getElementById( "preloader" );
                 preloader.style.opacity = 0.1;
                 const afterload = document.getElementById( "afterload" );
@@ -233,9 +232,11 @@
                         } )
                     } );
                     const userUpdate = await response.json();
-                    console.log( userUpdate );
+
                     if ( response.status == 201 ) {
-                        swal( "Update", userUpdate.message, "succes" );
+                        swal( "Update", userUpdate.message, "success" ).then( () => {
+                            location.reload();
+                        } );
                     }
                     else {
                         swal( "error", userUpdate.error, "error" );

@@ -308,7 +308,16 @@
 
           const messageResp = await response.json();
           if ( response.status == 400 ) {
-            swal( "Error", messageResp.error, "erroor" );
+            swal( "Error", messageResp.error, "error" ).then( () => {
+              contactform.message.value = "";
+              contactform.email.value = "";
+              contactform.name.value = "";
+              localStorage.removeItem( "token" );
+              localStorage.removeItem( "username" );
+              localStorage.removeItem( "role" );
+              localStorage.removeItem( "userId" );
+              location.href = "login.html";
+            } );
           }
           else if ( response.status == 403 ) {
             swal( messageResp.message, "Login Required", "error" ).then( () => {
