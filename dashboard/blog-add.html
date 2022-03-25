@@ -13,126 +13,140 @@
     </head>
 
     <body>
-        <div class="sidebar">
-            <div class="sidebar-brand">
-                <img src="images/mine_logo.png" height="60px" width="60px">
-            </div>
-            <div class="sidebar-menu">
-                <ul>
-                    <li class="nav-link "><a href="index.html"><span class=" fa fa-home"></span> &nbsp;Dashboard</a>
-                    </li>
-                    <li class="nav-link"><a href="blog-list.html"><span class=" fa fa-bars"></span> &nbsp;List Blog</a>
-                    </li>
-                    <li class="nav-link active"><a href="blog-add.html"><span class=" fa fa-blog"></span> &nbsp;Add
-                            Blog</a>
-                    </li>
-                    <li class="nav-link"><a href="contact-info.html"><span class=" fa fa-phone"></span>
-                            &nbsp;Contacts</a>
-                    </li>
-                    <li class="nav-link"><a href="All-subscriber.html"><span class=" fa fa-subscript"></span>
-                            &nbsp;All Subscribers</a>
-                    </li>
-                    <li class="nav-link"><a href="All-users.html"><span class=" fa fa-user"></span>
-                            &nbsp;All Users</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="loading" id="preloader">
+            <img src="images/loading2.gif" alt="">
         </div>
-        <div class="main-content">
-            <header>
-                <h2>
-                    <div class="hamburger" id="nav-toggle" name="menu-outline">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-
-                    </div>
-                    Dashboard
-                </h2>
-                <div class="return-button">
-                    <div class="home-buttons"><a href="../index.html">Home</a></div>
-                    <div class="home-buttons"><a href="../contact.html">Contact</a></div>
-                    <div class="home-buttons"><a href="../blog.html">Blog</a></div>
-
+        <div class="afterloading" id="afterload">
+            <div class="sidebar">
+                <div class="sidebar-brand">
+                    <img src="images/mine_logo.png" height="60px" width="60px">
                 </div>
-                <div class="user-wrapper dropdown">
-                    <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                        onclick="dropdown_menu()" aria-haspopup="true" aria-expanded="false">
-                        <img src="./images/user.png" width="40px" height="40px" alt=" users">
-                        <span id="username"></span>
-
-
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
-                        <a class="dropdown-item" href="profile.html">Profile</a>
-                        <a class="dropdown-item" onclick="logout()"> Logout</a>
-                    </div>
+                <div class="sidebar-menu">
+                    <ul>
+                        <li class="nav-link "><a href="index.html"><span class=" fa fa-home"></span> &nbsp;Dashboard</a>
+                        </li>
+                        <li class="nav-link"><a href="blog-list.html"><span class=" fa fa-bars"></span> &nbsp;List
+                                Blog</a>
+                        </li>
+                        <li class="nav-link active"><a href="blog-add.html"><span class=" fa fa-blog"></span> &nbsp;Add
+                                Blog</a>
+                        </li>
+                        <li class="nav-link"><a href="contact-info.html"><span class=" fa fa-phone"></span>
+                                &nbsp;Contacts</a>
+                        </li>
+                        <li class="nav-link"><a href="All-subscriber.html"><span class=" fa fa-subscript"></span>
+                                &nbsp;All Subscribers</a>
+                        </li>
+                        <li class="nav-link"><a href="All-users.html"><span class=" fa fa-user"></span>
+                                &nbsp;All Users</a>
+                        </li>
+                    </ul>
                 </div>
-            </header>
-            <main>
-                <div class="row ">
-                    <div class=" col-md-12">
-                        <div class="card">
-                            <div class=" card-header">
-                                <div class=" ">
-                                    ADD New Blog
+            </div>
+            <div class="main-content">
+                <header>
+                    <h2>
+                        <div class="hamburger" id="nav-toggle" name="menu-outline">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+
+                        </div>
+                        Dashboard
+                    </h2>
+                    <div class="return-button">
+                        <div class="home-buttons"><a href="../index.html">Home</a></div>
+                        <div class="home-buttons"><a href="../contact.html">Contact</a></div>
+                        <div class="home-buttons"><a href="../blog.html">Blog</a></div>
+
+                    </div>
+                    <div class="user-wrapper dropdown">
+                        <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                            onclick="dropdown_menu()" aria-haspopup="true" aria-expanded="false">
+                            <img src="./images/user.png" width="40px" height="40px" alt=" users">
+                            <span id="username"></span>
+
+
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
+                            <a class="dropdown-item" href="profile.html">Profile</a>
+                            <a class="dropdown-item" onclick="logout()"> Logout</a>
+                        </div>
+                    </div>
+                </header>
+                <main>
+                    <div class="row ">
+                        <div class=" col-md-12">
+                            <div class="card">
+                                <div class=" card-header">
+                                    <div class=" ">
+                                        ADD New Blog
+                                    </div>
+
                                 </div>
+                                <div class="card-body">
+                                    <div class="mt-3">
+                                        <form action="post" id="form">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="form-group">
+                                                        <span class="text-danger" id="title-error"></span>
+                                                        <span class="label label-default">Article Title <i
+                                                                class="text-danger">*</i></span>
 
-                            </div>
-                            <div class="card-body">
-                                <div class="mt-3">
-                                    <form action="post" id="form">
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="form-group">
-                                                    <span class="text-danger" id="title-error"></span>
-                                                    <span class="label label-default">Article Title <i
-                                                            class="text-danger">*</i></span>
+                                                        <input type="text" name="title" id="title" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <span class="text-danger" id="img-error"></span>
 
-                                                    <input type="text" name="title" id="title" class="form-control">
+                                                        <span class="label label-default">Article Images<i
+                                                                class="text-danger">*</i></span>
+
+                                                        <input type="file" id="img" class="form-control ">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <span class="text-danger" id="title-error"></span>
+                                                        <span class="label label-default">Article Preview <i
+                                                                class="text-danger">*</i></span>
+
+                                                        <textarea rows="2" name="preview" id="preview"
+                                                            class=" form-control"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <span class="text-danger" id="description-error"></span>
+
+                                                        <span class="label label-default">Article Description<i
+                                                                class="text-danger">*</i></span>
+
+                                                        <textarea name="description" id="description"
+                                                            class="form-control " rows="5"
+                                                            required="required"></textarea>
+
+                                                    </div>
+                                                    <input type="submit" value="Save" class="btn btn-primary-1">
                                                 </div>
-                                                <div class="form-group">
-                                                    <span class="text-danger" id="img-error"></span>
-
-                                                    <span class="label label-default">Article Images<i
-                                                            class="text-danger">*</i></span>
-
-                                                    <input type="file" id="img" class="form-control ">
-                                                </div>
-                                                <div class="form-group">
-                                                    <span class="text-danger" id="title-error"></span>
-                                                    <span class="label label-default">Article Preview <i
-                                                            class="text-danger">*</i></span>
-
-                                                    <textarea rows="2" name="preview" id="preview"
-                                                        class=" form-control"></textarea>
-                                                </div>
-                                                <div class="form-group">
-                                                    <span class="text-danger" id="description-error"></span>
-
-                                                    <span class="label label-default">Article Description<i
-                                                            class="text-danger">*</i></span>
-
-                                                    <textarea name="description" id="description" class="form-control "
-                                                        rows="5" required="required"></textarea>
-
-                                                </div>
-                                                <input type="submit" value="Save" class="btn btn-primary-1">
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
         <script src="./js/main.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <script>
+            window.onload=setTimeout(()=>{
+                 const preloader = document.getElementById( "preloader" );
+                preloader.style.opacity = 0.1;
+                const afterload = document.getElementById( "afterload" );
+                preloader.style.display = "none";
+                afterload.style.display = "block";
+            },300)
             const AddBlogForm = document.querySelector( "#form" );
             AddBlogForm.addEventListener( 'submit', async ( e ) => {
                 e.preventDefault();

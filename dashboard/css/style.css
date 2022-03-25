@@ -162,3 +162,16 @@ main {
   text-decoration: none;
   cursor: pointer;
 }
+.loading {
+  background-color: #fffafa;
+  height: 100vh;
+}
+
+.loading img {
+  top: 40%;
+  left: 40%;
+  position: absolute;
+}
+.afterloading {
+  display: none;
+}

@@ -13,129 +13,137 @@
     </head>
 
     <body>
-        <div class="sidebar">
-            <div class="sidebar-brand">
-                <img src="images/mine_logo.png" height="60px" width="60px">
-            </div>
-            <div class="sidebar-menu">
-                <ul>
-                    <li class="nav-link"><a href="index.html"><span class=" fa fa-home"></span>&nbsp; Dashboard</a></li>
-                    <li class="nav-link"><a href="blog-list.html"><span class=" fa fa-bars"></span> &nbsp; List Blog</a>
-                    </li>
-                    <li class="nav-link"><a href="blog-add.html"><span class=" fa fa-blog"></span>&nbsp; Add Blog</a>
-                    </li>
-                    <li class="nav-link"><a href="contact-info.html"><span class=" fa fa-phone"></span> Contacts</a>
-                    </li>
-                    <li class="nav-link"><a href="All-subscriber.html"><span class=" fa fa-subscript"></span>
-                            &nbsp;All Subscribers</a>
-                    </li>
-                    <li class="nav-link"><a href="All-users.html"><span class=" fa fa-user"></span>
-                            &nbsp;All Users</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="loading" id="preloader">
+            <img src="images/loading2.gif" alt="">
         </div>
-        <div class="main-content">
-            <header>
-                <h2>
-                    <div class="hamburger" id="nav-toggle" name="menu-outline">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-
-                    </div>
-
-                    Dashboard
-                </h2>
-                <div class="return-button">
-                    <div class="home-buttons"><a href="../index.html">Home</a></div>
-                    <div class="home-buttons"><a href="../contact.html">Contact</a></div>
-                    <div class="home-buttons"><a href="../blog.html">Blog</a></div>
-
+        <div class="afterloading" id="afterload">
+            <div class="sidebar">
+                <div class="sidebar-brand">
+                    <img src="images/mine_logo.png" height="60px" width="60px">
                 </div>
-                <div class="user-wrapper dropdown">
-                    <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                        onclick="dropdown_menu()" aria-haspopup="true" aria-expanded="false">
-                        <img src="./images/user.png" width="40px" height="40px" alt=" users">
-                        <span id="username"></span>
+                <div class="sidebar-menu">
+                    <ul>
+                        <li class="nav-link"><a href="index.html"><span class=" fa fa-home"></span>&nbsp; Dashboard</a>
+                        </li>
+                        <li class="nav-link"><a href="blog-list.html"><span class=" fa fa-bars"></span> &nbsp; List
+                                Blog</a>
+                        </li>
+                        <li class="nav-link"><a href="blog-add.html"><span class=" fa fa-blog"></span>&nbsp; Add
+                                Blog</a>
+                        </li>
+                        <li class="nav-link"><a href="contact-info.html"><span class=" fa fa-phone"></span> Contacts</a>
+                        </li>
+                        <li class="nav-link"><a href="All-subscriber.html"><span class=" fa fa-subscript"></span>
+                                &nbsp;All Subscribers</a>
+                        </li>
+                        <li class="nav-link"><a href="All-users.html"><span class=" fa fa-user"></span>
+                                &nbsp;All Users</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-content">
+                <header>
+                    <h2>
+                        <div class="hamburger" id="nav-toggle" name="menu-outline">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+
+                        </div>
+
+                        Dashboard
+                    </h2>
+                    <div class="return-button">
+                        <div class="home-buttons"><a href="../index.html">Home</a></div>
+                        <div class="home-buttons"><a href="../contact.html">Contact</a></div>
+                        <div class="home-buttons"><a href="../blog.html">Blog</a></div>
 
                     </div>
-                    <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
-                        <a class="dropdown-item " href="profile.html" style="background-color: gray;">Profile</a>
-                        <a class="dropdown-item" onclick="logout()"> Logout</a>
+                    <div class="user-wrapper dropdown">
+                        <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
+                            onclick="dropdown_menu()" aria-haspopup="true" aria-expanded="false">
+                            <img src="./images/user.png" width="40px" height="40px" alt=" users">
+                            <span id="username"></span>
+
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu1" style="top:70%;">
+                            <a class="dropdown-item " href="profile.html" style="background-color: gray;">Profile</a>
+                            <a class="dropdown-item" onclick="logout()"> Logout</a>
+                        </div>
                     </div>
-                </div>
-            </header>
-            <main>
-                <div class="container p-3" style="background-color: white; ">
-                    <div class="row  mt-4">
-                        <div class="col-lg-6 fadeInUp animated">
-                            <img id="blog_img" class="img-artical">
+                </header>
+                <main>
+                    <div class="container p-3" style="background-color: white; ">
+                        <div class="row  mt-4">
+                            <div class="col-lg-6 fadeInUp animated">
+                                <img id="blog_img" class="img-artical">
+
+
+                            </div>
+                            <div class="col-lg-6 text-black">
+                                <div class="row">
+
+                                    <div class="col-lg-12 fadeInUp animated mt-3">
+                                        <h5 id="blog-title"></h5>
+                                        <p id="blog-description"> </p>
+                                    </div>
+                                    <div class="col-lg-12 mt-5">
+                                        <div class="row">
+                                            <div class="col-md-4 text-muted fadeInUp animated">
+                                                posted at <span id="blog-posted-at">
+
+
+                                                </span>
+
+                                            </div>
+                                            <div class="col-md-5 text-muted">
+                                                liked by &nbsp; Disliked by &nbsp; Shared by
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
 
 
                         </div>
-                        <div class="col-lg-6 text-black">
-                            <div class="row">
+                        <div class="row mt-5 text-black">
+                            <div class="col-lg-12">
 
-                                <div class="col-lg-12 fadeInUp animated mt-3">
-                                    <h5 id="blog-title"></h5>
-                                    <p id="blog-description"> </p>
-                                </div>
-                                <div class="col-lg-12 mt-5">
-                                    <div class="row">
-                                        <div class="col-md-4 text-muted fadeInUp animated">
-                                            posted at <span id="blog-posted-at">
+                                <div class="row mb-5">
+
+                                    <div class="col-lg-12 animated fadeInUp pb-4 ">
+                                        <h4 class=" text-black-50 ">COMMENTS:</h4>
+
+                                        <table class="table table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Comments</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="comment_body">
+
+                                            </tbody>
+                                        </table>
 
 
-                                            </span>
 
-                                        </div>
-                                        <div class="col-md-5 text-muted">
-                                            liked by &nbsp; Disliked by &nbsp; Shared by
-                                        </div>
+
                                     </div>
 
                                 </div>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                    <div class="row mt-5 text-black">
-                        <div class="col-lg-12">
-
-                            <div class="row mb-5">
-
-                                <div class="col-lg-12 animated fadeInUp pb-4 ">
-                                    <h4 class=" text-black-50 ">COMMENTS:</h4>
-
-                                    <table class="table table-condensed table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Comments</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="comment_body">
-
-                                        </tbody>
-                                    </table>
-
-
-
-
-                                </div>
 
                             </div>
-
                         </div>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
         <script src="./js/main.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -164,6 +172,11 @@
 
                     blog_created_at.innerHTML = new Date( date ).toDateString();
                     const DataId = datas.data._id;
+                    const preloader = document.getElementById( "preloader" );
+                    preloader.style.opacity = 0.1;
+                    const afterload = document.getElementById( "afterload" );
+                    preloader.style.display = "none";
+                    afterload.style.display = "block";
 
 
                 }
