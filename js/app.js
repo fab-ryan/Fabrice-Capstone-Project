@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // end of footer looder
 
-const api = "https://my-brand-api-fabrice.herokuapp.com/api/v1/";
+const api = "https://cerulean-mite-fez.cyclic.app/api/v1/";
 let response;
 const login_button = document.getElementById("nav_login");
 const logout_button = document.getElementById("nav_logout");
