@@ -23,7 +23,7 @@ function display_sidbar(x) {
   });
 }
 let token = localStorage.getItem("token");
-const api = "https://my-brand-api-fabrice.herokuapp.com/api/v1/";
+const api = "https://cerulean-mite-fez.cyclic.app/api/v1/";
 function logout() {
   swal({
     title: "Log out",
