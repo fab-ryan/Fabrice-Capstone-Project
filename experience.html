@@ -1,243 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experience</title>
-    <link href="css/styles.css" type="text/css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience</title>
+  <link href="css/styles.css" type="text/css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/819befa940.js" crossorigin="anonymous"></script>
 
-    <link href="css/responsive.css" type="text/css" rel="stylesheet" />
-    <link href="css/ui.css" type="text/css" rel="stylesheet" />
+  <link href="css/responsive.css" type="text/css" rel="stylesheet" />
+  <link href="css/ui.css" type="text/css" rel="stylesheet" />
 
-  </head>
+</head>
 
-  <body>
-    <div class="loading" id="preloader">
-      <img src="/images/loading2.gif" alt="">
-    </div>
-    <div class="afterloading" id="afterload">
+<body>
+  <div class="loading" id="preloader">
+    <img src="/images/loading2.gif" alt="">
+  </div>
+  <div class="afterloading" id="afterload">
 
-      <header class="nav-header">
+    <header class="nav-header">
 
-        <div class="logo">
-          <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
-        </div>
-        <div class="hamburger" id="nav-toggle" name="menu-outline">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+      <div class="logo">
+        <a href="index.html" class="header__logo"><img src="./images/mine_logo.png"></a>
+      </div>
+      <div class="hamburger" id="nav-toggle" name="menu-outline">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
 
-        </div>
-        <nav class="nav" id="nav-menu">
-          <div class="nav__content bd-grid">
+      </div>
+      <nav class="nav" id="nav-menu">
+        <div class="nav__content bd-grid">
 
-            <div class="nav__close" id="nav-close">
+          <div class="nav__close" id="nav-close">
 
-              <i class="fa fa-times" aria-hidden="true"></i>
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </div>
+
+          <div class="nav__perfil">
+            <div class="nav__img">
+              <img src="./images/mine_logo.png" alt="">
             </div>
 
-            <div class="nav__perfil">
-              <div class="nav__img">
-                <img src="./images/mine_logo.png" alt="">
+
+          </div>
+
+          <div class="nav__menu">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
+              <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+              <li class="nav__item"><a href="experience.html" class="nav__link active">Experience</a></li>
+              <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+              <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+
+
+            </ul>
+          </div>
+
+          <div class="nav__login" id="nav_login">
+
+            <a href="login.html" class="nav__social-icon ">Login</a>
+
+
+          </div>
+          <div class="nav__logout text-white" id="nav_logout">
+            <div class="dropdown  nav__logout1 ">
+              <span id="username"></span>
+
+              <div class="dropdown-content text-black">
+                <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
+                <a href="profile.html" class="text-success" id="profile_link">Profile</a>
+                <a class="text-success" id="logout-link" onclick="logout()">logout</a>
               </div>
 
-
-            </div>
-
-            <div class="nav__menu">
-              <ul class="nav__list">
-                <li class="nav__item"><a href="index.html" class="nav__link ">Home</a></li>
-                <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                <li class="nav__item"><a href="experience.html" class="nav__link active">Experience</a></li>
-                <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
-
-
-              </ul>
-            </div>
-
-            <div class="nav__login" id="nav_login">
-
-              <a href="login.html" class="nav__social-icon ">Login</a>
-
-
-            </div>
-            <div class="nav__logout text-white" id="nav_logout">
-              <div class="dropdown  nav__logout1 ">
-                <span id="username"></span>
-
-                <div class="dropdown-content text-black">
-                  <a href="./dashboard/index.html" class="text-success" id="admin_link">Dashboard</a>
-                  <a href="profile.html" class="text-success" id="profile_link">Profile</a>
-                  <a class="text-success" id="logout-link" onclick="logout()">logout</a>
-                </div>
-
-              </div>
             </div>
           </div>
-        </nav>
-      </header>
-      <main class="container-experience " id="main">
-        <div class="header">
-          <p>Experience I have In all Domain</p>
         </div>
-        <div class="content_experience">
-          <div class=" ">
-            <div class="experience-body fadeInUp p-3 animated">
-              <div class="experience-section">
-                <h4 class="text-muted pl-4">
-                  Proffessional Skills
-                </h4>
-                <div class="row">
-                  <div class="col-md-6">
-
-                    <div class="mb-2"><span>HTML</span>
-                      <div class="progress my-1">
-                        <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
-                          data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 90%;" aria-valuenow="90"
-                          aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">90% Complete</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mb-2"><span>CSS</span>
-                      <div class="progress my-1">
-                        <div class="progress-bar bg-danger " role="progressbar" data-aos="zoom-in-right"
-                          data-aos-delay="200" data-aos-anchor=".skills-section" style="width: 85%" aria-valuenow="85"
-                          aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">85% Complete</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mb-2"><span>JavaScript</span>
-                      <div class="progress my-1">
-                        <div class="progress-bar bg-primary aos-init aos-animate" role="progressbar"
-                          data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section"
-                          style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">75% Complete</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mb-2"><span>Java</span>
-                      <div class="progress my-1">
-                        <div class="progress-bar bg-primary aos-init aos-animate" role="progressbar"
-                          data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section"
-                          style="width: 60%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">60% Complete</span>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-md-6">
-                    <div class="mb-2"><span>PHOTOSHOP</span>
-                      <div class="progress my-1">
-                        <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
-                          data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 89%;" aria-valuenow="89"
-                          aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">89% Complete</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mb-2"><span>ILLUSTRATOR</span>
-                      <div class="progress my-1">
-                        <div class="progress-bar bg-danger " role="progressbar" data-aos="zoom-in-right"
-                          data-aos-delay="200" data-aos-anchor=".skills-section" style="width: 40%" aria-valuenow="40"
-                          aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">40% Complete</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mb-2"><span>PHP</span>
-                      <div class="progress my-1">
-                        <div class="progress-bar bg-primary aos-init aos-animate" role="progressbar"
-                          data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section"
-                          style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">80% Complete</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mb-2"><span>CCNA NETWORKING</span>
-                      <div class="progress my-1">
-                        <div class="progress-bar bg-primary aos-init aos-animate" role="progressbar"
-                          data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section"
-                          style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">85% Complete</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-            <div class="experience-other p-3">
-              <h4 class="text-muted ">
-                Work Experience and Other Skills
+      </nav>
+    </header>
+    <main class="container-experience " id="main">
+      <div class="header">
+        <p>Experience I have In all Domain</p>
+      </div>
+      <div class="content_experience">
+        <div class=" ">
+          <div class="experience-body fadeInUp p-3 animated">
+            <div class="experience-section">
+              <h4 class="text-muted pl-4">
+                Proffessional Skills
               </h4>
               <div class="row">
-                <div class="col-md-12  pb-3">
-                  <div class="timeline">
-                    <div class="timeline-card timeline-card-success card shadow-sm">
-                      <div class="card-body">
-                        <h5 class="mb-1">Graphical Design at
-                          <span class="text-muted">
-                            Andela
-                          </span>
+                <div class="col-md-6">
 
-                        </h5>
-                        <div class="text-muted text-sm mb-1 h-2">
-                          2011-2013
-                        </div>
-                        <div>
-                          Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative
-                          approaches to
-                          corporate strategy foster collaborative thinking to further the overall value proposition
-                        </div>
+                  <div class="mb-2"><span>React Js</span>
+                    <div class="progress my-1">
+                      <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
+                        data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 90%;" aria-valuenow="90"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">90% Complete</span>
                       </div>
                     </div>
                   </div>
-                  <div class="timeline">
-                    <div class="timeline-card timeline-card-success card shadow-sm">
-                      <div class="card-body">
-                        <h5 class="mb-1">Graphical Design at
-                          <span class="text-muted">
-                            Andela
-                          </span>
-
-                        </h5>
-                        <div class="text-muted text-sm mb-1 h-2">
-                          2011-2013
-                        </div>
-                        <div>
-                          Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative
-                          approaches to
-                          corporate strategy foster collaborative thinking to further the overall value proposition
-                        </div>
+                  <div class="mb-2"><span>Next JS</span>
+                    <div class="progress my-1">
+                      <div class="progress-bar bg-danger " role="progressbar" data-aos="zoom-in-right"
+                        data-aos-delay="200" data-aos-anchor=".skills-section" style="width: 85%" aria-valuenow="85"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">85% Complete</span>
                       </div>
                     </div>
                   </div>
-                  <div class="timeline">
-                    <div class="timeline-card timeline-card-success card shadow-sm">
-                      <div class="card-body">
-                        <h5 class="mb-1">Graphical Design at
-                          <span class="text-muted">
-                            Andela
-                          </span>
+                  <div class="mb-2"><span>Typescript</span>
+                    <div class="progress my-1">
+                      <div class="progress-bar bg-primary aos-init aos-animate" role="progressbar"
+                        data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section"
+                        style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">75% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span>MERN</span>
+                    <div class="progress my-1">
+                      <div class="progress-bar bg-primary aos-init aos-animate" role="progressbar"
+                        data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section"
+                        style="width: 80%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
+                  </div>
 
-                        </h5>
-                        <div class="text-muted text-sm mb-1 h-2">
-                          2011-2013
-                        </div>
-                        <div>
-                          Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative
-                          approaches to
-                          corporate strategy foster collaborative thinking to further the overall value proposition
-                        </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-2"><span>React Native</span>
+                    <div class="progress my-1">
+                      <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
+                        data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 80%;" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">80% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span>Nest Js</span>
+                    <div class="progress my-1">
+                      <div class="progress-bar bg-danger " role="progressbar" data-aos="zoom-in-right"
+                        data-aos-delay="200" data-aos-anchor=".skills-section" style="width: 60%" aria-valuenow="60"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">40% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span>Postgress</span>
+                    <div class="progress my-1">
+                      <div class="progress-bar bg-primary aos-init aos-animate" role="progressbar"
+                        data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section"
+                        style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">80% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span>Laravel</span>
+                    <div class="progress my-1">
+                      <div class="progress-bar bg-primary aos-init aos-animate" role="progressbar"
+                        data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section"
+                        style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">85% Complete</span>
                       </div>
                     </div>
                   </div>
@@ -246,174 +174,318 @@
             </div>
 
 
-            <div class="experience-portfolio fadeInUp animated">
-              <h4 class="text-muted">
-                Portfolio
-              </h4>
-              <p class="text-muted w-40">
-                At lorem Ipsum available, but the majority have suffered alteration in some form by injected humour
-              </p>
-              <div class="row-port">
-                <nav id="filter" class="col-md-6 text-center fort">
-                  <ul>
-                    <li><a href="#" class="btn-theme btn-small current" data-filter="*">All</a></li>
-                    <li><a href="#" class="btn-theme btn-small" data-filter=".webdesign">Web Design</a></li>
-                    <li><a href="#" class="btn-theme btn-small" data-filter=".photography">Photography</a></li>
-                  </ul>
-                </nav>
-              </div>
+          </div>
+          <div class="experience-other p-3">
+            <h4 class="text-muted ">
+              Work Experience and Other Skills
+            </h4>
+            <div class="row">
+              <div class="col-md-12  pb-3">
+                <div class="timeline">
+                  <div class="timeline-card timeline-card-success card shadow-sm">
+                    <div class="card-body" style="width: 100%;">
+                      <h5 class="mb-1">Senior Software Engineer at
+                        <span class="text-muted">
+                          Zillionizer
+                        </span>
 
-              <div class=" portfolio-section ">
-                <div class="row-port ">
-
-                  <div class="portfolio-items isotopeWrapper clearfix" id="3">
-
-                    <div class="col-md-12-port">
-                      <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
-                        style="transform: translate3d(0px, 0px, 0px);">
-                        <div class="portfolio-item">
-                          <img src="images/portfolio/img9.jpg" alt="">
-                          <div class="portfolio-desc align-center">
-                            <div class="folio-info">
-                              <a href="images/portfolio/img9.jpg" class="fancybox">
-                                <h5>Project Name</h5>
-                                <i class="fa fa-arrows-alt fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-
-                      <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
-                        style="transform: translate3d(0px, 0px, 0px);">
-                        <div class="portfolio-item">
-                          <img src="images/portfolio/img8.jpg" alt="">
-                          <div class="portfolio-desc align-center">
-                            <div class="folio-info">
-                              <a href="images/portfolio/img8.jpg" class="fancybox">
-                                <h5>Project Name</h5>
-                                <i class="fa fa-arrows-alt fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-                      <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
-                        style="transform: translate3d(0px, 0px, 0px);">
-                        <div class="portfolio-item">
-                          <img src="images/portfolio/img9.jpg" alt="">
-                          <div class="portfolio-desc align-center">
-                            <div class="folio-info">
-                              <a href="images/portfolio/img9.jpg" class="fancybox">
-                                <h5>Project Name</h5>
-                                <i class="fa fa-arrows-alt fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-                    </div>
-                    <div class="col-md-12-port ">
-                      <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
-                        style="transform: translate3d(0px, 0px, 0px);">
-                        <div class="portfolio-item">
-                          <img src="images/portfolio/img3.jpg" alt="">
-                          <div class="portfolio-desc align-center">
-                            <div class="folio-info">
-                              <a href="images/portfolio/img3.jpg" class="fancybox">
-                                <h5>Project Name</h5>
-                                <i class="fa fa-arrows-alt fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-
-                      <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
-                        style="transform: translate3d(0px, 0px, 0px);">
-                        <div class="portfolio-item">
-                          <img src="images/portfolio/img5.jpg" alt="">
-                          <div class="portfolio-desc align-center">
-                            <div class="folio-info">
-                              <a href="images/portfolio/img5.jpg" class="fancybox">
-                                <h5>Project Name</h5>
-                                <i class="fa fa-arrows-alt fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-                      <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
-                        style="transform: translate3d(0px, 0px, 0px);">
-                        <div class="portfolio-item">
-                          <img src="images/portfolio/img7.jpg" alt="">
-                          <div class="portfolio-desc align-center">
-                            <div class="folio-info">
-                              <a href="images/portfolio/img7jpg" class="fancybox">
-                                <h5>Project Name</h5>
-                                <i class="fa fa-arrows-alt fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
+                      </h5>
+                      <div class="text-muted text-sm mb-1 h-2">
+                        Feb 2023 - Present
+                      </div>
+                      <div>
+                        Skills: MARN · MERN Stack · PHP · Laravel · Mobile Applications · JavaScript · TypeScript
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div class="timeline">
+                  <div class="timeline-card timeline-card-success card shadow-sm">
+                    <div class="card-body" style="width: 100%;">
+                      <h5 class="mb-1">Software Engineer at
+                        <span class="text-muted">
+                          KIVU Cold Group
+                        </span>
 
+                      </h5>
+                      <div class="text-muted text-sm mb-1 h-2">
+                        Nov 2022 - Present
+                      </div>
+                      <div>
+                        Skills: MERN Stack · Flutter · TypeScript · React.js
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline">
+                  <div class="timeline-card timeline-card-success card shadow-sm">
+                    <div class="card-body" style="width: 100%;">
+                      <h5 class="mb-1">
+                        Technical Team Lead at
+                        <span class="text-muted">
+                          Andela
+                        </span>
+
+                      </h5>
+                      <div class="text-muted text-sm mb-1 h-2">
+                        Dec 2022 - Jul 2023
+                      </div>
+                      <div>
+                        Skills: MERN Stack · Node.js · JavaScript · TypeScript
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline">
+                  <div class="timeline-card timeline-card-success card shadow-sm">
+                    <div class="card-body" style="width: 100%;">
+                      <h5 class="mb-1">
+                        Apprenticeship at
+                        <span class="text-muted">
+                          Monga Technology Ltd
+                        </span>
+
+                      </h5>
+                      <div class="text-muted text-sm mb-1 h-2">
+                        2022 - Nov 2022
+                      </div>
+                      <div>
+                        <pre>
+
+Developing React typescript and integrate with backendDeveloping React typescript and integrate
+with backend
+Skills: MERN Stack · React Native · TypeScript
+                        </pre>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline">
+                  <div class="timeline-card timeline-card-success card shadow-sm">
+                    <div class="card-body" style="width: 100%;">
+                      <h5 class="mb-1">
+                        Trainee at
+                        <span class="text-muted">
+                          KLAB
+                        </span>
+
+                      </h5>
+                      <div class="text-muted text-sm mb-1 h-2">
+                        May 2022 - Oct 2022
+                      </div>
+                      <div>
+                        <pre>
+- Development of React native mobile app.
+- Developing of REST/RESTful APIs.
+- Team collaboration.
+- System Analysis.
+- Developing of REST/RESTful APIs. 
+- Team collaboration. 
+- System Analysis.- Development of React native mobile app.
+- Developing of REST/RESTful APIs.
+- Team collaboration. 
+- System Analysis.
+- Developing of REST/RESTful APIs.
+- Team collaboration.
+- System Analysis.
+Skills: System Deployment · Mobile Application Development
+                         </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline">
+                  <div class="timeline-card timeline-card-success card shadow-sm">
+                    <div class="card-body" style="width: 100%;">
+                      <h5 class="mb-1">
+                        Trainee at
+                        <span class="text-muted">
+                          Andela
+                        </span>
+
+                      </h5>
+                      <div class="text-muted text-sm mb-1 h-2">
+                        Jan 2022 - Nov 2022
+                      </div>
+                      <div>
+                          Skills: MERN Stack · React Native · JavaScript · TypeScript · React.js · Apollo GraphQL · Tailwind CSS · Software Development
+                        </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
             </div>
           </div>
-        </div>
 
-      </main>
-      <footer class="footer">
-        <div>
-          <ul>
-            <li>
-              <a href="https://twitter.com/250_fab"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href="https://web.facebook.com/250.fab"><i class="fa fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href="https://github.com/fab-ryan"><i class="fa fa-github"></i></a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/250_fab"><i class="fa fa-instagram"></i></a>
-            </li>
-          </ul>
-        </div>
-        <form id="subscription-form">
-          <div style="display: flex;">
-            <input type="text" name="email" class="form-control" id="email" placeholder="Subscriber to My blog">
-            &nbsp;
-            <span>
-            </span>
-            <button type="submit" style="background-color: currentColor; border: none;"> <i class="fa fa-rocket"
-                style="font-size:30px; cursor: pointer; color:red;" aria-hidden=" true"></i></button>
 
+          <div class="experience-portfolio fadeInUp animated">
+            <h4 class="text-muted">
+              Portfolio
+            </h4>
+            <!-- <p class="text-muted w-40">
+              
+            </p> -->
+            <!-- <div class="row-port">
+              <nav id="filter" class="col-md-6 text-center fort">
+                <ul>
+                  <li><a href="#" class="btn-theme btn-small current" data-filter="*">All</a></li>
+                  <li><a href="#" class="btn-theme btn-small" data-filter=".webdesign">Web Design</a></li>
+                  <li><a href="#" class="btn-theme btn-small" data-filter=".photography">Photography</a></li>
+                </ul>
+              </nav>
+            </div> -->
+
+            <div class=" portfolio-section ">
+              <div class="row-port ">
+
+                <div class="portfolio-items isotopeWrapper clearfix" id="3">
+
+                  <div class="col-md-12-port">
+                    <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
+                      style="transform: translate3d(0px, 0px, 0px);">
+                      <div class="portfolio-item">
+                        <img src="images/portfolio/mofresh.png" alt="">
+                        <div class="portfolio-desc align-center">
+                          <div class="folio-info">
+                            <a href="https://mofresh.rw/" target="_blank" class="fancybox">
+                              <h5>Mofresh</h5>
+                              <i class="fa fa-arrows-alt fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
+                      style="transform: translate3d(0px, 0px, 0px);">
+                      <div class="portfolio-item">
+                        <img src="images/portfolio/rayon.png" alt="">
+                        <div class="portfolio-desc align-center">
+                          <div class="folio-info">
+                            <a href="https://tv.rayonsports.rw/" target="_blank" class="fancybox">
+                              <h5>Rayon Sports TV</h5>
+                              <i class="fa fa-arrows-alt fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
+                      style="transform: translate3d(0px, 0px, 0px);">
+                      <div class="portfolio-item">
+                        <img src="images/portfolio/radhnet.png" alt="">
+                        <div class="portfolio-desc align-center">
+                          <div class="folio-info">
+                            <a href="https://radahnet.com/" target="_blank" class="fancybox">
+                              <h5>Radahnet</h5>
+                              <i class="fa fa-arrows-alt fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="col-md-12-port ">
+                    <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
+                      style="transform: translate3d(0px, 0px, 0px);">
+                      <div class="portfolio-item">
+                        <img src="images/portfolio/eastflix.png" alt="">
+                        <div class="portfolio-desc align-center">
+                          <div class="folio-info">
+                            <a href="https://eastflix.tv/" target="_blank" class="fancybox">
+                              <h5>Eastflix Tv</h5>
+                              <i class="fa fa-arrows-alt fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
+                      style="transform: translate3d(0px, 0px, 0px);">
+                      <div class="portfolio-item">
+                        <img src="images/portfolio/palm.png" alt="">
+                        <div class="portfolio-desc align-center">
+                          <div class="folio-info">
+                            <a href="https://play.google.com/store/apps/details?id=com.palmevents&pli=1" target="_blank" class="fancybox">
+                              <h5>Palm Events App</h5>
+                              <i class="fa fa-arrows-alt fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="col-sm-4 isotopeItem webdesign isotope-item pt-3"
+                      style="transform: translate3d(0px, 0px, 0px);">
+                      <div class="portfolio-item">
+                        <img src="images/portfolio/events.png" alt="">
+                        <div class="portfolio-desc align-center">
+                          <div class="folio-info">
+                            <a href="https://easteventz.com/" target="_blank" class="fancybox">
+                              <h5>East Eventz</h5>
+                              <i class="fa fa-arrows-alt fa-2x"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+              </div>
+            </div>
 
           </div>
-        </form>
-        <div>copyright <i class="fa fa-copyright " aria-hidden="true"> </i>2022 Fabrice All Rights Reserved</div>
+        </div>
+      </div>
 
-      </footer>
-    </div>
-    <script src="./js/app.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </main>
+    <footer class="footer">
+      <div>
+        <ul>
+          <li>
+            <a href="https://twitter.com/250_fab"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="https://web.facebook.com/250.fab"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/fab-ryan"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/250_fab"><i class="fa fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+      <form id="subscription-form">
+        <div style="display: flex;">
+          <input type="text" name="email" class="form-control" id="email" placeholder="Subscriber to My blog">
+          &nbsp;
+          <span>
+          </span>
+          <button type="submit" style="background-color: currentColor; border: none;"> <i class="fa fa-rocket"
+              style="font-size:30px; cursor: pointer; color:red;" aria-hidden=" true"></i></button>
 
-    <script>
-      window.onload = setTimeout( function () {
 
-        const preloader = document.getElementById( "preloader" );
-        preloader.style.opacity = 0.1;
-        const afterload = document.getElementById( "afterload" );
-        preloader.style.display = "none";
-        afterload.style.display = "block";
-      }, 1000 );
-    </script>
-  </body>
+        </div>
+      </form>
+      <div>copyright <i class="fa fa-copyright " aria-hidden="true"> </i>2022 Fabrice All Rights Reserved</div>
+
+    </footer>
+  </div>
+  <script src="./js/app.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script>
+    window.onload = setTimeout(function () {
+
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = 0.1;
+      const afterload = document.getElementById("afterload");
+      preloader.style.display = "none";
+      afterload.style.display = "block";
+    }, 1000);
+  </script>
+</body>
 
 </html>
